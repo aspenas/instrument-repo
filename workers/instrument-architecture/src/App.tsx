@@ -43,7 +43,7 @@ const rules = [
 
 
 function Signature() {
-  const ref = useRef<HTMLParagraphElement>(null)
+  const ref = useRef<SVGSVGElement>(null)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -51,16 +51,43 @@ function Signature() {
     if (!el) return
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect() } },
-      { threshold: 0.6 }
+      { threshold: 0.5 }
     )
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <p ref={ref} className={`signature ${visible ? 'signature--visible' : ''}`} aria-label="PJS">
-      <span className="signature-text">PJS</span>
-    </p>
+    <div className="signature" aria-label="PJS">
+      <svg
+        ref={ref}
+        className={`signature-svg ${visible ? 'signature-svg--draw' : ''}`}
+        viewBox="0 0 160 60"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <text
+          x="0"
+          y="48"
+          className="signature-stroke"
+          fontFamily="Caveat, cursive"
+          fontSize="52"
+          strokeWidth="1.2"
+          fill="none"
+        >
+          PJS
+        </text>
+        <text
+          x="0"
+          y="48"
+          className="signature-fill"
+          fontFamily="Caveat, cursive"
+          fontSize="52"
+        >
+          PJS
+        </text>
+      </svg>
+    </div>
   )
 }
 
