@@ -196,47 +196,80 @@ html.lenis, html.lenis body {
    ─────────────────────────────────────────────── */
 
 .demo-callout {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 clamp(1.5rem, 5vw, 5rem);
-}
-
-.demo-link {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 1.75rem;
-  border: 1px solid var(--accent);
-  border-radius: 1rem;
-  transition: background 200ms ease, border-color 200ms ease;
+  text-align: center;
+  padding: clamp(5rem, 10vh, 8rem) 2rem;
+  overflow: hidden;
 }
 
-.demo-link:hover {
-  background: color-mix(in srgb, var(--accent) 8%, transparent);
+.demo-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%);
+  pointer-events: none;
 }
 
 .demo-pulse {
-  flex-shrink: 0;
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 0.65rem;
+  height: 0.65rem;
   border-radius: 50%;
   background: var(--accent);
-  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 12px var(--accent), 0 0 30px color-mix(in srgb, var(--accent) 40%, transparent);
+  animation: pulse 2.5s ease-in-out infinite;
+  margin-bottom: 1.5rem;
 }
 
-.demo-text {
-  flex: 1;
-  font-size: 0.95rem;
+.demo-label {
+  margin: 0 0 1rem;
+  font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.demo-heading {
+  margin: 0;
+  font-family: "Instrument Serif", "Iowan Old Style", serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+.demo-desc {
+  margin: 1rem 0 0;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.7;
   color: var(--text-sub);
 }
 
-.demo-text strong {
-  color: var(--text);
+.demo-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.85rem 2rem;
+  border-radius: 9999px;
+  background: var(--accent);
+  color: #041014;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.demo-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+  50% { opacity: 0.4; transform: scale(0.8); }
 }
 
 /* ───────────────────────────────────────────────
