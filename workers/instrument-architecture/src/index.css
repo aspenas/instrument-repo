@@ -330,34 +330,13 @@ html.lenis, html.lenis body {
 
 .signature {
   margin: 3.5rem 0 0;
+  color: var(--text);
 }
 
 .signature-svg {
-  width: clamp(8rem, 14vw, 11rem);
+  width: clamp(7rem, 12vw, 9rem);
   height: auto;
-}
-
-.signature-stroke {
-  stroke: var(--text);
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.signature-fill {
-  fill: var(--text);
-  opacity: 0;
-}
-
-.signature-svg--draw .signature-stroke {
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.signature-svg--draw .signature-fill {
-  opacity: 0.85;
-  transition: opacity 0.8s ease 1.6s;
+  opacity: 0.8;
 }
 
 /* ───────────────────────────────────────────────
@@ -535,8 +514,7 @@ html.lenis, html.lenis body {
 
 .specimen-figure {
   margin: 0;
-  padding: 1rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   background: linear-gradient(180deg, #0c0f10, #101315);
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -547,11 +525,9 @@ html[data-theme="light"] .specimen-figure {
 }
 
 .specimen-figure img {
+  display: block;
   width: 100%;
   height: auto;
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  object-fit: contain;
 }
 
 .specimen-meta h3 {

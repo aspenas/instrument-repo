@@ -43,11 +43,13 @@ const rules = [
 
 
 function Signature() {
-  const ref = useRef<SVGSVGElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const pathRef = useRef<SVGPathElement>(null)
+  const penRef = useRef<SVGCircleElement>(null)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const el = ref.current
+    const el = containerRef.current
     if (!el) return
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect() } },
@@ -57,35 +59,74 @@ function Signature() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    if (!visible || !pathRef.current || !penRef.current) return
+    const path = pathRef.current
+    const pen = penRef.current
+    const length = path.getTotalLength()
+
+    path.style.strokeDasharray = `${length}`
+    path.style.strokeDashoffset = `${length}`
+
+    const duration = 2800
+    const start = performance.now()
+
+    function animate(now: number) {
+      const elapsed = now - start
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+
+      path.style.strokeDashoffset = `${length * (1 - eased)}`
+
+      const point = path.getPointAtLength(length * eased)
+      pen.setAttribute('cx', `${point.x}`)
+      pen.setAttribute('cy', `${point.y}`)
+      pen.style.opacity = progress < 1 ? '1' : '0'
+
+      if (progress < 1) requestAnimationFrame(animate)
+    }
+
+    requestAnimationFrame(animate)
+  }, [visible])
+
+  // PJS path — connected cursive strokes
+  const d = [
+    // P downstroke + loop
+    'M 8 52 L 8 10 C 8 10 10 6 16 6 C 26 6 32 12 32 18 C 32 26 26 30 18 30 L 8 30',
+    // connecting stroke to J
+    'M 8 52 C 14 50 22 46 30 40',
+    // J stem + hook
+    'M 42 8 L 42 44 C 42 52 38 56 32 56 C 28 56 26 52 28 48',
+    // connecting stroke to S
+    'M 42 36 C 48 32 54 28 60 24',
+    // S curve
+    'M 72 16 C 68 12 60 10 58 14 C 54 18 58 24 64 28 C 70 32 76 34 76 42 C 76 48 72 52 64 52 C 60 52 56 48 58 44',
+  ].join(' ')
+
   return (
-    <div className="signature" aria-label="PJS">
+    <div ref={containerRef} className="signature" aria-label="PJS">
       <svg
-        ref={ref}
-        className={`signature-svg ${visible ? 'signature-svg--draw' : ''}`}
-        viewBox="0 0 160 60"
+        className="signature-svg"
+        viewBox="0 0 86 62"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <text
-          x="0"
-          y="48"
-          className="signature-stroke"
-          fontFamily="Caveat, cursive"
-          fontSize="52"
-          strokeWidth="1.2"
+        <path
+          ref={pathRef}
+          d={d}
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           fill="none"
-        >
-          PJS
-        </text>
-        <text
-          x="0"
-          y="48"
-          className="signature-fill"
-          fontFamily="Caveat, cursive"
-          fontSize="52"
-        >
-          PJS
-        </text>
+          style={{ strokeDasharray: '2000', strokeDashoffset: '2000' }}
+        />
+        <circle
+          ref={penRef}
+          r="3"
+          fill="currentColor"
+          style={{ opacity: 0 }}
+        />
       </svg>
     </div>
   )
