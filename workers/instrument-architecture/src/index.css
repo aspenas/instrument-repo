@@ -176,6 +176,70 @@ img { display: block; max-width: 100%; }
 }
 
 /* ───────────────────────────────────────────────
+   Lenis
+   ─────────────────────────────────────────────── */
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* ───────────────────────────────────────────────
+   Demo callout
+   ─────────────────────────────────────────────── */
+
+.demo-callout {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 5rem);
+}
+
+.demo-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 1rem;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.demo-link:hover {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.demo-pulse {
+  flex-shrink: 0;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.demo-text {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--text-sub);
+}
+
+.demo-text strong {
+  color: var(--text);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* ───────────────────────────────────────────────
    Intro
    ─────────────────────────────────────────────── */
 

@@ -90,6 +90,17 @@ export default function App() {
           />
         </section>
 
+        {/* ──── Demo callout ──── */}
+        <section className="demo-callout">
+          <a href="https://tharp-demo.highline.work/perch/" target="_blank" rel="noreferrer" className="demo-link">
+            <span className="demo-pulse" aria-hidden="true" />
+            <span className="demo-text">
+              <strong>See Perch live.</strong> The first instrument, running against real Tharp data.
+            </span>
+            <ArrowUpRight className="icon" aria-hidden="true" />
+          </a>
+        </section>
+
         {/* ──── Intro ──── */}
         <section className="intro">
           <div className="intro-lead">
