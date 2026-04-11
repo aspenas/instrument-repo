@@ -473,6 +473,13 @@ search(query)                # Full-text search across business data`}</pre>
         <footer className="site-footer">
           <p className="footer-closing">Perch is the first member of the instrument&nbsp;family.</p>
           <img
+            src="/brand/pjs-signature.svg"
+            alt="PJS"
+            width={200}
+            height={80}
+            className="footer-signature"
+          />
+          <img
             src={lockupSrc}
             alt="Perch horizontal lockup"
             width={420}

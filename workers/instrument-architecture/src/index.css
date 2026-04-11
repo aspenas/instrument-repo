@@ -459,6 +459,20 @@ html[data-theme="light"] .specimen-figure {
   color: var(--text);
 }
 
+.footer-signature {
+  width: min(100%, 10rem);
+  opacity: 0.85;
+}
+
+html[data-theme="light"] .footer-signature {
+  opacity: 0.9;
+}
+
+html[data-theme="dark"] .footer-signature {
+  filter: invert(1);
+  opacity: 0.7;
+}
+
 .footer-lockup {
   width: min(100%, 16rem);
   opacity: 0.7;
