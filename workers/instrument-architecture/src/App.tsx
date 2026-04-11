@@ -415,7 +415,8 @@ export default function App() {
               └──────────────────┼──────────────────┘
                                  │
                                  ▼
-                    Synthesizer (Claude Opus 4.5)
+                    Candlefish Synthesis Engine
+                    (proprietary multi-model on NVIDIA Trident GPU)
                     Operator briefing generation
                                  │
                     ┌────────────┼────────────┐
@@ -435,7 +436,8 @@ export default function App() {
                   <tr><td>ERP</td><td>Syteline Cloud (REST + custom IDOs)</td></tr>
                   <tr><td>Data fabric</td><td>OneView JSON ingestion</td></tr>
                   <tr><td>File access</td><td>SMB mount (shared drives)</td></tr>
-                  <tr><td>Synthesis</td><td>Claude Opus 4.5</td></tr>
+                  <tr><td>Synthesis</td><td>Proprietary multi-model (Opus 4.6 + Codex 5.4 High + ensemble)</td></tr>
+                  <tr><td>Compute</td><td>NVIDIA Trident GPU</td></tr>
                   <tr><td>Secrets</td><td>Infisical (all credentials)</td></tr>
                   <tr><td>Deploy</td><td>Mac Studio via rsync + LaunchAgent</td></tr>
                 </tbody>
@@ -450,7 +452,7 @@ export default function App() {
                   <tr><td>Ingest</td><td>Syteline ERP via IONAPI REST. Read-only posture — never writes back to ERP. Snapshots stored in MongoDB.</td></tr>
                   <tr><td>Financials</td><td>P&L ingestion from CSV/Excel and optional API. Parsed into structured financial records.</td></tr>
                   <tr><td>Data fabric</td><td>OneView JSON payloads ingested via dedicated pipeline. SMB file server for shared drive access.</td></tr>
-                  <tr><td>Synthesize</td><td>Opus generates operator briefings from raw financial and operational data. Linked to context memory.</td></tr>
+                  <tr><td>Synthesize</td><td>Proprietary multi-model engine (Opus 4.6 + Codex 5.4 High) generates operator briefings from raw financial and operational data on NVIDIA Trident GPU.</td></tr>
                   <tr><td>Output</td><td>Weekly briefing, anomaly alerts, cash flow reads. Served via Tharp API on port 5200.</td></tr>
                 </tbody>
               </table>
@@ -548,7 +550,7 @@ tharp-scheduling.highline.work/     # Scheduling interface
                 <tbody>
                   <tr><td>Ingest</td><td>Domain-specific connector pulls data on a schedule. Read-only posture. Snapshots stored in MongoDB.</td></tr>
                   <tr><td>Analyze</td><td>Service layer computes domain metrics — financial analysis, anomaly detection, scheduling intelligence.</td></tr>
-                  <tr><td>Synthesize</td><td>Claude Opus generates natural language interpretation. Linked to operator context.</td></tr>
+                  <tr><td>Synthesize</td><td>Proprietary multi-model engine generates natural language interpretation. Runs on NVIDIA Trident GPU. Linked to operator context.</td></tr>
                   <tr><td>Expose</td><td>REST API + React dashboard. The operator never sees the pipeline — only the read.</td></tr>
                 </tbody>
               </table>
