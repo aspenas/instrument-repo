@@ -801,7 +801,20 @@ html[data-theme="light"] .tech-code {
    Responsive
    ─────────────────────────────────────────────── */
 
+/* ───────────────────────────────────────────────
+   Mobile — iOS Safari, Chrome, Android
+   ─────────────────────────────────────────────── */
+
 @media (max-width: 768px) {
+
+  /* Safe areas for notched phones */
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Hero */
   .hero {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
@@ -809,7 +822,7 @@ html[data-theme="light"] .tech-code {
     justify-items: center;
     text-align: center;
     gap: 1.5rem;
-    padding: 3rem 1.5rem;
+    padding: 3rem 1.25rem;
   }
 
   .hero-mark {
@@ -821,22 +834,69 @@ html[data-theme="light"] .tech-code {
     align-items: center;
   }
 
+  .hero-title {
+    font-size: clamp(4rem, 18vw, 6rem);
+  }
+
+  /* Demo callout */
+  .demo-callout {
+    padding: 4rem 1.25rem;
+  }
+
+  .demo-confidential {
+    font-size: 0.6rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .demo-heading {
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+  }
+
+  /* Intro */
+  .intro,
+  .instrument,
+  .brand,
+  .voice,
+  .tech-ref {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
   .intro-body {
     grid-template-columns: 1fr;
   }
 
+  .display-heading {
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+  }
+
+  .section-heading {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+
+  /* Signature */
+  .signature-svg {
+    width: clamp(5rem, 20vw, 7rem);
+  }
+
+  /* Principles */
   .principles {
     grid-template-columns: 1fr;
   }
 
+  /* Surfaces */
   .surfaces {
     grid-template-columns: 1fr;
   }
 
   .surface {
-    min-height: 14rem;
+    min-height: 12rem;
+    padding: 1.5rem;
   }
 
+  /* Rules */
   .rule {
     grid-template-columns: 1fr;
   }
@@ -845,12 +905,38 @@ html[data-theme="light"] .tech-code {
     margin-bottom: -0.5rem;
   }
 
+  /* Voice */
   .voice-specimen {
     grid-template-columns: 1fr;
   }
 
+  /* Tech — tables need horizontal scroll wrapper */
   .tech-grid {
     grid-template-columns: 1fr;
+  }
+
+  .tech-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tech-table tbody {
+    display: table;
+    width: 100%;
+    min-width: 28rem;
+  }
+
+  .tech-table td:first-child {
+    width: 8rem;
+    white-space: nowrap;
+  }
+
+  .tech-diagram,
+  .tech-code {
+    font-size: 0.55rem;
+    padding: 1rem;
+    -webkit-overflow-scrolling: touch;
   }
 
   .tech-asset-link {
@@ -861,8 +947,38 @@ html[data-theme="light"] .tech-code {
     display: none;
   }
 
-  .tech-diagram,
-  .tech-code {
-    font-size: 0.62rem;
+  /* Footer */
+  .site-footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: calc(3rem + env(safe-area-inset-bottom));
+  }
+
+  .footer-closing {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* Touch targets — minimum 44px */
+  .theme-toggle {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+
+  .demo-cta {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .footer-links a {
+    padding: 0.5rem 0;
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
   }
 }
