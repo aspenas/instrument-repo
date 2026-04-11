@@ -1,0 +1,15 @@
+name = "instrument-architecture"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+account_id = "eb3f284eb2fc05d0c63b9548f575e3e4"
+
+routes = [
+  { pattern = "instruments.highline.work/*", zone_id = "fc8e05752e843d9a45edd03ba54d6924" }
+]
+
+[build]
+command = "npm run build"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"

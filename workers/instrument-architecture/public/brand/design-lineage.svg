@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880" fill="none">
+  <rect width="1400" height="880" rx="38" fill="#070809"/>
+  <text x="86" y="78" fill="#4A9BA8" font-family="JetBrains Mono, monospace" font-size="18" letter-spacing="0.42em">LINEAGE COMPARISON</text>
+  <text x="700" y="136" fill="#FAFAFA" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="700" text-anchor="middle">Candlefish to Perch</text>
+  <text x="700" y="178" fill="#7B8486" font-family="JetBrains Mono, monospace" font-size="18" letter-spacing="0.14em" text-anchor="middle">real parent logo / approved instrument mark / direction is the tell</text>
+
+  <rect x="68" y="228" width="566" height="472" rx="30" fill="#F7F4EE" stroke="#D8D2C8" stroke-width="2"/>
+  <rect x="766" y="228" width="566" height="472" rx="30" fill="#101112" stroke="#232628" stroke-width="2"/>
+
+  <text x="116" y="282" fill="#0F637B" font-family="JetBrains Mono, monospace" font-size="18" font-weight="600" letter-spacing="0.32em">PARENT SYSTEM</text>
+  <image href="candlefish/logo-light.png" x="116" y="312" width="314" height="69" preserveAspectRatio="xMinYMin meet"/>
+  <text x="116" y="420" fill="#5F6368" font-family="Inter, Arial, sans-serif" font-size="24">Faces left. Scope retained. Parent company mark only.</text>
+  <rect x="116" y="454" width="470" height="150" rx="24" fill="#FFFFFF" stroke="#E1DBD1" stroke-width="2"/>
+  <image href="candlefish/icon.png" x="268" y="462" width="166" height="134" preserveAspectRatio="xMidYMid meet"/>
+  <text x="116" y="646" fill="#6D7175" font-family="JetBrains Mono, monospace" font-size="18">ROLE / Parent company</text>
+  <text x="116" y="678" fill="#6D7175" font-family="JetBrains Mono, monospace" font-size="18">FACING / Left</text>
+  <text x="116" y="710" fill="#6D7175" font-family="JetBrains Mono, monospace" font-size="18">SCOPE / Yes</text>
+  <text x="116" y="742" fill="#6D7175" font-family="JetBrains Mono, monospace" font-size="18">ACCENT / #04DAF6</text>
+
+  <text x="814" y="282" fill="#4A9BA8" font-family="JetBrains Mono, monospace" font-size="18" font-weight="600" letter-spacing="0.32em">FIRST INSTRUMENT</text>
+  <image href="perch-lockup-horizontal-dark.svg" x="814" y="308" width="430" height="130" preserveAspectRatio="xMinYMin meet"/>
+  <text x="814" y="490" fill="#A7ADB0" font-family="Inter, Arial, sans-serif" font-size="24">Faces right. Scope removed. Wake instrument by Candlefish.</text>
+  <rect x="814" y="526" width="470" height="110" rx="24" fill="#171717" stroke="#232628" stroke-width="2"/>
+  <image href="perch-mark.svg" x="964" y="540" width="170" height="128" preserveAspectRatio="xMidYMid meet"/>
+  <text x="814" y="690" fill="#8E989B" font-family="JetBrains Mono, monospace" font-size="18">ROLE / First instrument</text>
+  <text x="814" y="722" fill="#8E989B" font-family="JetBrains Mono, monospace" font-size="18">FACING / Right</text>
+  <text x="814" y="754" fill="#8E989B" font-family="JetBrains Mono, monospace" font-size="18">SCOPE / No</text>
+  <text x="814" y="786" fill="#8E989B" font-family="JetBrains Mono, monospace" font-size="18">ACCENT / #4A9BA8</text>
+
+  <path d="M654 466H744" stroke="#4A9BA8" stroke-width="3" stroke-linecap="round"/>
+  <path d="M724 446L756 466L724 486" stroke="#4A9BA8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="699" y="438" fill="#4A9BA8" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="0.12em" text-anchor="middle">same construction language</text>
+
+  <rect x="68" y="742" width="1264" height="92" rx="24" fill="#111315" stroke="#222628" stroke-width="2"/>
+  <text x="104" y="780" fill="#6E777A" font-family="JetBrains Mono, monospace" font-size="16" letter-spacing="0.18em">SHARED DNA</text>
+  <text x="104" y="812" fill="#E2E4E5" font-family="Inter, Arial, sans-serif" font-size="24">Uniform line art, filled eye, fish naming, and Wake infrastructure.</text>
+  <text x="104" y="842" fill="#E2E4E5" font-family="Inter, Arial, sans-serif" font-size="24">Perch changes direction, removes scope, and warms the accent.</text>
+</svg>

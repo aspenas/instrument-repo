@@ -1,0 +1,657 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────
+   Theme tokens
+   ─────────────────────────────────────────────── */
+
+:root {
+  --bg: #0a0c0d;
+  --text: #f7f4ef;
+  --text-body: #c6c7c3;
+  --text-sub: #889093;
+  --accent: #4a9ba8;
+  --line: rgba(255, 255, 255, 0.08);
+  --surface-light-a: #fffdfa;
+  --surface-light-b: #f3eee6;
+  --surface-dark-a: #0d1011;
+  --surface-dark-b: #060708;
+  --shadow: 0 32px 80px rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="light"] {
+  --bg: #fafafa;
+  --text: #111314;
+  --text-body: #3a3d3f;
+  --text-sub: #6c7476;
+  --line: rgba(17, 17, 17, 0.08);
+  --shadow: 0 32px 80px rgba(0, 0, 0, 0.08);
+}
+
+/* ───────────────────────────────────────────────
+   Base
+   ─────────────────────────────────────────────── */
+
+html {
+  background: var(--bg);
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text-body);
+  font-family: "DM Sans Variable", "DM Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+#root { min-height: 100vh; }
+
+.icon { width: 1rem; height: 1rem; }
+.accent { color: var(--accent); }
+
+/* ───────────────────────────────────────────────
+   Skip link & theme toggle
+   ─────────────────────────────────────────────── */
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  border-radius: 9999px;
+  background: var(--accent);
+  color: #041014;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: none;
+}
+
+.theme-toggle {
+  position: fixed;
+  right: 1.5rem;
+  top: 1.5rem;
+  z-index: 40;
+  display: inline-flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 200ms ease;
+}
+
+.theme-toggle:hover { border-color: var(--accent); }
+
+.theme-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* ───────────────────────────────────────────────
+   Shared typographic patterns
+   ─────────────────────────────────────────────── */
+
+.section-label {
+  margin: 0;
+  font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.section-heading {
+  margin: 0.75rem 0 0;
+  font-family: "Instrument Serif", "Iowan Old Style", serif;
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+/* ───────────────────────────────────────────────
+   Hero
+   ─────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 100svh;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 5vw, 5rem);
+  overflow: clip;
+}
+
+.hero-mark {
+  justify-self: center;
+  width: min(100%, 28rem);
+  pointer-events: none;
+  animation: drift 10s ease-in-out infinite;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-title {
+  margin: 0;
+  font-family: "Instrument Serif", "Iowan Old Style", serif;
+  font-size: clamp(6rem, 14vw, 12rem);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  color: var(--text);
+}
+
+.hero-attr {
+  margin: 0;
+  font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+}
+
+/* ───────────────────────────────────────────────
+   Instrument
+   ─────────────────────────────────────────────── */
+
+.instrument {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+
+.instrument-header {
+  max-width: 42rem;
+  margin-bottom: clamp(3rem, 6vh, 5rem);
+}
+
+.display-heading {
+  margin: 0;
+  font-family: "Instrument Serif", "Iowan Old Style", serif;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.instrument-desc {
+  margin: 1.5rem 0 0;
+  max-width: 36rem;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.85;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.principle {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.principle h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.principle p {
+  margin: 0.6rem 0 0;
+  line-height: 1.75;
+}
+
+/* ───────────────────────────────────────────────
+   Brand
+   ─────────────────────────────────────────────── */
+
+.brand {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+
+.brand-header {
+  max-width: 36rem;
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+}
+
+.surfaces {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: clamp(3rem, 6vh, 5rem);
+}
+
+.surface {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20rem;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.surface--light {
+  background: linear-gradient(180deg, var(--surface-light-a), var(--surface-light-b));
+}
+
+.surface--dark {
+  background: linear-gradient(180deg, var(--surface-dark-a), var(--surface-dark-b));
+}
+
+.surface img {
+  width: min(100%, 26rem);
+}
+
+.rules {
+  display: grid;
+  gap: 0;
+}
+
+.rule {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.rule:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.rule-num {
+  font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  padding-top: 0.15rem;
+}
+
+.rule h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.rule p {
+  margin: 0.35rem 0 0;
+  line-height: 1.75;
+}
+
+/* ───────────────────────────────────────────────
+   Voice
+   ─────────────────────────────────────────────── */
+
+.voice {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+
+.voice-header {
+  max-width: 36rem;
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+}
+
+.voice-desc {
+  margin: 1rem 0 0;
+  max-width: 34rem;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.85;
+}
+
+.voice-specimen {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.specimen-figure {
+  margin: 0;
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(180deg, #0c0f10, #101315);
+  box-shadow: var(--shadow);
+}
+
+html[data-theme="light"] .specimen-figure {
+  background: linear-gradient(180deg, #0d1011, #141719);
+}
+
+.specimen-figure img {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.specimen-meta h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.specimen-meta p {
+  margin: 0.6rem 0 0;
+  line-height: 1.75;
+}
+
+/* ───────────────────────────────────────────────
+   Footer
+   ─────────────────────────────────────────────── */
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 4rem clamp(1.5rem, 5vw, 5rem) 6rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.footer-closing {
+  margin: 0;
+  font-family: "Instrument Serif", "Iowan Old Style", serif;
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.footer-lockup {
+  width: min(100%, 16rem);
+  opacity: 0.7;
+}
+
+html[data-theme="light"] .footer-lockup {
+  opacity: 0.6;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  transition: color 200ms ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+/* ───────────────────────────────────────────────
+   Technical reference
+   ─────────────────────────────────────────────── */
+
+.tech-ref {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+
+.tech-ref-header {
+  max-width: 36rem;
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 2.5rem;
+}
+
+.tech-block h3 {
+  margin: 0 0 1rem;
+  font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.tech-block--full {
+  grid-column: 1 / -1;
+}
+
+.tech-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tech-table td {
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--line);
+  vertical-align: top;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.tech-table tr:last-child td {
+  border-bottom: 1px solid var(--line);
+}
+
+.tech-table td:first-child {
+  width: 10rem;
+  color: var(--text-sub);
+  font-size: 0.85rem;
+  padding-right: 1.5rem;
+}
+
+.tech-table td:last-child {
+  color: var(--text);
+}
+
+.tech-table strong {
+  color: var(--text);
+}
+
+.tech-table code {
+  font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+.tech-table a {
+  color: var(--accent);
+  transition: opacity 200ms ease;
+}
+
+.tech-table a:hover {
+  opacity: 0.7;
+}
+
+.tech-usage {
+  font-size: 0.82rem;
+  color: var(--text-sub);
+}
+
+.tech-assets {
+  display: grid;
+  gap: 0;
+}
+
+.tech-asset-link {
+  display: grid;
+  grid-template-columns: 12rem 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+  transition: color 200ms ease;
+}
+
+.tech-asset-link:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.tech-asset-link:hover {
+  color: var(--accent);
+}
+
+.tech-asset-link span {
+  color: var(--text);
+}
+
+.tech-asset-link code {
+  font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--text-sub);
+}
+
+.tech-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-swatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  width: 7.5rem;
+  height: 5rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.75rem;
+  font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.tech-swatch span:first-child {
+  font-weight: 600;
+}
+
+.tech-swatch span:last-child {
+  opacity: 0.7;
+}
+
+/* ───────────────────────────────────────────────
+   Animation
+   ─────────────────────────────────────────────── */
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+}
+
+/* ───────────────────────────────────────────────
+   Responsive
+   ─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-mark {
+    order: -1;
+    width: min(48vw, 13rem);
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .principles {
+    grid-template-columns: 1fr;
+  }
+
+  .surfaces {
+    grid-template-columns: 1fr;
+  }
+
+  .surface {
+    min-height: 14rem;
+  }
+
+  .rule {
+    grid-template-columns: 1fr;
+  }
+
+  .rule-num {
+    margin-bottom: -0.5rem;
+  }
+
+  .voice-specimen {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-asset-link {
+    grid-template-columns: 1fr auto;
+  }
+
+  .tech-asset-link code {
+    display: none;
+  }
+
+  .tech-swatches {
+    gap: 0.5rem;
+  }
+
+  .tech-swatch {
+    width: 6rem;
+    height: 4.5rem;
+  }
+}
