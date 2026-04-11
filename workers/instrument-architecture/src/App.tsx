@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight, MoonStar, SunMedium } from 'lucide-react'
 
 type Theme = 'dark' | 'light'
@@ -41,6 +41,28 @@ const rules = [
   },
 ]
 
+
+function Signature() {
+  const ref = useRef<HTMLParagraphElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect() } },
+      { threshold: 0.6 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <p ref={ref} className={`signature ${visible ? 'signature--visible' : ''}`} aria-label="PJS">
+      <span className="signature-text">PJS</span>
+    </p>
+  )
+}
 
 export default function App() {
   const [theme, setTheme] = useState<Theme>(() => {
@@ -157,7 +179,7 @@ export default function App() {
             </p>
           </div>
 
-          <p className="signature">PJS</p>
+          <Signature />
         </section>
 
         {/* ──── Perch specifically ──── */}
@@ -312,31 +334,31 @@ export default function App() {
             {/* ── Architecture ── */}
             <div className="tech-block tech-block--full">
               <h3>Architecture</h3>
-              <pre className="tech-diagram">{`Simplifi (Quicken)          QuickBooks          Bank feeds
-        │                        │                    │
-        └────────────────────────┼────────────────────┘
+              <pre className="tech-diagram">{`Syteline Cloud ERP        OneView Data Fabric        P&L (CSV/Excel)
+        │                        │                        │
+        └────────────────────────┼────────────────────────┘
                                  │
-                    SimplifiLiveConnector
-                    (Playwright browser automation, 15-min sync)
+                    Tharp Ingestion Pipeline
+                    (IONAPI auth, REST + SMB connectors)
                                  │
                                  ▼
                     ┌─────────────────────────┐
-                    │    PostgreSQL            │
-                    │    wealth_accounts       │
-                    │    wealth_transactions   │
-                    │    wealth_audit_log      │
+                    │    MongoDB (:27117)      │
+                    │    snapshots             │
+                    │    erp_data              │
+                    │    financials            │
                     └────────────┬────────────┘
                                  │
               ┌──────────────────┼──────────────────┐
               ▼                  ▼                  ▼
-     NetWorthService    ForensicAudit     ML Classification
-     (balances, rates)  (immutable log)   (category, entity)
+     Scheduling Engine    Financial Analysis   Anomaly Detection
+     (production ops)     (P&L, cash flow)     (duplicates, drift)
               │                  │                  │
               └──────────────────┼──────────────────┘
                                  │
                                  ▼
-                         WakeBrain + Synthesizer
-                         (Opus 4.5 — synthesis, briefings)
+                    Synthesizer (Claude Opus 4.5)
+                    Operator briefing generation
                                  │
                     ┌────────────┼────────────┐
                     ▼            ▼            ▼
@@ -348,15 +370,16 @@ export default function App() {
               <h3>Stack</h3>
               <table className="tech-table">
                 <tbody>
-                  <tr><td>Runtime</td><td>Python 3.12, FastAPI, Uvicorn</td></tr>
-                  <tr><td>Database</td><td>PostgreSQL (asyncpg)</td></tr>
-                  <tr><td>Vectors</td><td>Qdrant (voyage-3, 1024-dim)</td></tr>
-                  <tr><td>Graph</td><td>Neo4j (entities, relationships)</td></tr>
-                  <tr><td>Cache</td><td>Redis</td></tr>
-                  <tr><td>Browser</td><td>Playwright (connector sync)</td></tr>
+                  <tr><td>Runtime</td><td>Python 3.11+, stdlib HTTP server</td></tr>
+                  <tr><td>Database</td><td>MongoDB (Docker, port 27117)</td></tr>
+                  <tr><td>Frontend</td><td>React 19 + TypeScript + Vite</td></tr>
+                  <tr><td>Auth</td><td>JWT (HS256), IONAPI hybrid auth</td></tr>
+                  <tr><td>ERP</td><td>Syteline Cloud (REST + custom IDOs)</td></tr>
+                  <tr><td>Data fabric</td><td>OneView JSON ingestion</td></tr>
+                  <tr><td>File access</td><td>SMB mount (shared drives)</td></tr>
                   <tr><td>Synthesis</td><td>Claude Opus 4.5</td></tr>
-                  <tr><td>Classification</td><td>Claude Haiku 3.5</td></tr>
-                  <tr><td>Secrets</td><td>Infisical (all env vars)</td></tr>
+                  <tr><td>Secrets</td><td>Infisical (all credentials)</td></tr>
+                  <tr><td>Deploy</td><td>Mac Studio via rsync + LaunchAgent</td></tr>
                 </tbody>
               </table>
             </div>
@@ -366,71 +389,59 @@ export default function App() {
               <h3>Data pipeline</h3>
               <table className="tech-table">
                 <tbody>
-                  <tr><td>Sync</td><td>Every 15 min via Playwright into Simplifi. Delta detection — only new transactions.</td></tr>
-                  <tr><td>Classify</td><td>ML assigns category, entity (personal / business / household), tax deductibility. Uncertain items go to review queue.</td></tr>
-                  <tr><td>Analyze</td><td>Net worth, savings rate, cash flow, anomaly detection. All changes immutably logged.</td></tr>
-                  <tr><td>Synthesize</td><td>Opus generates the operator read from raw analysis. Linked to Wake memory via vector search.</td></tr>
-                  <tr><td>Output</td><td>Weekly briefing, anomaly alerts, cash flow reads. Exposed via Wealth V2 API and MCP tools.</td></tr>
+                  <tr><td>Ingest</td><td>Syteline ERP via IONAPI REST. Read-only posture — never writes back to ERP. Snapshots stored in MongoDB.</td></tr>
+                  <tr><td>Financials</td><td>P&L ingestion from CSV/Excel and optional API. Parsed into structured financial records.</td></tr>
+                  <tr><td>Data fabric</td><td>OneView JSON payloads ingested via dedicated pipeline. SMB file server for shared drive access.</td></tr>
+                  <tr><td>Synthesize</td><td>Opus generates operator briefings from raw financial and operational data. Linked to context memory.</td></tr>
+                  <tr><td>Output</td><td>Weekly briefing, anomaly alerts, cash flow reads. Served via Tharp API on port 5200.</td></tr>
                 </tbody>
               </table>
             </div>
 
-            {/* ── Perch API surface ── */}
+            {/* ── Tharp API surface ── */}
             <div className="tech-block tech-block--full">
-              <h3>Perch API surface</h3>
-              <p className="tech-note">Endpoints Perch uses from the Wake platform. This is the operator-facing data layer, not the personal finance engine.</p>
-              <pre className="tech-code">{`GET  /wealth/v2/accounts                         # Business accounts + balances
-GET  /wealth/v2/transactions                      # Transaction listing + filters
-GET  /wealth/v2/reports/cash-flow                 # Monthly cash flow trends
-GET  /wealth/v2/reports/entity/{entity}           # Full entity report (business only)
-GET  /wealth/v2/reports/income-statement          # Revenue vs expenses
-POST /wealth/v2/insights                          # Ingest financial insight → Wake memory
-GET  /wealth/v2/insights/search                   # Semantic search over insights
-GET  /wealth/v2/review-queue                      # ML items needing operator approval
-POST /wealth/v2/review-queue/{id}/approve         # Confirm classification
-POST /wealth/v2/review-queue/{id}/correct         # Override classification`}</pre>
+              <h3>Tharp API</h3>
+              <p className="tech-note">Python stdlib HTTP server with JWT auth. Serves the React SPA and exposes the data layer. Port 5200.</p>
+              <pre className="tech-code">{`# API (JWT-authenticated, Tailscale-only)
+GET  /api/snapshots                # ERP data snapshots
+GET  /api/financials               # P&L and financial records
+GET  /api/scheduling               # Production scheduling data
+POST /api/ingest                   # Trigger ingestion pipeline
+
+# Perch briefing endpoints
+GET  /perch/briefing               # Latest operator briefing
+GET  /perch/anomalies              # Flagged anomalies
+GET  /perch/cashflow               # Cash flow read
+
+# Frontend (SPA)
+GET  /perch/*                      # React app (static fallback)`}</pre>
             </div>
 
-            {/* ── Services ── */}
+            {/* ── Source locations ── */}
             <div className="tech-block">
-              <h3>Core services</h3>
+              <h3>Source locations</h3>
               <table className="tech-table">
                 <tbody>
-                  <tr><td>ForensicAuditService</td><td>Immutable audit trail. Logs every transaction change, category assignment, and ML classification. Generates cash flow statements and income reports.</td></tr>
-                  <tr><td>ConnectorManager</td><td>Orchestrates data connectors. Handles sync scheduling, backfill, health checks. Each connector implements connect, sync, disconnect.</td></tr>
-                  <tr><td>WakeBrain</td><td>Orchestrates memory analysis. Extracts commitments, relationships, risks from ingested data. Generates proactive insights and operator briefings.</td></tr>
-                  <tr><td>Synthesizer</td><td>LLM abstraction layer. Routes to Opus (complex synthesis) or Haiku (quick classification). Tracks token usage and cost.</td></tr>
+                  <tr><td>API server</td><td><code>tharp/src/tharp/server/app.py</code></td></tr>
+                  <tr><td>ERP connector</td><td><code>tharp/src/tharp/automator/api/</code></td></tr>
+                  <tr><td>Ingestion</td><td><code>tharp/src/tharp/ingest_*.py</code></td></tr>
+                  <tr><td>Financial P&L</td><td><code>tharp/src/tharp/ingest_financials.py</code></td></tr>
+                  <tr><td>Dashboard</td><td><code>tharp/src/dashboard/</code></td></tr>
+                  <tr><td>Brand site</td><td><code>instrument-repo/workers/</code></td></tr>
                 </tbody>
               </table>
             </div>
 
-            {/* ── Key tables ── */}
+            {/* ── MongoDB collections ── */}
             <div className="tech-block">
-              <h3>Perch data</h3>
+              <h3>MongoDB collections</h3>
               <table className="tech-table">
                 <tbody>
-                  <tr><td><code>wealth_accounts</code></td><td>Business accounts (institution, type, balance)</td></tr>
-                  <tr><td><code>wealth_transactions</code></td><td>Transactions (payee, amount, category, entity)</td></tr>
-                  <tr><td><code>wealth_audit_log</code></td><td>Immutable audit trail (before/after state)</td></tr>
-                  <tr><td><code>wealth_category_assignments</code></td><td>ML classification results</td></tr>
-                  <tr><td><code>wealth_review_queue</code></td><td>Items pending operator review</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            {/* ── File locations ── */}
-            <div className="tech-block tech-block--full">
-              <h3>Perch source locations</h3>
-              <table className="tech-table">
-                <tbody>
-                  <tr><td>Perch API routes</td><td><code>wake/src/wake/api/routers/wealth_v2_pkg/</code></td></tr>
-                  <tr><td>Audit service</td><td><code>wake/src/wake/services/forensic_audit_service.py</code></td></tr>
-                  <tr><td>Data connector</td><td><code>wake/src/wake/integrations/simplifi_live.py</code></td></tr>
-                  <tr><td>Connector orchestration</td><td><code>wake/src/wake/integrations/manager.py</code></td></tr>
-                  <tr><td>Intelligence (brain)</td><td><code>wake/src/wake/agent/brain.py</code></td></tr>
-                  <tr><td>Synthesis (LLM)</td><td><code>wake/src/wake/agent/synthesizer.py</code></td></tr>
-                  <tr><td>MCP exposure</td><td><code>wake/src/wake/mcp/wake_server.py</code></td></tr>
-                  <tr><td>Brand site</td><td><code>instrument-repo/workers/instrument-architecture/</code></td></tr>
+                  <tr><td><code>snapshots</code></td><td>ERP data snapshots (timestamped)</td></tr>
+                  <tr><td><code>erp_data</code></td><td>Parsed Syteline records</td></tr>
+                  <tr><td><code>financials</code></td><td>P&L, cash flow, revenue data</td></tr>
+                  <tr><td><code>scheduling</code></td><td>Production scheduling exports</td></tr>
+                  <tr><td><code>anomalies</code></td><td>Flagged items for operator review</td></tr>
                 </tbody>
               </table>
             </div>
@@ -439,13 +450,15 @@ POST /wealth/v2/review-queue/{id}/correct         # Override classification`}</p
             <div className="tech-block tech-block--full">
               <h3>Briefing delivery</h3>
               <p className="tech-note">
-                Perch briefings are delivered via internal MCP tools on the Candlefish Tailscale network only.
-                Nothing is exposed to the public internet. All access requires Tailscale mesh membership.
+                All Perch data and briefings are served on the Candlefish Tailscale network only.
+                Nothing is exposed to the public internet. Access requires Tailscale mesh membership.
               </p>
-              <pre className="tech-code">{`morning_brief(refresh)       # Daily operator briefing — signals, actions, attention items
-weekly_digest(weeks_back)    # Weekly summary with patterns and recommendations
-recall(query)                # Semantic search across financial insights + context
-search(query)                # Full-text search across business data`}</pre>
+              <pre className="tech-code">{`# Tharp API (port 5200, Tailscale-only)
+tharp-demo.highline.work/perch/     # Live Perch dashboard
+tharp-scheduling.highline.work/     # Scheduling interface
+
+# Cloudflared tunnel for remote access
+# Mac Studio deployment via rsync + SSH`}</pre>
             </div>
 
             {/* ── Security ── */}
@@ -457,12 +470,12 @@ search(query)                # Full-text search across business data`}</pre>
               </p>
               <table className="tech-table">
                 <tbody>
-                  <tr><td>Network</td><td><strong>Tailscale</strong> zero-trust mesh. All internal services (API, MCP, databases) are Tailscale-only. No public endpoints for financial data.</td></tr>
-                  <tr><td>Secrets</td><td><strong>Infisical</strong> vault. All API keys, database credentials, and connector auth are managed centrally. No .env files. Auto-loaded on shell startup.</td></tr>
-                  <tr><td>Pre-commit</td><td><strong>Gitleaks v8</strong> scans every commit for leaked secrets. Custom rules detect Anthropic keys, AWS credentials, MongoDB URIs, Plaid secrets. Blocks commit on detection.</td></tr>
-                  <tr><td>Audit</td><td><strong>Immutable audit log</strong> for all financial data changes. Every transaction create, update, delete, category change, and ML classification is logged with before/after state.</td></tr>
-                  <tr><td>Monitoring</td><td>Daily security monitor checks firewall status, SSH config, .env permissions, open ports, and subdomain takeover risk.</td></tr>
-                  <tr><td>Auth</td><td>Service-level bearer tokens on Tailscale. GitHub token-based. AWS IAM. Cloudflare API tokens per zone. No shared credentials.</td></tr>
+                  <tr><td>Network</td><td><strong>Tailscale</strong> zero-trust mesh. All services (API, MongoDB, dashboards) are Tailscale-only. No public endpoints for financial data.</td></tr>
+                  <tr><td>Secrets</td><td><strong>Infisical</strong> vault. All API keys, IONAPI credentials, and database URIs managed centrally. No .env files.</td></tr>
+                  <tr><td>ERP access</td><td><strong>Read-only</strong> posture. Perch never writes back to Syteline. All data flows are inbound snapshots only.</td></tr>
+                  <tr><td>Auth</td><td>JWT (HS256) on the API. IONAPI hybrid auth (password grant + raw REST) for ERP. Cloudflared tunnel for remote.</td></tr>
+                  <tr><td>Pre-commit</td><td><strong>Gitleaks v8</strong> scans every commit. Custom rules for API keys, MongoDB URIs, IONAPI tokens.</td></tr>
+                  <tr><td>Monitoring</td><td>Daily security monitor: firewall, SSH config, .env permissions, open ports, subdomain takeover.</td></tr>
                 </tbody>
               </table>
             </div>
@@ -475,11 +488,10 @@ search(query)                # Full-text search across business data`}</pre>
               </p>
               <table className="tech-table">
                 <tbody>
-                  <tr><td>Ingest</td><td>Domain-specific connector pulls data on a schedule. Delta sync. Immutable audit log.</td></tr>
-                  <tr><td>Classify</td><td>ML categorizes incoming data. Uncertain items go to a review queue for human confirmation.</td></tr>
-                  <tr><td>Analyze</td><td>Service layer computes domain metrics. Results stored in PostgreSQL.</td></tr>
-                  <tr><td>Synthesize</td><td>WakeBrain + Opus generates natural language interpretation. Linked to Wake memory.</td></tr>
-                  <tr><td>Expose</td><td>REST API + MCP tools. The operator never sees the pipeline — only the read.</td></tr>
+                  <tr><td>Ingest</td><td>Domain-specific connector pulls data on a schedule. Read-only posture. Snapshots stored in MongoDB.</td></tr>
+                  <tr><td>Analyze</td><td>Service layer computes domain metrics — financial analysis, anomaly detection, scheduling intelligence.</td></tr>
+                  <tr><td>Synthesize</td><td>Claude Opus generates natural language interpretation. Linked to operator context.</td></tr>
+                  <tr><td>Expose</td><td>REST API + React dashboard. The operator never sees the pipeline — only the read.</td></tr>
                 </tbody>
               </table>
             </div>
