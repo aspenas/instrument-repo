@@ -30,11 +30,6 @@ if (!isTouchDevice && !prefersReduced) {
   })
   lenis.on('scroll', ScrollTrigger.update)
 
-  // Expose scroll velocity as CSS variable
-  lenis.on('scroll', ({ velocity }: { velocity: number }) => {
-    document.documentElement.style.setProperty('--scroll-velocity', `${velocity}`)
-  })
-
   // Anchor links through Lenis
   document.addEventListener('click', (e) => {
     const target = (e.target as HTMLElement).closest('a[href^="#"]')
@@ -48,6 +43,9 @@ if (!isTouchDevice && !prefersReduced) {
     }
   })
 }
+
+// Mobile: tell ScrollTrigger to use native scroller
+ScrollTrigger.config({ ignoreMobileResize: true })
 
 // ScrollTrigger-powered section reveals
 function initReveals() {

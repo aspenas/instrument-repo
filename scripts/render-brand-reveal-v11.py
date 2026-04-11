@@ -56,7 +56,7 @@ F_JBMONO   = "/Users/patricksmith/Library/Fonts/JetBrainsMonoNL-Regular.ttf"
 F_JBMONO_B = "/Users/patricksmith/Library/Fonts/JetBrainsMonoNL-Bold.ttf"
 F_BERKELEY = "/Users/patricksmith/Library/Fonts/BerkeleyMono-Regular.otf"
 
-FISH_PNG  = "/Users/patricksmith/Work/instrument-repo/assets/perch/mark-white-corrected.png"
+FISH_PNG  = "/Users/patricksmith/Work/instrument-repo/workers/instrument-architecture/dist/brand/mark-white-corrected.png"
 SLIDE_DIR = "/Users/patricksmith/Work/tharp"
 OUT_DIR   = "/Users/patricksmith/Work/instrument-repo/assets/video"
 OUT_FILE  = f"{OUT_DIR}/perch-brand-reveal-v11.mp4"
@@ -305,17 +305,25 @@ class Renderer:
         self._precompute_card_stack()
 
     def _precompute_card_stack(self):
-        card_h_start, card_h_end = 200, 70
-        gap_start, gap_end = 14, 3
+        """Pre-compute card dimensions with SHRINK + OVERLAP decay.
+
+        Cards shrink from 200px tall (large, readable) to 20px slivers.
+        Gaps shrink from 16px to negative (overlap).
+        """
         n = len(QUOTE_CARDS)
         self.card_heights = []
+        self.card_gaps = []
         self.card_y_offsets = []
         cumulative = 0.0
         for i in range(n):
             progress = i / max(1, n - 1)
-            ch = lerp(card_h_start, card_h_end, progress)
-            gp = lerp(gap_start, gap_end, progress)
-            self.card_heights.append(int(ch))
+            # A) SHRINK: 200 → 20 with exponent for acceleration
+            ch = int(lerp(200, 20, progress ** 1.5))
+            # B) OVERLAP: gaps go from 16 → negative (cards pile on top)
+            # After card ~30, gaps go negative = overlap
+            gp = lerp(16, -ch * 0.5, progress ** 1.3)
+            self.card_heights.append(ch)
+            self.card_gaps.append(gp)
             self.card_y_offsets.append(cumulative)
             cumulative += ch + gp
 
@@ -326,14 +334,16 @@ class Renderer:
         img = Image.new('RGBA', (W, H), BLACK + (255,))
         draw = ImageDraw.Draw(img)
 
-        # Camera flash: 6 frames pure white
-        if 27.85 <= t < 28.05:
+        # TOTAL AMBUSH: exactly 3 frames of pure white at 28s (frames 840-842)
+        flash_frame = 28.0 * FPS  # frame 840
+        if flash_frame <= n < flash_frame + 3:
             return Image.new('RGB', (W, H), WHITE)
 
-        # Afterimage: white -> teal tint -> black
-        if 28.05 <= t < 29.5:
-            decay = 1.0 - ease_out((t - 28.05) / 1.45)
-            teal_t = min(1.0, (t - 28.05) / 0.5) * 0.12
+        # After flash: hard cut to black (teal tint fades quickly)
+        flash_end_t = (flash_frame + 3) / FPS  # 28.1s
+        if flash_end_t <= t < 29.5:
+            decay = 1.0 - ease_out((t - flash_end_t) / 1.4)
+            teal_t = min(1.0, (t - flash_end_t) / 0.3) * 0.08
             rv = int(255 * decay * (1.0 - teal_t) + 74 * decay * teal_t)
             gv = int(255 * decay * (1.0 - teal_t) + 155 * decay * teal_t)
             bv = int(255 * decay * (1.0 - teal_t) + 168 * decay * teal_t)
@@ -347,11 +357,7 @@ class Renderer:
         self._act5_data(img, draw, t, n)
         self._act6_close(img, draw, t, n)
 
-        # Pre-bloom: screen whitens before flash
-        if 26.5 < t < 27.85:
-            bloom = ease_in((t - 26.5) / 1.35) * 0.55
-            ov = Image.new('RGBA', (W, H), WHITE + (int(bloom * 255),))
-            img = Image.alpha_composite(img, ov)
+        # NO pre-bloom — total ambush, chaos goes straight to white flash
 
         # Global fade to black
         if t >= 97:
@@ -364,7 +370,7 @@ class Renderer:
     # ── ACT 1: Opening + Feed (0-28s) ────────────────────
 
     def _act1_feed(self, img, draw, t, n):
-        if t >= 27.85: return
+        if t >= 28.0: return
 
         cy = CZ_TOP + CZ_H // 2
 
@@ -391,62 +397,123 @@ class Renderer:
 
         if t < 7: return
 
-        # ── QUOTE CARD FLOOD ────────────────────
+        # ── QUOTE CARD FLOOD — all three decay modes ────────────
         margin = 30
         card_w = W - 2 * margin
         elapsed = t - 7.0
 
-        # Analytical scroll: s = a*t + b*t^4/(4c^3)
-        a_coeff, b_coeff, c_dur = 8.0, 200.0, 14.0
+        # C) SPEED: exponential scroll acceleration
+        # Scroll speed (px/s): starts at 8, accelerates to ~250
+        a_coeff, b_coeff, c_dur = 8.0, 300.0, 14.0
         if elapsed <= c_dur:
             scroll_offset = a_coeff * elapsed + b_coeff * (elapsed ** 4) / (4 * c_dur ** 3)
+            scroll_speed = a_coeff + b_coeff * (elapsed ** 3) / (c_dur ** 3)
         else:
             base = a_coeff * c_dur + b_coeff * c_dur / 4
             terminal_v = a_coeff + b_coeff
             scroll_offset = base + terminal_v * (elapsed - c_dur)
+            scroll_speed = terminal_v
 
         start_y = CZ_TOP + 10
         for i, card in enumerate(QUOTE_CARDS):
             if t < card['t']: continue
             card_age = t - card['t']
             ch = self.card_heights[i]
-            y = int(start_y + self.card_y_offsets[i] - scroll_offset * 0.25)
-            if y < -ch - 50 or y > H + 50: continue
+            progress_i = i / max(1, len(QUOTE_CARDS) - 1)
+
+            # Position: cards pile up due to negative gaps
+            y_base = start_y + self.card_y_offsets[i] - scroll_offset * 0.25
+            y = int(y_base)
+
+            # Cull off-screen (generous bounds for ghosts)
+            ghost_range = int(scroll_speed * 0.4) + 60
+            if y < -ch - ghost_range or y > H + ghost_range: continue
+
             card_a = min(1.0, card_age / 0.2)
             if card_a <= 0: continue
-            self._draw_quote_card(draw, margin, y, card_w, ch, card, card_a)
 
-    def _draw_quote_card(self, draw, x, y, w, h, card, a):
+            # C) SPEED BLUR: ghost/smear effect for fast-moving cards
+            if scroll_speed > 40 and progress_i > 0.3:
+                ghost_offset = int(min(scroll_speed * 0.3, 80))
+                ghost_opacity = card_a * 0.3 * min(1.0, (scroll_speed - 40) / 100)
+                # Draw ghost (leading smear)
+                self._draw_quote_card(draw, margin, y - ghost_offset,
+                                      card_w, ch, card, ghost_opacity, progress_i)
+                # Second ghost for extreme speeds
+                if scroll_speed > 120:
+                    ghost2_offset = int(min(scroll_speed * 0.15, 40))
+                    self._draw_quote_card(draw, margin, y - ghost2_offset,
+                                          card_w, ch, card, ghost_opacity * 0.5, progress_i)
+
+            # Draw main card
+            self._draw_quote_card(draw, margin, y, card_w, ch, card,
+                                  card_a * 0.85 if scroll_speed > 100 else card_a, progress_i)
+
+    def _draw_quote_card(self, draw, x, y, w, h, card, a, progress=0.0):
+        """Draw a single quote card with decay-aware rendering.
+
+        progress: 0.0 (first card) to 1.0 (last card) controls text detail.
+        Cards shorter than 50px render as pure colored bars (no text).
+        Cards shorter than 100px show truncated text.
+        """
         if y + h < 0 or y > H: return
-        draw.rectangle([x, max(0, y), x + w, min(H, y + h)], fill=mul_c(CARD_BG, a))
-        draw.rectangle([x, max(0, y), x + 7, min(H, y + h)], fill=mul_c(card['bar'], a))
+        if a <= 0.01: return
+
+        y_top = max(0, y)
+        y_bot = min(H, y + h)
+        if y_top >= y_bot: return
+
+        # Background
+        draw.rectangle([x, y_top, x + w, y_bot], fill=mul_c(CARD_BG, a))
+
+        # Accent bar (always visible — becomes the only visual at small sizes)
+        bar_w = max(4, int(lerp(7, 12, progress)))  # bars get thicker as cards shrink
+        draw.rectangle([x, y_top, x + bar_w, y_bot], fill=mul_c(card['bar'], a))
+
+        # B) Text detail degrades with card height
+        if h < 35:
+            # Pure accent bar — no text, just color
+            return
+        if h < 60:
+            # Tiny: just the bar color visible, maybe a blur of text
+            if card['q'] and h > 45:
+                # One line of tiny text, clipped
+                draw.text((x + bar_w + 8, y + 4), card['q'][:30],
+                          font=self.f_quote_sm, fill=mul_c(WHITE, a * 0.3))
+            return
+
+        # Select font based on card height
         if h > 160:
             font, line_h = self.f_quote, 42
         elif h > 120:
             font, line_h = self.f_quote_md, 34
         else:
             font, line_h = self.f_quote_sm, 28
-        tx = x + 32
-        ty = y + 16
+
+        tx = x + bar_w + 24
+        ty = y + 14
         words = card['q'].split()
-        line, max_w = "", w - 64
+        line, max_w = "", w - bar_w - 48
         for word in words:
             test = f"{line} {word}".strip()
             bb = draw.textbbox((0, 0), test, font=font)
             if bb[2] - bb[0] > max_w and line:
-                if 0 < ty < H - 20:
+                if 0 < ty < H - 20 and ty < y + h - 10:
                     draw.text((tx, ty), line, font=font, fill=mul_c(WHITE, a * 0.95))
                 ty += line_h
                 line = word
             else:
                 line = test
-        if line and 0 < ty < H - 20:
+        if line and 0 < ty < H - 20 and ty < y + h - 10:
             draw.text((tx, ty), line, font=font, fill=mul_c(WHITE, a * 0.95))
-        attr_y = y + h - 30
-        if 0 < attr_y < H - 10 and card['who']:
-            attrib = f"\u2014 {card['who']}" + (f"  \u00b7  {card['org']}" if card['org'] else "")
-            draw.text((tx, attr_y), attrib, font=self.f_quote_who,
-                      fill=mul_c(DIM, a * 0.6))
+
+        # Attribution — only if card is tall enough
+        if h > 100 and card.get('who'):
+            attr_y = y + h - 30
+            if 0 < attr_y < H - 10:
+                attrib = f"\u2014 {card['who']}" + (f"  \u00b7  {card['org']}" if card.get('org') else "")
+                draw.text((tx, attr_y), attrib, font=self.f_quote_who,
+                          fill=mul_c(DIM, a * 0.6))
 
     # ── ACT 2: Pivot (28-42s) ────────────────────────────
 

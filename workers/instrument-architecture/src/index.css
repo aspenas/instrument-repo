@@ -34,11 +34,10 @@ html[data-theme="light"] {
 html {
   background: var(--bg);
   color-scheme: dark;
-  overflow-x: hidden;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 html[data-theme="light"] {
@@ -614,6 +613,7 @@ html[data-theme="light"] .footer-lockup {
    ─────────────────────────────────────────────── */
 
 .tech-ref {
+  overflow: hidden;
   max-width: 1120px;
   margin: 0 auto;
   padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
@@ -629,6 +629,7 @@ html[data-theme="light"] .footer-lockup {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem 2.5rem;
+  overflow: hidden;
 }
 
 .tech-block h3 {
@@ -643,6 +644,7 @@ html[data-theme="light"] .footer-lockup {
 
 .tech-block--full {
   grid-column: 1 / -1;
+  overflow: hidden;
 }
 
 .tech-table {
@@ -734,6 +736,7 @@ html[data-theme="light"] .footer-lockup {
 .tech-diagram {
   display: flex;
   justify-content: center;
+  max-width: 100%;
   margin: 0;
   padding: 2.5rem 1.5rem;
   border-radius: 0.75rem;
@@ -749,6 +752,7 @@ html[data-theme="light"] .footer-lockup {
 
 .tech-code {
   margin: 0;
+  max-width: 100%;
   padding: 1.5rem;
   border-radius: 0.75rem;
   background: rgba(0, 0, 0, 0.3);
