@@ -41,33 +41,6 @@ const rules = [
   },
 ]
 
-const techSpec = [
-  { label: 'Classification', value: 'Instrument (not agent, not dashboard)' },
-  { label: 'Attribution', value: 'instrument by Wake · built by Candlefish' },
-  { label: 'Platform', value: 'Wake' },
-  { label: 'Parent', value: 'Candlefish' },
-  { label: 'Accent', value: '#4A9BA8' },
-  { label: 'Direction', value: 'Perch faces right · Candlefish faces left' },
-  { label: 'Eye', value: 'Filled circle — never hollow, never scoped' },
-  { label: 'Scope', value: 'Candlefish only — never applied to Perch' },
-]
-
-const techAssets = [
-  { label: 'Mark (dark bg)', path: '/brand/perch-mark.svg' },
-  { label: 'Mark (light bg)', path: '/brand/perch-mark-light.svg' },
-  { label: 'Lockup horizontal (light)', path: '/brand/perch-lockup-horizontal.svg' },
-  { label: 'Lockup horizontal (dark)', path: '/brand/perch-lockup-horizontal-dark.svg' },
-  { label: 'Clearspace reference', path: '/brand/perch-clearspace.svg' },
-  { label: 'Design lineage', path: '/brand/design-lineage.svg' },
-  { label: 'Color swatches', path: '/brand/color-swatches.svg' },
-  { label: 'Brand system PDF', path: '/brand/logo-system-v5.pdf' },
-]
-
-const techTypography = [
-  { role: 'Display', family: 'Instrument Serif', weight: '400', usage: 'Hero, section headings, editorial statements' },
-  { role: 'Body', family: 'DM Sans', weight: '400–500', usage: 'Paragraphs, descriptions, UI text' },
-  { role: 'Mono', family: 'JetBrains Mono', weight: '500', usage: 'Labels, attribution, technical metadata' },
-]
 
 export default function App() {
   const [theme, setTheme] = useState<Theme>(() => {
@@ -265,96 +238,174 @@ export default function App() {
           </div>
         </section>
 
-        {/* ──── Technical reference ──── */}
+        {/* ──── Engineering guide ──── */}
         <section className="tech-ref">
           <div className="tech-ref-header">
-            <p className="section-label">Technical reference</p>
-            <h2 className="section-heading">Perch specification.</h2>
+            <p className="section-label">Engineering</p>
+            <h2 className="section-heading">How Perch works.</h2>
           </div>
 
           <div className="tech-grid">
+            {/* ── Architecture ── */}
+            <div className="tech-block tech-block--full">
+              <h3>Architecture</h3>
+              <pre className="tech-diagram">{`Simplifi (Quicken)          QuickBooks          Bank feeds
+        │                        │                    │
+        └────────────────────────┼────────────────────┘
+                                 │
+                    SimplifiLiveConnector
+                    (Playwright browser automation, 15-min sync)
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │    PostgreSQL            │
+                    │    wealth_accounts       │
+                    │    wealth_transactions   │
+                    │    wealth_audit_log      │
+                    └────────────┬────────────┘
+                                 │
+              ┌──────────────────┼──────────────────┐
+              ▼                  ▼                  ▼
+     NetWorthService    ForensicAudit     ML Classification
+     (balances, rates)  (immutable log)   (category, entity)
+              │                  │                  │
+              └──────────────────┼──────────────────┘
+                                 │
+                                 ▼
+                         WakeBrain + Synthesizer
+                         (Opus 4.5 — synthesis, briefings)
+                                 │
+                    ┌────────────┼────────────┐
+                    ▼            ▼            ▼
+              Weekly brief  Anomaly alert  Cash read`}</pre>
+            </div>
+
+            {/* ── Stack ── */}
             <div className="tech-block">
-              <h3>Identity</h3>
+              <h3>Stack</h3>
               <table className="tech-table">
                 <tbody>
-                  {techSpec.map((row) => (
-                    <tr key={row.label}>
-                      <td>{row.label}</td>
-                      <td>{row.value}</td>
-                    </tr>
-                  ))}
+                  <tr><td>Runtime</td><td>Python 3.12, FastAPI, Uvicorn</td></tr>
+                  <tr><td>Database</td><td>PostgreSQL (asyncpg)</td></tr>
+                  <tr><td>Vectors</td><td>Qdrant (voyage-3, 1024-dim)</td></tr>
+                  <tr><td>Graph</td><td>Neo4j (entities, relationships)</td></tr>
+                  <tr><td>Cache</td><td>Redis</td></tr>
+                  <tr><td>Browser</td><td>Playwright (connector sync)</td></tr>
+                  <tr><td>Synthesis</td><td>Claude Opus 4.5</td></tr>
+                  <tr><td>Classification</td><td>Claude Haiku 3.5</td></tr>
+                  <tr><td>Secrets</td><td>Infisical (all env vars)</td></tr>
                 </tbody>
               </table>
             </div>
 
+            {/* ── Data pipeline ── */}
             <div className="tech-block">
-              <h3>Typography</h3>
+              <h3>Data pipeline</h3>
               <table className="tech-table">
                 <tbody>
-                  {techTypography.map((row) => (
-                    <tr key={row.role}>
-                      <td>{row.role}</td>
-                      <td>
-                        <strong>{row.family}</strong> {row.weight}
-                        <br /><span className="tech-usage">{row.usage}</span>
-                      </td>
-                    </tr>
-                  ))}
+                  <tr><td>Sync</td><td>Every 15 min via Playwright into Simplifi. Delta detection — only new transactions.</td></tr>
+                  <tr><td>Classify</td><td>ML assigns category, entity (personal / business / household), tax deductibility. Uncertain items go to review queue.</td></tr>
+                  <tr><td>Analyze</td><td>Net worth, savings rate, cash flow, anomaly detection. All changes immutably logged.</td></tr>
+                  <tr><td>Synthesize</td><td>Opus generates the operator read from raw analysis. Linked to Wake memory via vector search.</td></tr>
+                  <tr><td>Output</td><td>Weekly briefing, anomaly alerts, cash flow reads. Exposed via Wealth V2 API and MCP tools.</td></tr>
                 </tbody>
               </table>
             </div>
 
+            {/* ── Core API ── */}
             <div className="tech-block tech-block--full">
-              <h3>Asset routes</h3>
-              <div className="tech-assets">
-                {techAssets.map((a) => (
-                  <a key={a.path} href={a.path} target="_blank" rel="noreferrer" className="tech-asset-link">
-                    <span>{a.label}</span>
-                    <code>{a.path}</code>
-                    <ArrowUpRight className="icon" aria-hidden="true" />
-                  </a>
-                ))}
-              </div>
+              <h3>Wealth V2 API</h3>
+              <pre className="tech-code">{`GET  /wealth/v2/accounts                         # All accounts + balances
+GET  /wealth/v2/accounts/{id}/balance-history     # Balance trend over time
+GET  /wealth/v2/net-worth                         # Current net worth by entity
+GET  /wealth/v2/net-worth/trend                   # Net worth over time
+GET  /wealth/v2/transactions                      # Transaction listing + filters
+GET  /wealth/v2/reports/cash-flow                 # Monthly cash flow
+GET  /wealth/v2/reports/tax-summary               # Tax-deductible expenses
+GET  /wealth/v2/reports/entity/{entity}           # Full entity report
+GET  /wealth/v2/reports/income-statement          # Revenue vs expenses
+POST /wealth/v2/insights                          # Ingest financial insight → memory
+GET  /wealth/v2/insights/search                   # Semantic search over insights
+GET  /wealth/v2/review-queue                      # ML items needing approval
+POST /wealth/v2/review-queue/{id}/approve         # Confirm classification
+POST /wealth/v2/review-queue/{id}/correct         # Override classification`}</pre>
             </div>
 
-            <div className="tech-block tech-block--full">
-              <h3>Figma source</h3>
+            {/* ── Services ── */}
+            <div className="tech-block">
+              <h3>Core services</h3>
               <table className="tech-table">
                 <tbody>
-                  <tr><td>File</td><td><a href="https://www.figma.com/design/Mf9QlzzVsg9mfF0Qu8ohVU/Perch-%E2%80%94-Logo-System" target="_blank" rel="noreferrer">Perch — Logo System</a></td></tr>
-                  <tr><td>Primary lockup dark</td><td><code>12:3</code></td></tr>
-                  <tr><td>Primary lockup light</td><td><code>12:20</code></td></tr>
-                  <tr><td>Horizontal dark</td><td><code>12:36</code></td></tr>
-                  <tr><td>Horizontal light</td><td><code>12:56</code></td></tr>
-                  <tr><td>Icon dark</td><td><code>12:77</code></td></tr>
+                  <tr><td>NetWorthService</td><td>Calculates net worth by entity. Classifies accounts as liquid, investment, property, or liability. Computes savings rate.</td></tr>
+                  <tr><td>ForensicAuditService</td><td>Immutable audit trail. Logs every transaction create, update, delete, category change, entity assignment, and ML classification. Generates tax summaries and cash flow statements.</td></tr>
+                  <tr><td>ConnectorManager</td><td>Orchestrates data connectors. Handles sync scheduling, backfill, health checks. Each connector implements connect, sync, disconnect.</td></tr>
+                  <tr><td>WakeBrain</td><td>Orchestrates memory analysis. Extracts commitments, relationships, risks from ingested data. Generates proactive insights.</td></tr>
+                  <tr><td>Synthesizer</td><td>LLM abstraction layer. Routes to Opus (complex synthesis) or Haiku (quick classification). Tracks token usage and cost.</td></tr>
                 </tbody>
               </table>
             </div>
 
+            {/* ── Key tables ── */}
+            <div className="tech-block">
+              <h3>Database tables</h3>
+              <table className="tech-table">
+                <tbody>
+                  <tr><td><code>wealth_accounts</code></td><td>Account master data (institution, type, balance)</td></tr>
+                  <tr><td><code>wealth_transactions</code></td><td>All transactions (payee, amount, category, entity)</td></tr>
+                  <tr><td><code>wealth_balance_history</code></td><td>Balance snapshots over time</td></tr>
+                  <tr><td><code>wealth_audit_log</code></td><td>Immutable audit trail (before/after state)</td></tr>
+                  <tr><td><code>wealth_category_assignments</code></td><td>ML classification results</td></tr>
+                  <tr><td><code>wealth_review_queue</code></td><td>Items pending human review</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* ── File locations ── */}
             <div className="tech-block tech-block--full">
-              <h3>Color</h3>
-              <div className="tech-swatches">
-                <div className="tech-swatch" style={{ background: '#4A9BA8' }}>
-                  <span>#4A9BA8</span>
-                  <span>Accent</span>
-                </div>
-                <div className="tech-swatch" style={{ background: '#0a0c0d', color: '#f7f4ef' }}>
-                  <span>#0A0C0D</span>
-                  <span>Dark bg</span>
-                </div>
-                <div className="tech-swatch" style={{ background: '#fafafa', color: '#111314', border: '1px solid #e0e0e0' }}>
-                  <span>#FAFAFA</span>
-                  <span>Light bg</span>
-                </div>
-                <div className="tech-swatch" style={{ background: '#f7f4ef', color: '#111314', border: '1px solid #e0e0e0' }}>
-                  <span>#F7F4EF</span>
-                  <span>Dark text</span>
-                </div>
-                <div className="tech-swatch" style={{ background: '#111314' }}>
-                  <span>#111314</span>
-                  <span>Light text</span>
-                </div>
-              </div>
+              <h3>Source locations</h3>
+              <table className="tech-table">
+                <tbody>
+                  <tr><td>API entry</td><td><code>wake/src/wake/main.py</code></td></tr>
+                  <tr><td>Wealth routes</td><td><code>wake/src/wake/api/routers/wealth_v2_pkg/</code></td></tr>
+                  <tr><td>Net worth</td><td><code>wake/src/wake/services/net_worth_service.py</code></td></tr>
+                  <tr><td>Forensic audit</td><td><code>wake/src/wake/services/forensic_audit_service.py</code></td></tr>
+                  <tr><td>Simplifi connector</td><td><code>wake/src/wake/integrations/simplifi_live.py</code></td></tr>
+                  <tr><td>Connector manager</td><td><code>wake/src/wake/integrations/manager.py</code></td></tr>
+                  <tr><td>Brain</td><td><code>wake/src/wake/agent/brain.py</code></td></tr>
+                  <tr><td>Synthesizer</td><td><code>wake/src/wake/agent/synthesizer.py</code></td></tr>
+                  <tr><td>MCP server</td><td><code>wake/src/wake/mcp/wake_server.py</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* ── MCP exposure ── */}
+            <div className="tech-block tech-block--full">
+              <h3>MCP tools</h3>
+              <p className="tech-note">
+                Perch data is exposed to Claude and external clients via the Wake MCP proxy on port 8195.
+              </p>
+              <pre className="tech-code">{`recall(query)                # Semantic search across all memories including financial insights
+morning_brief(refresh)       # Daily operator briefing — signals, commitments, actions
+weekly_digest(weeks_back)    # Weekly summary with patterns and recommendations
+timeline(query)              # Temporal narrative of any topic
+search(query)                # Full-text search across connectors`}</pre>
+            </div>
+
+            {/* ── Instrument pattern ── */}
+            <div className="tech-block tech-block--full">
+              <h3>The instrument pattern</h3>
+              <p className="tech-note">
+                Every instrument follows the same architecture. Perch is the reference implementation.
+              </p>
+              <table className="tech-table">
+                <tbody>
+                  <tr><td>Ingest</td><td>Domain-specific connector pulls data on a schedule. Delta sync. Immutable audit log.</td></tr>
+                  <tr><td>Classify</td><td>ML categorizes incoming data. Uncertain items go to a review queue for human confirmation.</td></tr>
+                  <tr><td>Analyze</td><td>Service layer computes domain metrics. Results stored in PostgreSQL.</td></tr>
+                  <tr><td>Synthesize</td><td>WakeBrain + Opus generates natural language interpretation. Linked to Wake memory.</td></tr>
+                  <tr><td>Expose</td><td>REST API + MCP tools. The operator never sees the pipeline — only the read.</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
