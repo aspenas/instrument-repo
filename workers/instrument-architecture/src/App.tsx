@@ -22,7 +22,7 @@ const rules = [
   {
     label: '01',
     title: 'Instrument, not agent',
-    body: 'Always describe Perch as an instrument by Wake, built by Candlefish. It is operational software, not an autonomous persona.',
+    body: 'Perch is an instrument, built by Candlefish. It is operational software, not an autonomous persona.',
   },
   {
     label: '02',
@@ -78,7 +78,7 @@ export default function App() {
         <section className="hero">
           <div className="hero-content">
             <h1 className="hero-title">Perch<span className="accent">.</span></h1>
-            <p className="hero-attr">instrument by Wake&ensp;·&ensp;built by Candlefish</p>
+            <p className="hero-attr">built by Candlefish</p>
           </div>
           <img
             src={heroMarkSrc}
@@ -283,6 +283,12 @@ export default function App() {
           <div className="tech-ref-header">
             <p className="section-label">Engineering</p>
             <h2 className="section-heading">How Perch works.</h2>
+            <p className="tech-header-note">
+              Case study: Perch as implemented for the Tharp engagement.
+              This section documents the specific architecture, data pipeline,
+              and integration surface behind the first instrument.
+            </p>
+            <p className="confidential-badge">Confidential — internal engineering reference only</p>
           </div>
 
           <div className="tech-grid">
@@ -352,21 +358,18 @@ export default function App() {
               </table>
             </div>
 
-            {/* ── Core API ── */}
+            {/* ── Perch API surface ── */}
             <div className="tech-block tech-block--full">
-              <h3>Wealth V2 API</h3>
-              <pre className="tech-code">{`GET  /wealth/v2/accounts                         # All accounts + balances
-GET  /wealth/v2/accounts/{id}/balance-history     # Balance trend over time
-GET  /wealth/v2/net-worth                         # Current net worth by entity
-GET  /wealth/v2/net-worth/trend                   # Net worth over time
+              <h3>Perch API surface</h3>
+              <p className="tech-note">Endpoints Perch uses from the Wake platform. This is the operator-facing data layer, not the personal finance engine.</p>
+              <pre className="tech-code">{`GET  /wealth/v2/accounts                         # Business accounts + balances
 GET  /wealth/v2/transactions                      # Transaction listing + filters
-GET  /wealth/v2/reports/cash-flow                 # Monthly cash flow
-GET  /wealth/v2/reports/tax-summary               # Tax-deductible expenses
-GET  /wealth/v2/reports/entity/{entity}           # Full entity report
+GET  /wealth/v2/reports/cash-flow                 # Monthly cash flow trends
+GET  /wealth/v2/reports/entity/{entity}           # Full entity report (business only)
 GET  /wealth/v2/reports/income-statement          # Revenue vs expenses
-POST /wealth/v2/insights                          # Ingest financial insight → memory
+POST /wealth/v2/insights                          # Ingest financial insight → Wake memory
 GET  /wealth/v2/insights/search                   # Semantic search over insights
-GET  /wealth/v2/review-queue                      # ML items needing approval
+GET  /wealth/v2/review-queue                      # ML items needing operator approval
 POST /wealth/v2/review-queue/{id}/approve         # Confirm classification
 POST /wealth/v2/review-queue/{id}/correct         # Override classification`}</pre>
             </div>
@@ -376,10 +379,9 @@ POST /wealth/v2/review-queue/{id}/correct         # Override classification`}</p
               <h3>Core services</h3>
               <table className="tech-table">
                 <tbody>
-                  <tr><td>NetWorthService</td><td>Calculates net worth by entity. Classifies accounts as liquid, investment, property, or liability. Computes savings rate.</td></tr>
-                  <tr><td>ForensicAuditService</td><td>Immutable audit trail. Logs every transaction create, update, delete, category change, entity assignment, and ML classification. Generates tax summaries and cash flow statements.</td></tr>
+                  <tr><td>ForensicAuditService</td><td>Immutable audit trail. Logs every transaction change, category assignment, and ML classification. Generates cash flow statements and income reports.</td></tr>
                   <tr><td>ConnectorManager</td><td>Orchestrates data connectors. Handles sync scheduling, backfill, health checks. Each connector implements connect, sync, disconnect.</td></tr>
-                  <tr><td>WakeBrain</td><td>Orchestrates memory analysis. Extracts commitments, relationships, risks from ingested data. Generates proactive insights.</td></tr>
+                  <tr><td>WakeBrain</td><td>Orchestrates memory analysis. Extracts commitments, relationships, risks from ingested data. Generates proactive insights and operator briefings.</td></tr>
                   <tr><td>Synthesizer</td><td>LLM abstraction layer. Routes to Opus (complex synthesis) or Haiku (quick classification). Tracks token usage and cost.</td></tr>
                 </tbody>
               </table>
@@ -387,48 +389,65 @@ POST /wealth/v2/review-queue/{id}/correct         # Override classification`}</p
 
             {/* ── Key tables ── */}
             <div className="tech-block">
-              <h3>Database tables</h3>
+              <h3>Perch data</h3>
               <table className="tech-table">
                 <tbody>
-                  <tr><td><code>wealth_accounts</code></td><td>Account master data (institution, type, balance)</td></tr>
-                  <tr><td><code>wealth_transactions</code></td><td>All transactions (payee, amount, category, entity)</td></tr>
-                  <tr><td><code>wealth_balance_history</code></td><td>Balance snapshots over time</td></tr>
+                  <tr><td><code>wealth_accounts</code></td><td>Business accounts (institution, type, balance)</td></tr>
+                  <tr><td><code>wealth_transactions</code></td><td>Transactions (payee, amount, category, entity)</td></tr>
                   <tr><td><code>wealth_audit_log</code></td><td>Immutable audit trail (before/after state)</td></tr>
                   <tr><td><code>wealth_category_assignments</code></td><td>ML classification results</td></tr>
-                  <tr><td><code>wealth_review_queue</code></td><td>Items pending human review</td></tr>
+                  <tr><td><code>wealth_review_queue</code></td><td>Items pending operator review</td></tr>
                 </tbody>
               </table>
             </div>
 
             {/* ── File locations ── */}
             <div className="tech-block tech-block--full">
-              <h3>Source locations</h3>
+              <h3>Perch source locations</h3>
               <table className="tech-table">
                 <tbody>
-                  <tr><td>API entry</td><td><code>wake/src/wake/main.py</code></td></tr>
-                  <tr><td>Wealth routes</td><td><code>wake/src/wake/api/routers/wealth_v2_pkg/</code></td></tr>
-                  <tr><td>Net worth</td><td><code>wake/src/wake/services/net_worth_service.py</code></td></tr>
-                  <tr><td>Forensic audit</td><td><code>wake/src/wake/services/forensic_audit_service.py</code></td></tr>
-                  <tr><td>Simplifi connector</td><td><code>wake/src/wake/integrations/simplifi_live.py</code></td></tr>
-                  <tr><td>Connector manager</td><td><code>wake/src/wake/integrations/manager.py</code></td></tr>
-                  <tr><td>Brain</td><td><code>wake/src/wake/agent/brain.py</code></td></tr>
-                  <tr><td>Synthesizer</td><td><code>wake/src/wake/agent/synthesizer.py</code></td></tr>
-                  <tr><td>MCP server</td><td><code>wake/src/wake/mcp/wake_server.py</code></td></tr>
+                  <tr><td>Perch API routes</td><td><code>wake/src/wake/api/routers/wealth_v2_pkg/</code></td></tr>
+                  <tr><td>Audit service</td><td><code>wake/src/wake/services/forensic_audit_service.py</code></td></tr>
+                  <tr><td>Data connector</td><td><code>wake/src/wake/integrations/simplifi_live.py</code></td></tr>
+                  <tr><td>Connector orchestration</td><td><code>wake/src/wake/integrations/manager.py</code></td></tr>
+                  <tr><td>Intelligence (brain)</td><td><code>wake/src/wake/agent/brain.py</code></td></tr>
+                  <tr><td>Synthesis (LLM)</td><td><code>wake/src/wake/agent/synthesizer.py</code></td></tr>
+                  <tr><td>MCP exposure</td><td><code>wake/src/wake/mcp/wake_server.py</code></td></tr>
+                  <tr><td>Brand site</td><td><code>instrument-repo/workers/instrument-architecture/</code></td></tr>
                 </tbody>
               </table>
             </div>
 
-            {/* ── MCP exposure ── */}
+            {/* ── Briefing delivery ── */}
             <div className="tech-block tech-block--full">
-              <h3>MCP tools</h3>
+              <h3>Briefing delivery</h3>
               <p className="tech-note">
-                Perch data is exposed to Claude and external clients via the Wake MCP proxy on port 8195.
+                Perch briefings are delivered via internal MCP tools on the Candlefish Tailscale network only.
+                Nothing is exposed to the public internet. All access requires Tailscale mesh membership.
               </p>
-              <pre className="tech-code">{`recall(query)                # Semantic search across all memories including financial insights
-morning_brief(refresh)       # Daily operator briefing — signals, commitments, actions
+              <pre className="tech-code">{`morning_brief(refresh)       # Daily operator briefing — signals, actions, attention items
 weekly_digest(weeks_back)    # Weekly summary with patterns and recommendations
-timeline(query)              # Temporal narrative of any topic
-search(query)                # Full-text search across connectors`}</pre>
+recall(query)                # Semantic search across financial insights + context
+search(query)                # Full-text search across business data`}</pre>
+            </div>
+
+            {/* ── Security ── */}
+            <div className="tech-block tech-block--full">
+              <h3>Security posture</h3>
+              <p className="tech-note">
+                Perch operates entirely within Candlefish's secured infrastructure. No financial data
+                is accessible from the public internet.
+              </p>
+              <table className="tech-table">
+                <tbody>
+                  <tr><td>Network</td><td><strong>Tailscale</strong> zero-trust mesh. All internal services (API, MCP, databases) are Tailscale-only. No public endpoints for financial data.</td></tr>
+                  <tr><td>Secrets</td><td><strong>Infisical</strong> vault. All API keys, database credentials, and connector auth are managed centrally. No .env files. Auto-loaded on shell startup.</td></tr>
+                  <tr><td>Pre-commit</td><td><strong>Gitleaks v8</strong> scans every commit for leaked secrets. Custom rules detect Anthropic keys, AWS credentials, MongoDB URIs, Plaid secrets. Blocks commit on detection.</td></tr>
+                  <tr><td>Audit</td><td><strong>Immutable audit log</strong> for all financial data changes. Every transaction create, update, delete, category change, and ML classification is logged with before/after state.</td></tr>
+                  <tr><td>Monitoring</td><td>Daily security monitor checks firewall status, SSH config, .env permissions, open ports, and subdomain takeover risk.</td></tr>
+                  <tr><td>Auth</td><td>Service-level bearer tokens on Tailscale. GitHub token-based. AWS IAM. Cloudflare API tokens per zone. No shared credentials.</td></tr>
+                </tbody>
+              </table>
             </div>
 
             {/* ── Instrument pattern ── */}
