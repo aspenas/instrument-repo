@@ -109,7 +109,7 @@ img { display: block; max-width: 100%; }
    ─────────────────────────────────────────────── */
 
 .section-label {
-  margin: 0;
+  margin: 0 0 1.25rem;
   font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
   font-size: 0.72rem;
   font-weight: 500;
@@ -119,7 +119,7 @@ img { display: block; max-width: 100%; }
 }
 
 .section-heading {
-  margin: 0.75rem 0 0;
+  margin: 0;
   font-family: "Instrument Serif", "Iowan Old Style", serif;
   font-size: clamp(2.4rem, 4.5vw, 4rem);
   line-height: 1;
@@ -390,6 +390,11 @@ img { display: block; max-width: 100%; }
   max-width: 34rem;
   font-size: clamp(1rem, 1.4vw, 1.12rem);
   line-height: 1.85;
+}
+
+.voice-specimens {
+  display: grid;
+  gap: clamp(3rem, 6vh, 5rem);
 }
 
 .voice-specimen {

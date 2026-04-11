@@ -218,22 +218,62 @@ export default function App() {
             </p>
           </div>
 
-          <div className="voice-specimen">
-            <figure className="specimen-figure">
-              <img
-                src="/brand/voice-card-briefing.svg"
-                alt="Perch weekly owner briefing specimen"
-                width={720}
-                height={460}
-                loading="lazy"
-              />
-            </figure>
-            <div className="specimen-meta">
-              <h3>Weekly owner briefing</h3>
-              <p>
-                What changed, why it changed, and what deserves attention next.
-                The numbers moved — Perch tells the owner before they have to ask.
-              </p>
+          <div className="voice-specimens">
+            <div className="voice-specimen">
+              <figure className="specimen-figure">
+                <img
+                  src="/brand/voice-card-briefing.svg"
+                  alt="Perch weekly owner briefing specimen"
+                  width={720}
+                  height={460}
+                  loading="lazy"
+                />
+              </figure>
+              <div className="specimen-meta">
+                <h3>Weekly owner briefing</h3>
+                <p>
+                  What changed, why it changed, and what deserves attention next.
+                  The numbers moved — Perch tells the owner before they have to ask.
+                </p>
+              </div>
+            </div>
+
+            <div className="voice-specimen">
+              <figure className="specimen-figure">
+                <img
+                  src="/brand/voice-card-anomaly.svg"
+                  alt="Perch anomaly alert specimen"
+                  width={720}
+                  height={460}
+                  loading="lazy"
+                />
+              </figure>
+              <div className="specimen-meta">
+                <h3>Anomaly alert</h3>
+                <p>
+                  A duplicate charge, a category mismatch, an unusual vendor pattern.
+                  Surfaced before close — not after.
+                </p>
+              </div>
+            </div>
+
+            <div className="voice-specimen">
+              <figure className="specimen-figure">
+                <img
+                  src="/brand/voice-card-cashflow.svg"
+                  alt="Perch cash flow read specimen"
+                  width={720}
+                  height={460}
+                  loading="lazy"
+                />
+              </figure>
+              <div className="specimen-meta">
+                <h3>Cash flow read</h3>
+                <p>
+                  Runway, receivables, and pressure points — in operator language,
+                  with the warning visible before the problem becomes urgent.
+                </p>
+              </div>
             </div>
           </div>
         </section>
