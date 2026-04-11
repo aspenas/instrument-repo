@@ -156,6 +156,8 @@ export default function App() {
               system — and that is worth building toward.
             </p>
           </div>
+
+          <p className="signature">PJS</p>
         </section>
 
         {/* ──── Perch specifically ──── */}
@@ -487,13 +489,6 @@ search(query)                # Full-text search across business data`}</pre>
         {/* ──── Footer ──── */}
         <footer className="site-footer">
           <p className="footer-closing">Perch is the first member of the instrument&nbsp;family.</p>
-          <img
-            src="/brand/pjs-signature.svg"
-            alt="PJS"
-            width={200}
-            height={80}
-            className="footer-signature"
-          />
           <img
             src={lockupSrc}
             alt="Perch horizontal lockup"
