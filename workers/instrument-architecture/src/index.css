@@ -924,27 +924,45 @@ html[data-theme="light"] .tech-code {
     grid-template-columns: 1fr;
   }
 
-  .tech-table {
+  .tech-table,
+  .tech-table tbody,
+  .tech-table tr,
+  .tech-table td {
     display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    width: 100%;
   }
 
-  .tech-table tbody {
-    display: table;
+  .tech-table tr {
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .tech-table tr:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .tech-table td {
+    padding: 0;
+    border: none;
     width: 100%;
-    min-width: 28rem;
   }
 
   .tech-table td:first-child {
-    width: 8rem;
-    white-space: nowrap;
+    width: 100%;
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 0.78rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .tech-table td:last-child {
+    font-size: 0.9rem;
   }
 
   .tech-diagram,
   .tech-code {
-    font-size: 0.55rem;
-    padding: 1rem;
+    font-size: 0.5rem;
+    padding: 0.75rem;
     -webkit-overflow-scrolling: touch;
   }
 
