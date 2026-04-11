@@ -34,6 +34,13 @@ html[data-theme="light"] {
 html {
   background: var(--bg);
   color-scheme: dark;
+  scroll-snap-type: y proximity;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+  }
 }
 
 html[data-theme="light"] {
@@ -142,6 +149,7 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   padding: 0 clamp(2rem, 5vw, 5rem);
   overflow: clip;
+  scroll-snap-align: start;
 }
 
 .hero-mark {
@@ -237,6 +245,7 @@ img { display: block; max-width: 100%; }
    ─────────────────────────────────────────────── */
 
 .demo-callout {
+  scroll-snap-align: start;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -318,6 +327,7 @@ img { display: block; max-width: 100%; }
    ─────────────────────────────────────────────── */
 
 .intro {
+  scroll-snap-align: start;
   max-width: 1120px;
   margin: 0 auto;
   padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
@@ -441,6 +451,7 @@ img { display: block; max-width: 100%; }
    ─────────────────────────────────────────────── */
 
 .brand {
+  scroll-snap-align: start;
   max-width: 1120px;
   margin: 0 auto;
   padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
@@ -523,6 +534,7 @@ img { display: block; max-width: 100%; }
    ─────────────────────────────────────────────── */
 
 .voice {
+  scroll-snap-align: start;
   max-width: 1120px;
   margin: 0 auto;
   padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);

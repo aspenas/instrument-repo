@@ -154,7 +154,7 @@ export default function App() {
 
       <main id="main">
         {/* ──── Hero ──── */}
-        <section className="hero">
+        <section className="hero" data-lenis-scroll-snap-align="start">
           <div className="hero-content">
             <h1 className="hero-title">Perch<span className="accent">.</span></h1>
             <p className="hero-attr">built by Candlefish</p>
@@ -170,7 +170,7 @@ export default function App() {
         </section>
 
         {/* ──── Demo callout ──── */}
-        <section className="demo-callout">
+        <section className="demo-callout" data-lenis-scroll-snap-align="start">
           <div className="demo-glow" aria-hidden="true" />
           <span className="demo-pulse" aria-hidden="true" />
           <p className="demo-label">Live demo</p>
@@ -185,7 +185,7 @@ export default function App() {
         </section>
 
         {/* ──── Intro ──── */}
-        <section className="intro">
+        <section className="intro" data-lenis-scroll-snap-align="start">
           <div className="intro-lead">
             <p className="section-label">Why instruments</p>
             <h2 className="display-heading">
@@ -263,7 +263,7 @@ export default function App() {
         </section>
 
         {/* ──── Brand ──── */}
-        <section id="brand" className="brand">
+        <section id="brand" className="brand" data-lenis-scroll-snap-align="start">
           <div className="brand-header">
             <p className="section-label">Brand system</p>
             <h2 className="section-heading">Shown correctly on both surfaces.</h2>
@@ -304,7 +304,7 @@ export default function App() {
         </section>
 
         {/* ──── Voice ──── */}
-        <section className="voice">
+        <section className="voice" data-lenis-scroll-snap-align="start">
           <div className="voice-header">
             <p className="section-label">Voice</p>
             <h2 className="section-heading">Perch should read like operating intelligence.</h2>

@@ -12,10 +12,11 @@ const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
 
 if (!isTouchDevice) {
   const lenis = new Lenis({
-    duration: 1.4,
+    duration: 1.6,
     easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
     touchMultiplier: 0,
+    anchors: true,
   })
 
   function raf(time: number) {
