@@ -148,7 +148,6 @@ img { display: block; max-width: 100%; }
   justify-self: center;
   width: min(100%, 28rem);
   pointer-events: none;
-  animation: drift 10s ease-in-out infinite;
 }
 
 .hero-content {

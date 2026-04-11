@@ -6,4 +6,10 @@ artifacts/
 playwright-report/
 test-results/
 .playwright-mcp/
+.claude/
 *.log
+*.png
+HANDOFF.md
+instrument-architecture.html
+assets/
+scripts/
