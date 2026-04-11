@@ -17,9 +17,8 @@
   <text x="193" y="97" fill="#000000" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="700" letter-spacing="-0.04em">
     Perch<tspan fill="#4A9BA8">.</tspan>
   </text>
-  <rect x="360" y="63" width="1" height="36" fill="#E6E6E6"/>
   <text fill="#737373" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="0.22em">
-    <tspan x="384" y="79">INSTRUMENT BY WAKE</tspan>
-    <tspan x="384" y="95">BUILT BY CANDLEFISH</tspan>
+    <tspan x="370" y="79">INSTRUMENT BY WAKE</tspan>
+    <tspan x="370" y="95">BUILT BY CANDLEFISH</tspan>
   </text>
 </svg>
