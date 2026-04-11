@@ -176,6 +176,62 @@ img { display: block; max-width: 100%; }
 }
 
 /* ───────────────────────────────────────────────
+   Intro
+   ─────────────────────────────────────────────── */
+
+.intro {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+
+.intro-lead {
+  max-width: 40rem;
+  margin-bottom: clamp(3rem, 6vh, 5rem);
+}
+
+.intro-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: clamp(3rem, 6vh, 5rem);
+}
+
+.intro-body p {
+  margin: 0;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.85;
+}
+
+.intro-story {
+  max-width: 38rem;
+  margin-bottom: 2.5rem;
+}
+
+.intro-story:last-child {
+  margin-bottom: 0;
+}
+
+.intro-story h3 {
+  margin: 0 0 0.75rem;
+  font-family: "Instrument Serif", "Iowan Old Style", serif;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.intro-story p {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.85;
+}
+
+.intro-story p:last-child {
+  margin-bottom: 0;
+}
+
+/* ───────────────────────────────────────────────
    Instrument
    ─────────────────────────────────────────────── */
 
@@ -607,6 +663,10 @@ html[data-theme="light"] .footer-lockup {
 
   .hero-content {
     align-items: center;
+  }
+
+  .intro-body {
+    grid-template-columns: 1fr;
   }
 
   .principles {

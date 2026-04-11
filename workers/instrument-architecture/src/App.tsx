@@ -117,9 +117,63 @@ export default function App() {
           />
         </section>
 
-        {/* ──── Instrument ──── */}
+        {/* ──── Intro ──── */}
+        <section className="intro">
+          <div className="intro-lead">
+            <p className="section-label">Why instruments</p>
+            <h2 className="display-heading">
+              The industry calls everything an agent.<br />
+              We build instruments.
+            </h2>
+          </div>
+
+          <div className="intro-body">
+            <p>
+              An instrument is purpose-built operational intelligence — software
+              that reads a domain, interprets what happened, and delivers the
+              operator read before anyone has to ask. Not a dashboard to stare at.
+              Not a chatbot to prompt. A named, specific piece of the system that
+              does one thing exceptionally well.
+            </p>
+            <p>
+              Wake is the platform underneath — the shared memory, the connectors,
+              the synthesis layer. It does the hard work quietly so each instrument
+              can stay calm and specific to the operator receiving it.
+            </p>
+          </div>
+
+          <div className="intro-story">
+            <h3>How this started</h3>
+            <p>
+              We were deep in the Tharp engagement — building the pitch deck,
+              mapping the operation — and hit a gap. Nobody had done a proper read
+              on the financials. Not a dashboard. Not a spreadsheet export. An
+              actual interpreted briefing that tells the owner what moved and why
+              it matters.
+            </p>
+            <p>
+              So we built one. And then it became obvious: this wasn't just useful
+              for Tharp. Every operator we work with has the same gap. The financial
+              read was the first instrument, but the architecture works anywhere.
+            </p>
+          </div>
+
+          <div className="intro-story">
+            <h3>Where this goes</h3>
+            <p>
+              Perch is the first. There will be more — different domains, different
+              operators, each one named and specific. The point is we build these
+              together. Every instrument we ship makes the platform smarter.
+              Collectively, we are building the Candlefish operating intelligence
+              system — and that is worth building toward.
+            </p>
+          </div>
+        </section>
+
+        {/* ──── Perch specifically ──── */}
         <section className="instrument">
           <div className="instrument-header">
+            <p className="section-label">First instrument</p>
             <h2 className="display-heading">
               Financial intelligence that already feels understood.
             </h2>
