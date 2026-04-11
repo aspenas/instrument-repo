@@ -34,6 +34,11 @@ html[data-theme="light"] {
 html {
   background: var(--bg);
   color-scheme: dark;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 html[data-theme="light"] {
@@ -822,7 +827,7 @@ html[data-theme="light"] .tech-code {
     justify-items: center;
     text-align: center;
     gap: 1.5rem;
-    padding: 3rem 1.25rem;
+    padding: 3rem 1rem;
   }
 
   .hero-mark {
@@ -840,7 +845,7 @@ html[data-theme="light"] .tech-code {
 
   /* Demo callout */
   .demo-callout {
-    padding: 4rem 1.25rem;
+    padding: 3.5rem 1rem;
   }
 
   .demo-confidential {
@@ -858,8 +863,8 @@ html[data-theme="light"] .tech-code {
   .brand,
   .voice,
   .tech-ref {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
@@ -949,8 +954,8 @@ html[data-theme="light"] .tech-code {
 
   /* Footer */
   .site-footer {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-bottom: calc(3rem + env(safe-area-inset-bottom));
   }
 

@@ -1,0 +1,3577 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.268 --> 00:00:06.003
+Chris Anderson: Sam, welcome to TED.
+
+00:00:06.003 --> 00:00:07.405
+Thank you so much for coming.
+
+00:00:07.405 --> 00:00:09.173
+Sam Altman: Thank you. It's an honor.
+
+00:00:09.206 --> 00:00:13.511
+CA: Your company has been releasing
+crazy insane new models  
+
+00:00:13.511 --> 00:00:15.813
+pretty much every other week
+it feels like.
+
+00:00:16.447 --> 00:00:18.382
+I've been playing with a couple of them.
+
+00:00:18.382 --> 00:00:21.619
+I'd like to show you
+what I've been playing.
+
+00:00:21.652 --> 00:00:25.689
+So, Sora, this is the image
+and video generator.
+
+00:00:26.323 --> 00:00:28.225
+I asked Sora this:
+
+00:00:28.259 --> 00:00:33.531
+What will it look like when you share
+some shocking revelations here at TED?
+
+00:00:33.564 --> 00:00:36.801
+You want to see
+how it imagined it, you know?
+
+00:00:36.834 --> 00:00:38.936
+(Laughter)
+
+00:00:39.503 --> 00:00:40.704
+I mean, not bad, right?
+
+00:00:40.738 --> 00:00:41.939
+How would you grade that?
+
+00:00:41.972 --> 00:00:44.075
+Five fingers on all hands.
+
+00:00:44.075 --> 00:00:46.710
+SA: Very close to what I'm wearing,
+you know, it's good.
+
+00:00:46.744 --> 00:00:48.946
+CA: I've never seen you
+quite that animated.
+
+00:00:48.979 --> 00:00:51.082
+SA: No, I'm not that animated of a person.
+
+00:00:51.115 --> 00:00:52.283
+CA: So maybe a B-plus.
+
+00:00:52.316 --> 00:00:55.986
+But this one genuinely astounded me.
+
+00:00:56.020 --> 00:00:58.823
+When I asked it to come up with a diagram
+
+00:00:58.856 --> 00:01:01.926
+that shows the difference
+between intelligence and consciousness.
+
+00:01:01.926 --> 00:01:03.594
+Like  how would you do that?
+
+00:01:04.028 --> 00:01:05.629
+This is what it did.
+
+00:01:06.397 --> 00:01:10.201
+I mean, this is so simple,
+but it's incredible.
+
+00:01:10.234 --> 00:01:12.603
+What is the kind of process
+that would allow --
+
+00:01:12.636 --> 00:01:14.939
+like this is clearly not just
+image generation.
+
+00:01:14.939 --> 00:01:20.211
+It's linking into the core intelligences
+that your overall model has.
+
+00:01:21.078 --> 00:01:25.616
+SA: Yeah, the new image
+generation model is part of GPT-4o,
+
+00:01:25.649 --> 00:01:27.985
+so it's got all
+of the intelligence in there.
+
+00:01:28.385 --> 00:01:30.154
+And I think that's one of the reasons
+
+00:01:30.154 --> 00:01:33.224
+it's been able to do these things
+that people really love.
+
+00:01:33.257 --> 00:01:37.328
+CA: I mean, if I'm a management consultant
+and I'm playing with some of this stuff,
+
+00:01:37.328 --> 00:01:40.030
+I'm thinking, uh oh,
+what does my future look like?
+
+00:01:41.465 --> 00:01:45.503
+SA: I mean, I think there are
+sort of two views you can take.
+
+00:01:45.536 --> 00:01:47.838
+You can say, oh, man,
+it's doing everything I do.
+
+00:01:47.872 --> 00:01:49.273
+What's going to happen to me?
+
+00:01:49.273 --> 00:01:50.741
+Or you can say,
+
+00:01:50.774 --> 00:01:53.677
+like through every other
+technological revolution in history,
+
+00:01:53.677 --> 00:01:56.080
+OK, now there's this new tool.
+
+00:01:56.113 --> 00:01:57.448
+I can do a lot more.
+
+00:01:58.415 --> 00:02:00.017
+What am I going to be able to do?
+
+00:02:00.017 --> 00:02:03.120
+It is true that the expectation
+
+00:02:03.154 --> 00:02:06.023
+of what we’ll have for someone
+in a particular job increases,
+
+00:02:06.056 --> 00:02:08.726
+but the capabilities
+will increase so dramatically
+
+00:02:08.726 --> 00:02:11.662
+that I think it will be easy
+to rise to that occasion.
+
+00:02:11.662 --> 00:02:13.063
+CA: So this impressed me too.
+
+00:02:13.097 --> 00:02:17.601
+I asked it to imagine Charlie Brown
+as thinking of himself as an AI.
+
+00:02:18.369 --> 00:02:19.803
+It came up with this.
+
+00:02:19.837 --> 00:02:22.907
+I thought this was actually
+rather profound.
+
+00:02:23.474 --> 00:02:24.942
+What do you think?
+
+00:02:24.975 --> 00:02:26.243
+(Laughs)
+
+00:02:30.047 --> 00:02:32.583
+I mean, the writing quality
+of some of the new models,
+
+00:02:32.583 --> 00:02:34.018
+not just here, but in detail,
+
+00:02:34.018 --> 00:02:36.520
+is really going to a new level.
+
+00:02:36.520 --> 00:02:38.689
+SA: I mean, this is
+an incredible meta answer,
+
+00:02:38.722 --> 00:02:42.526
+but there's really no way to know
+if it is thinking that
+
+00:02:42.560 --> 00:02:45.162
+or it just saw that a lot of times
+in the training set.
+
+00:02:45.196 --> 00:02:47.731
+And of course like
+if you can’t tell the difference,
+
+00:02:47.765 --> 00:02:49.233
+how much do you care?
+
+00:02:50.201 --> 00:02:51.802
+CA: So that's really interesting.
+
+00:02:51.802 --> 00:02:53.103
+We don't know.
+
+00:02:53.137 --> 00:02:54.538
+Isn't there though ...
+
+00:02:55.272 --> 00:02:58.309
+like at first glance
+this looks like IP theft.
+
+00:02:58.342 --> 00:03:01.445
+Like you guys don’t have a deal
+with the “Peanuts” estate?
+
+00:03:01.478 --> 00:03:04.281
+(Applause)
+
+00:03:04.281 --> 00:03:06.584
+You can clap about that
+all you want, enjoy.
+
+00:03:06.617 --> 00:03:08.285
+(Laughter and murmuring)
+
+00:03:08.819 --> 00:03:13.657
+I will say that I think
+the creative spirit of humanity
+
+00:03:13.691 --> 00:03:15.426
+is an incredibly important thing,
+
+00:03:15.459 --> 00:03:18.429
+and we want to build
+tools that lift that up,
+
+00:03:18.462 --> 00:03:22.066
+that make it so that new people
+can create better art,
+
+00:03:22.099 --> 00:03:23.267
+better content,
+
+00:03:23.267 --> 00:03:25.102
+write better novels that we all enjoy.
+
+00:03:25.135 --> 00:03:28.639
+I believe very deeply that humans
+will be at the center of that.
+
+00:03:29.573 --> 00:03:33.744
+I also believe that we probably
+do need to figure out
+
+00:03:33.744 --> 00:03:40.417
+some sort of new model
+around the economics of creative output.
+
+00:03:40.718 --> 00:03:43.587
+I think people have been building
+on the creativity of others
+
+00:03:43.621 --> 00:03:44.822
+for a long time.
+
+00:03:44.822 --> 00:03:46.924
+People take inspiration for a long time.
+
+00:03:46.957 --> 00:03:51.762
+But as the access to creativity
+gets incredibly democratized
+
+00:03:51.795 --> 00:03:54.999
+and people are building off
+of each other's ideas all the time,
+
+00:03:55.032 --> 00:03:57.901
+I think there are incredible
+new business models
+
+00:03:57.935 --> 00:04:00.204
+that we and others are excited to explore.
+
+00:04:00.237 --> 00:04:02.640
+Exactly what that's going to look like,
+
+00:04:02.673 --> 00:04:03.807
+I'm not sure.
+
+00:04:03.841 --> 00:04:05.776
+Clearly, there’s some cut and dry stuff,
+
+00:04:05.776 --> 00:04:07.745
+like you can’t copy someone else’s work.
+
+00:04:07.778 --> 00:04:09.613
+But how much inspiration can you take?
+
+00:04:09.613 --> 00:04:13.017
+If you say, I want to generate art
+in the style of these seven people,
+
+00:04:13.050 --> 00:04:14.918
+all of whom have consented to that,
+
+00:04:14.952 --> 00:04:17.688
+how do you, like divvy up
+how much money goes to each one?
+
+00:04:17.721 --> 00:04:19.189
+These are like big questions.
+
+00:04:19.223 --> 00:04:21.225
+But every time throughout history
+
+00:04:21.258 --> 00:04:23.527
+we have put better
+and more powerful technology
+
+00:04:23.560 --> 00:04:24.928
+in the hands of creators.
+
+00:04:24.962 --> 00:04:27.331
+I think we collectively get
+better creative output
+
+00:04:27.364 --> 00:04:29.199
+and people do just more amazing stuff.
+
+00:04:29.199 --> 00:04:33.203
+CA: An even bigger question
+is when they haven't consented to it.
+
+00:04:33.237 --> 00:04:37.474
+In our opening session,
+Carole Cadwalladr, showed, you know,
+
+00:04:37.508 --> 00:04:40.377
+"ChatGPT give a talk in the style
+of Carole Cadwalladr"
+
+00:04:40.377 --> 00:04:41.879
+and sure enough, it gave a talk
+
+00:04:41.879 --> 00:04:44.148
+that wasn't quite as good
+as the talk she gave,
+
+00:04:44.181 --> 00:04:45.582
+but it was pretty impressive.
+
+00:04:45.582 --> 00:04:50.387
+And she said, "OK, it's great,
+but I did not consent to this."
+
+00:04:51.088 --> 00:04:52.790
+How are we going to navigate this?
+
+00:04:52.823 --> 00:04:54.491
+Like isn’t there a way,
+
+00:04:54.491 --> 00:04:56.493
+should it just be people who’ve consented?
+
+00:04:56.493 --> 00:04:58.629
+Or shouldn’t there be a model
+
+00:04:58.629 --> 00:05:02.633
+that somehow says that any
+named individual in a prompt
+
+00:05:02.633 --> 00:05:06.170
+whose work is then used,
+they should get something for that?
+
+00:05:06.203 --> 00:05:08.906
+SA: So right now, if you use
+our image-gen thing and say,
+
+00:05:08.906 --> 00:05:11.275
+I want something in the style
+of a living artist,
+
+00:05:11.275 --> 00:05:12.609
+it won't do that.
+
+00:05:12.643 --> 00:05:17.548
+But if you say I want it in the style
+of this particular like kind of vibe,
+
+00:05:17.581 --> 00:05:21.552
+or this studio or this art movement
+or whatever, it will.
+
+00:05:22.820 --> 00:05:24.922
+And obviously if you’re like, you know,
+
+00:05:24.955 --> 00:05:28.525
+output a song that is like a copy
+of a song, it won't do that.
+
+00:05:28.559 --> 00:05:33.197
+The question of like
+where that line should be
+
+00:05:33.197 --> 00:05:36.400
+and how people say like,
+this is too much,
+
+00:05:36.400 --> 00:05:39.136
+we sorted that out before
+with copyright law
+
+00:05:39.169 --> 00:05:41.438
+and kind of what fair use looks like.
+
+00:05:41.472 --> 00:05:43.173
+Again, I think in the world of AI,
+
+00:05:43.173 --> 00:05:46.610
+there will be a new model
+that we figure out.
+
+00:05:48.212 --> 00:05:50.247
+CA: From the point of view, I mean,
+
+00:05:50.280 --> 00:05:52.983
+creative people are some
+of the angriest people right now
+
+00:05:53.016 --> 00:05:54.752
+or the most scared people about AI.
+
+00:05:54.752 --> 00:05:58.689
+And the difference between
+feeling your work is being stolen from you
+
+00:05:58.722 --> 00:06:01.091
+and your future is being stolen from you,
+
+00:06:01.125 --> 00:06:04.328
+and feeling your work is being amplified
+and can be amplified,
+
+00:06:04.361 --> 00:06:06.530
+those are such different feelings.
+
+00:06:06.563 --> 00:06:09.500
+And if we could shift
+to the other one, to the second one,
+
+00:06:09.533 --> 00:06:13.604
+I think that really changes how much
+humanity as a whole embraces all this.
+
+00:06:13.637 --> 00:06:17.474
+SA: Well, again, I would say
+some creative people are very upset.
+
+00:06:17.508 --> 00:06:20.377
+Some creatives are like,
+"This is the most amazing tool ever,
+
+00:06:20.377 --> 00:06:22.279
+I'm doing incredible new work."
+
+00:06:22.312 --> 00:06:27.651
+But you know like
+it’s definitely a change.
+
+00:06:27.684 --> 00:06:31.588
+And I have a lot of like
+empathy to people who are just like,
+
+00:06:31.622 --> 00:06:33.457
+"I wish this change weren't happening.
+
+00:06:33.457 --> 00:06:35.426
+I liked the way things were before."
+
+00:06:36.960 --> 00:06:43.567
+CA: But in principle, you can calculate
+from any given prompt how much ...
+
+00:06:43.600 --> 00:06:46.003
+there should be some way
+of being able to calculate
+
+00:06:46.003 --> 00:06:48.572
+what percentage of a subscription,
+revenue or whatever
+
+00:06:48.605 --> 00:06:49.807
+goes towards each answer.
+
+00:06:49.840 --> 00:06:51.542
+In principle, it should be possible
+
+00:06:51.542 --> 00:06:53.944
+if one could get the rest
+of the rules figured out.
+
+00:06:53.977 --> 00:06:55.279
+It's obviously complicated.
+
+00:06:55.279 --> 00:06:57.681
+You could calculate some kind
+of revenue share, no?
+
+00:06:57.681 --> 00:07:01.351
+SA: If you're a musician and you spend
+your whole life, your whole childhood,
+
+00:07:01.385 --> 00:07:02.686
+listening to music,
+
+00:07:02.719 --> 00:07:05.122
+and then you get an idea
+and you go compose a song
+
+00:07:05.155 --> 00:07:07.257
+that is inspired by what
+you've heard before,
+
+00:07:07.291 --> 00:07:08.459
+but a new direction,
+
+00:07:08.492 --> 00:07:10.327
+it'd be very hard for you to say like,
+
+00:07:10.327 --> 00:07:12.763
+this much was from this song
+I heard when I was 11.
+
+00:07:12.763 --> 00:07:13.931
+CA: That's right.
+
+00:07:13.964 --> 00:07:15.999
+But we're talking here about the situation
+
+00:07:15.999 --> 00:07:18.535
+where someone specifically
+in a prompt names someone.
+
+00:07:18.569 --> 00:07:21.271
+SA: Well, again,
+right now, if you try to like,
+
+00:07:21.305 --> 00:07:23.140
+go generate an image in a named style,
+
+00:07:23.140 --> 00:07:25.476
+we just say that artist
+is living, we don't do it.
+
+00:07:25.509 --> 00:07:26.877
+But I think it would be cool
+
+00:07:26.910 --> 00:07:28.946
+to figure out a new model
+where if you say,
+
+00:07:28.946 --> 00:07:32.082
+I want to do it in the name
+of this artist and they opt in,
+
+00:07:32.082 --> 00:07:33.517
+there's a revenue model there.
+
+00:07:33.550 --> 00:07:35.486
+I think that's a good thing to explore.
+
+00:07:35.519 --> 00:07:38.922
+CA: So, I think the world should help you
+figure out that model quickly.
+
+00:07:38.922 --> 00:07:41.391
+And I think it will make
+a huge difference actually.
+
+00:07:41.425 --> 00:07:43.227
+I want to switch topics quickly.
+
+00:07:43.260 --> 00:07:44.661
+(Applause)
+
+00:07:44.695 --> 00:07:47.764
+The battle between
+your model and open source.
+
+00:07:47.798 --> 00:07:51.768
+How much were you shaken up
+by the arrival of DeepSeek?
+
+00:07:53.203 --> 00:07:56.473
+SA: I think open source
+has an important place.
+
+00:07:56.473 --> 00:08:00.544
+We actually, just last night,
+hosted our first community session
+
+00:08:00.577 --> 00:08:04.348
+to kind of decide the parameters
+of our open-source model
+
+00:08:04.381 --> 00:08:06.183
+and how we want to shape it.
+
+00:08:06.683 --> 00:08:09.520
+We're going to do a very
+powerful open-source model.
+
+00:08:09.553 --> 00:08:11.488
+I think this is important.
+
+00:08:12.122 --> 00:08:14.725
+We're going to do something
+near the frontier, I think,
+
+00:08:14.725 --> 00:08:17.194
+better than any current
+open-source model out there.
+
+00:08:17.194 --> 00:08:18.629
+This will not be all --
+
+00:08:18.629 --> 00:08:22.299
+there will be people who will use this
+in ways that some people in this room,
+
+00:08:22.299 --> 00:08:23.700
+maybe you or I, don’t like.
+
+00:08:23.734 --> 00:08:27.404
+But there is going to be an important
+place for open-source models
+
+00:08:27.404 --> 00:08:29.439
+as part of the constellation here.
+
+00:08:30.274 --> 00:08:34.511
+And, you know, I think
+we were late to act on that,
+
+00:08:34.545 --> 00:08:36.547
+but we're going to do it really well now.
+
+00:08:36.547 --> 00:08:39.816
+CA: I mean, you're spending
+it seems, like an order,
+
+00:08:39.850 --> 00:08:44.688
+or even orders of magnitude more
+than DeepSeek allegedly spent,
+
+00:08:44.721 --> 00:08:46.990
+although I know there's
+controversy around that.
+
+00:08:46.990 --> 00:08:51.128
+Are you confident that the actual
+better model is going to be recognized?
+
+00:08:51.161 --> 00:08:52.563
+Or are you actually like,
+
+00:08:52.596 --> 00:08:56.066
+isn't this in some ways life-threatening
+to the notion that, yeah,
+
+00:08:56.099 --> 00:08:59.369
+by going to massive scale,
+tens of billions of dollars of investment,
+
+00:08:59.369 --> 00:09:02.406
+we can maintain an incredible lead.
+
+00:09:03.907 --> 00:09:08.278
+SA: All day long, I call people
+and beg them to give us their GPUs.
+
+00:09:08.679 --> 00:09:11.181
+We are so incredibly constrained.
+
+00:09:11.214 --> 00:09:12.683
+Our growth is going like this.
+
+00:09:12.683 --> 00:09:15.118
+DeepSeek launched,
+and it didn’t seem to impact it.
+
+00:09:15.152 --> 00:09:16.954
+There's other stuff that's happening.
+
+00:09:17.421 --> 00:09:19.289
+CA: Tell us about the growth, actually.
+
+00:09:19.289 --> 00:09:21.725
+You gave me a shocking
+number backstage there.
+
+00:09:22.659 --> 00:09:25.362
+SA: I have never seen
+growth in any company,
+
+00:09:25.395 --> 00:09:27.331
+one that I've been involved with or not,
+
+00:09:27.331 --> 00:09:29.499
+like this, like the growth of ChatGPT.
+
+00:09:29.533 --> 00:09:30.934
+It's really fun.
+
+00:09:30.968 --> 00:09:33.537
+I feel like great, deeply honored.
+
+00:09:33.570 --> 00:09:36.607
+But it is crazy to live through,
+
+00:09:36.640 --> 00:09:38.609
+and our teams are exhausted and stressed.
+
+00:09:38.609 --> 00:09:40.344
+And we’re trying to keep things up.
+
+00:09:40.377 --> 00:09:42.112
+CA: How many users do you have now?
+
+00:09:43.180 --> 00:09:46.249
+SA: I think the last time we said
+was 500 million weekly actives,
+
+00:09:46.249 --> 00:09:48.118
+and it is growing very rapidly.
+
+00:09:50.020 --> 00:09:53.190
+CA: I mean, you told me that like
+doubled in just a few weeks.
+
+00:09:53.624 --> 00:09:55.659
+Like in terms of compute
+or in terms of ...
+
+00:09:55.659 --> 00:09:57.661
+SA: I said that privately, but I guess ...
+
+00:09:57.661 --> 00:09:58.662
+CA: Oh.
+
+00:09:58.662 --> 00:09:59.663
+(Laughter)
+
+00:09:59.663 --> 00:10:02.132
+I misremembered, Sam, I'm sorry.
+
+00:10:02.165 --> 00:10:04.835
+We can edit that out of the thing
+if you really want to.
+
+00:10:04.868 --> 00:10:06.370
+And no one here would tweet it.
+
+00:10:06.370 --> 00:10:07.671
+SA: It's growing very fast.
+
+00:10:07.704 --> 00:10:08.839
+(Laughter)
+
+00:10:11.174 --> 00:10:13.944
+CA: So you're confident,
+you're seeing it grow,
+
+00:10:13.944 --> 00:10:15.345
+take off like a rocket ship,
+
+00:10:15.345 --> 00:10:17.848
+you're releasing incredible
+new models all the time.
+
+00:10:17.848 --> 00:10:21.385
+What are you seeing in your best
+internal models right now
+
+00:10:21.418 --> 00:10:23.687
+that you haven't yet shared with the world
+
+00:10:23.720 --> 00:10:25.689
+but you would love to here on this stage?
+
+00:10:25.689 --> 00:10:27.524
+SA: So first of all, you asked about,
+
+00:10:27.557 --> 00:10:29.760
+are we worried about this
+model or that model?
+
+00:10:29.760 --> 00:10:32.362
+There will be a lot
+of intelligent models in the world.
+
+00:10:32.396 --> 00:10:35.065
+Very smart models will be
+commoditized to some degree.
+
+00:10:35.098 --> 00:10:36.466
+I think we’ll have the best,
+
+00:10:36.466 --> 00:10:38.101
+and for some use you'll want that.
+
+00:10:38.101 --> 00:10:40.804
+But like, honestly,
+the models are now so smart
+
+00:10:40.837 --> 00:10:43.240
+that for most of the things
+most people want to do,
+
+00:10:43.273 --> 00:10:44.608
+they're good enough.
+
+00:10:46.076 --> 00:10:47.577
+I hope that'll change over time
+
+00:10:47.577 --> 00:10:49.680
+because people will raise
+their expectations.
+
+00:10:49.713 --> 00:10:53.917
+But like, if you're kind of
+using ChatGPT as a standard user,
+
+00:10:53.950 --> 00:10:55.819
+the model capability is very smart.
+
+00:10:55.819 --> 00:10:58.255
+But we have to build a great product,
+
+00:10:58.288 --> 00:10:59.589
+not just a great model.
+
+00:10:59.623 --> 00:11:02.659
+And so there will be a lot of people
+with great models,
+
+00:11:02.693 --> 00:11:04.728
+and we will try to build the best product.
+
+00:11:04.761 --> 00:11:07.564
+And people want their image-gen,
+
+00:11:07.597 --> 00:11:11.268
+you know, you saw some
+Sora examples for video earlier.
+
+00:11:12.202 --> 00:11:14.404
+They want to integrate it
+with all their stuff.
+
+00:11:14.404 --> 00:11:17.641
+We just launched a new feature,
+it's still called Memory,
+
+00:11:17.641 --> 00:11:19.710
+but it's way better
+than the Memory before,
+
+00:11:19.710 --> 00:11:23.213
+where this model will get to know you
+over the course of your lifetime.
+
+00:11:23.246 --> 00:11:25.415
+And we have a lot more stuff
+to come to build
+
+00:11:25.415 --> 00:11:27.718
+like this great integrated product.
+
+00:11:27.751 --> 00:11:30.787
+And, you know, I think
+people will stick with that.
+
+00:11:30.821 --> 00:11:34.357
+So there will be many models,
+but I think we will, I hope,
+
+00:11:34.357 --> 00:11:38.028
+continue to focus on building the best
+defining product in this space.
+
+00:11:38.028 --> 00:11:40.397
+CA: I mean after I saw
+your announcement yesterday
+
+00:11:40.430 --> 00:11:45.569
+that ChatGPT will know all
+of your query history,
+
+00:11:45.569 --> 00:11:47.704
+I entered, "Tell me about me,
+
+00:11:47.738 --> 00:11:49.740
+ChatGPT, from all you know."
+
+00:11:49.773 --> 00:11:52.109
+And my jaw dropped, Sam, it was shocking.
+
+00:11:52.142 --> 00:11:55.779
+It knew who I was
+and all these sort of interests
+
+00:11:55.812 --> 00:12:00.083
+that hopefully mostly were
+pretty much appropriate and shareable.
+
+00:12:00.083 --> 00:12:02.886
+But it was astonishing.
+
+00:12:02.886 --> 00:12:05.122
+And I felt the sense of real excitement,
+
+00:12:05.155 --> 00:12:06.757
+a little bit queasy,
+
+00:12:06.790 --> 00:12:08.592
+but mainly excitement, actually,
+
+00:12:08.625 --> 00:12:12.829
+at how much more that would allow it
+to be useful to me.
+
+00:12:12.863 --> 00:12:15.132
+SA: One of our researchers
+tweeted, you know,
+
+00:12:15.165 --> 00:12:17.033
+kind of like yesterday or this morning,
+
+00:12:17.067 --> 00:12:19.169
+that the upload happens bit by bit.
+
+00:12:19.469 --> 00:12:22.139
+It’s not you know, that you plug
+your brain in one day.
+
+00:12:22.139 --> 00:12:25.842
+But you will talk to ChatGPT
+over the course of your life
+
+00:12:25.842 --> 00:12:27.377
+and some day, maybe if you want,
+
+00:12:27.410 --> 00:12:30.280
+it'll be listening to you
+throughout the day
+
+00:12:30.313 --> 00:12:32.382
+and sort of observing what you're doing,
+
+00:12:32.415 --> 00:12:33.617
+and it'll get to know you
+
+00:12:33.617 --> 00:12:37.154
+and it'll become this extension
+of yourself, this companion,
+
+00:12:37.154 --> 00:12:39.956
+this thing that just tries to,
+like, help you be the best,
+
+00:12:39.990 --> 00:12:41.458
+do the best you can.
+
+00:12:41.491 --> 00:12:42.959
+CA: In the movie "Her,"
+
+00:12:42.993 --> 00:12:48.398
+the AI basically announces
+that she's read all of his emails
+
+00:12:48.398 --> 00:12:49.900
+and decided he's a great writer
+
+00:12:49.933 --> 00:12:53.703
+and you know, persuades
+a publisher to publish him.
+
+00:12:53.737 --> 00:12:57.040
+That might be coming
+sooner than we think.
+
+00:12:59.776 --> 00:13:02.646
+SA: I don't think it will happen
+exactly like that, but yeah,
+
+00:13:02.646 --> 00:13:06.016
+I think something
+in the direction where AI --
+
+00:13:06.016 --> 00:13:09.452
+you don’t have to just,
+like, go to ChatGPT or whatever
+
+00:13:09.486 --> 00:13:11.755
+and say, I have a question,
+give me an answer.
+
+00:13:11.788 --> 00:13:15.358
+But you're getting like,
+proactively pushed things that help you,
+
+00:13:15.358 --> 00:13:16.960
+that make you better or whatever.
+
+00:13:16.993 --> 00:13:18.461
+That does seem like it's soon.
+
+00:13:18.895 --> 00:13:22.165
+CA: So what have you seen
+that's coming up, internally,
+
+00:13:22.165 --> 00:13:24.601
+that you think is going
+to blow people's minds?
+
+00:13:24.601 --> 00:13:28.138
+Give us at least a hint
+of what the next big jaw dropper is.
+
+00:13:29.940 --> 00:13:32.442
+SA: The thing that I'm personally
+most excited about
+
+00:13:32.475 --> 00:13:34.978
+is AI for science at this point.
+
+00:13:35.645 --> 00:13:38.515
+I am a big believer
+
+00:13:38.548 --> 00:13:41.685
+that the most important
+driver of the world
+
+00:13:41.718 --> 00:13:45.155
+and people's lives getting better
+and better is new scientific discovery.
+
+00:13:45.188 --> 00:13:46.723
+We can do more things with less,
+
+00:13:46.756 --> 00:13:49.993
+we sort of push back the frontier
+of what's possible.
+
+00:13:50.861 --> 00:13:53.330
+We're starting to hear
+a lot from scientists
+
+00:13:53.363 --> 00:13:55.031
+with our latest models
+
+00:13:55.065 --> 00:13:58.134
+that they're actually just more productive
+than they were before.
+
+00:13:58.134 --> 00:14:00.637
+That's actually mattering
+to what they can discover.
+
+00:14:00.670 --> 00:14:05.375
+CA: What’s the plausible near-term
+discovery, like, room temperature --
+
+00:14:05.408 --> 00:14:06.610
+SA: Superconductors?
+
+00:14:06.610 --> 00:14:07.944
+CA: Superconducting, yeah.
+
+00:14:07.978 --> 00:14:09.346
+Is that possible?
+
+00:14:09.913 --> 00:14:12.649
+SA: I don't think that's prevented
+by the laws of physics.
+
+00:14:12.649 --> 00:14:13.884
+So it should be possible.
+
+00:14:13.917 --> 00:14:15.752
+But we don't know for sure.
+
+00:14:16.086 --> 00:14:18.421
+I think you'll start to see some ...
+
+00:14:19.823 --> 00:14:25.328
+meaningful progress against disease
+with AI-assisted tools.
+
+00:14:26.763 --> 00:14:29.099
+You know, physics maybe
+takes a little bit longer,
+
+00:14:29.132 --> 00:14:30.567
+but I hope for it.
+
+00:14:31.868 --> 00:14:34.004
+So that's like, one direction.
+
+00:14:34.504 --> 00:14:37.974
+Another that I think is big
+is starting pretty soon,
+
+00:14:38.008 --> 00:14:39.342
+like in the coming months.
+
+00:14:39.376 --> 00:14:42.078
+Software development
+has already been pretty transformed.
+
+00:14:42.078 --> 00:14:46.149
+Like it’s quite amazing how different
+the process of creating software is now
+
+00:14:46.149 --> 00:14:47.851
+than it was two years ago.
+
+00:14:47.884 --> 00:14:52.355
+But I expect like another move
+that big in the coming months
+
+00:14:52.389 --> 00:14:55.792
+as agentic software engineering
+really starts to happen.
+
+00:14:56.559 --> 00:14:58.662
+CA: I've heard engineers say
+that they've had
+
+00:14:58.695 --> 00:15:01.598
+almost like religious-like moments
+with some of the new models
+
+00:15:01.631 --> 00:15:03.667
+where suddenly, they can do
+in an afternoon
+
+00:15:03.700 --> 00:15:05.535
+what would have taken them two years.
+
+00:15:05.568 --> 00:15:06.903
+SA: Yeah, it's like mind --
+
+00:15:06.937 --> 00:15:10.206
+it really like, that’s been one
+of my big “feel the AGI” moments.
+
+00:15:10.640 --> 00:15:13.610
+CA: But talk about what
+is the scariest thing that you've seen.
+
+00:15:13.643 --> 00:15:14.878
+Because like, outside,
+
+00:15:14.878 --> 00:15:18.882
+a lot of people picture you as,
+you know, you have access to this stuff.
+
+00:15:18.882 --> 00:15:21.251
+And we hear all these rumors
+coming out of AI,
+
+00:15:21.284 --> 00:15:24.020
+and it's like, "Oh my God,
+they've seen consciousness,"
+
+00:15:24.054 --> 00:15:25.255
+or "They've seen AGI,"
+
+00:15:25.288 --> 00:15:27.857
+or "They've seen some kind
+of apocalypse coming."
+
+00:15:27.891 --> 00:15:29.159
+Have you seen,
+
+00:15:29.159 --> 00:15:31.227
+has there been a scary moment
+
+00:15:31.261 --> 00:15:33.630
+when you've seen something
+internally and thought,
+
+00:15:33.663 --> 00:15:36.199
+"Uh oh, we need to pay attention to this?"
+
+00:15:37.267 --> 00:15:39.402
+SA: There have been like moments of awe.
+
+00:15:39.436 --> 00:15:43.406
+And I think with that is always like,
+how far is this going to go?
+
+00:15:43.406 --> 00:15:44.941
+What is this going to be?
+
+00:15:44.975 --> 00:15:48.778
+But there's no like,
+we don't secretly have,
+
+00:15:48.778 --> 00:15:51.614
+we're not secretly sitting
+on a conscious model or something
+
+00:15:51.614 --> 00:15:54.651
+that's capable of self-improvement
+or anything like that.
+
+00:15:55.852 --> 00:15:57.587
+You know, I ...
+
+00:15:59.055 --> 00:16:02.792
+people have very different views of what
+the big AI risks are going to be.
+
+00:16:05.161 --> 00:16:07.230
+And I myself have like
+evolved on thinking
+
+00:16:07.230 --> 00:16:09.232
+about where we're going to see those.
+
+00:16:12.369 --> 00:16:16.473
+I continue to believe there will come
+very powerful models
+
+00:16:16.506 --> 00:16:18.775
+that people can misuse in big ways.
+
+00:16:19.242 --> 00:16:22.512
+People talk a lot about the potential
+for new kinds of bioterror,
+
+00:16:22.545 --> 00:16:26.216
+models that can present
+like a real cybersecurity challenge,
+
+00:16:26.249 --> 00:16:29.319
+models that are capable
+of self-improvement
+
+00:16:29.352 --> 00:16:32.355
+in a way that leads
+to some sort of loss of control.
+
+00:16:32.355 --> 00:16:34.290
+So I think there are big risks there.
+
+00:16:34.324 --> 00:16:36.159
+And then there's a lot of other stuff,
+
+00:16:36.192 --> 00:16:39.796
+which honestly is kind of
+what I think, many people mean,
+
+00:16:39.829 --> 00:16:42.365
+where people talk about disinformation
+
+00:16:42.399 --> 00:16:45.502
+or models saying things
+that they don't like or things like that.
+
+00:16:45.535 --> 00:16:47.303
+CA: Sticking with the first of those,
+
+00:16:47.337 --> 00:16:49.639
+do you check for that
+internally before release?
+
+00:16:49.639 --> 00:16:50.807
+SA: Of course, yeah.
+
+00:16:50.840 --> 00:16:52.709
+So we have this preparedness framework
+
+00:16:52.709 --> 00:16:54.377
+that outlines how we do that.
+
+00:16:55.545 --> 00:16:59.582
+CA: I mean, you've had some
+departures from your safety team.
+
+00:16:59.616 --> 00:17:02.819
+How many people have departed,
+why have they left?
+
+00:17:03.520 --> 00:17:07.090
+SA: We have, I don't know
+the exact number,
+
+00:17:07.123 --> 00:17:10.026
+but there are clearly different views
+about AI safety systems.
+
+00:17:10.060 --> 00:17:12.062
+I would really point to our track record.
+
+00:17:12.095 --> 00:17:14.431
+There are people who will say
+all sorts of things.
+
+00:17:14.464 --> 00:17:19.436
+You know, something like 10 percent
+of the world uses our systems now a lot.
+
+00:17:19.469 --> 00:17:24.240
+And we are very proud
+of the safety track record.
+
+00:17:24.274 --> 00:17:27.010
+CA: But track record
+isn't the issue in a way --
+
+00:17:27.043 --> 00:17:28.211
+SA: No, it kind of is.
+
+00:17:28.244 --> 00:17:31.181
+CA: Because we're talking
+about an exponentially growing power
+
+00:17:31.181 --> 00:17:33.349
+where we fear that we may wake up one day
+
+00:17:33.349 --> 00:17:34.884
+and the world is ending.
+
+00:17:34.884 --> 00:17:36.986
+So it's really not about track record,
+
+00:17:37.020 --> 00:17:40.457
+it's about plausibly saying
+that the pieces are in place
+
+00:17:40.490 --> 00:17:44.461
+to shut things down quickly
+if we see a danger.
+
+00:17:44.494 --> 00:17:47.363
+SA: Yeah, no, of course,
+of course that's important.
+
+00:17:47.397 --> 00:17:50.400
+You don't, like, wake up one day and say,
+
+00:17:50.433 --> 00:17:52.735
+"Hey, we didn't have
+any safety process in place.
+
+00:17:52.735 --> 00:17:54.671
+Now we think the model is really smart.
+
+00:17:54.704 --> 00:17:56.506
+So now we have to care about safety."
+
+00:17:56.506 --> 00:18:00.310
+You have to care about it
+all along this exponential curve.
+
+00:18:00.343 --> 00:18:03.980
+Of course the stakes increase,
+and there are big challenges.
+
+00:18:04.013 --> 00:18:07.117
+But the way we learn
+how to build safe systems
+
+00:18:07.117 --> 00:18:09.519
+is this iterative process
+
+00:18:09.552 --> 00:18:11.855
+of deploying them to the world,
+getting feedback,
+
+00:18:11.855 --> 00:18:14.557
+while the stakes are relatively low,
+learning about like,
+
+00:18:14.591 --> 00:18:16.493
+this is something we have to address.
+
+00:18:16.526 --> 00:18:18.862
+And I think as we move
+into these agentic systems,
+
+00:18:18.895 --> 00:18:22.265
+there's a whole big category of new things
+we have to learn to address.
+
+00:18:22.298 --> 00:18:26.836
+CA: So let's talk about agentic systems
+and the relationship between that and AGI.
+
+00:18:26.870 --> 00:18:29.305
+I think there's confusion
+out there, I'm confused.
+
+00:18:29.339 --> 00:18:31.141
+So artificial general intelligence,
+
+00:18:31.141 --> 00:18:34.844
+it feels like ChatGPT is already
+a general intelligence.
+
+00:18:34.844 --> 00:18:36.212
+I can ask it about anything,
+
+00:18:36.212 --> 00:18:39.048
+and it comes back
+with an intelligent answer.
+
+00:18:39.082 --> 00:18:41.184
+Why isn't that AGI?
+
+00:18:42.485 --> 00:18:43.953
+SA: It doesn't ...
+
+00:18:43.987 --> 00:18:45.922
+First of all, you can't ask it anything.
+
+00:18:45.955 --> 00:18:47.490
+That's very nice of you to say,
+
+00:18:47.490 --> 00:18:50.660
+but there's a lot of things
+that it's still embarrassingly bad at.
+
+00:18:50.660 --> 00:18:53.329
+But even if we fixed those,
+which hopefully we will,
+
+00:18:53.363 --> 00:18:55.732
+it doesn't continuously learn and improve.
+
+00:18:55.765 --> 00:18:59.269
+It can't go get better at something
+
+00:18:59.302 --> 00:19:01.337
+that it's currently weak at.
+
+00:19:01.337 --> 00:19:05.208
+It can't go discover new science
+and update its understanding and do that.
+
+00:19:06.309 --> 00:19:11.881
+And it also kind of can't,
+even if we lower the bar,
+
+00:19:11.881 --> 00:19:14.284
+it can't just sort of do
+any knowledge work
+
+00:19:14.284 --> 00:19:16.085
+you could do in front of a computer.
+
+00:19:16.085 --> 00:19:18.821
+I actually, even without
+the sort of ability
+
+00:19:18.821 --> 00:19:21.157
+to get better at something
+it doesn't know yet,
+
+00:19:21.191 --> 00:19:24.494
+I might accept that
+as a definition of AGI.
+
+00:19:24.527 --> 00:19:26.729
+But the current systems,
+
+00:19:26.729 --> 00:19:29.232
+you can't say like, hey,
+go do this task for my job,
+
+00:19:29.265 --> 00:19:31.467
+and it goes off and clicks
+around the internet
+
+00:19:31.501 --> 00:19:34.037
+and calls someone and looks
+at your files and does it.
+
+00:19:34.070 --> 00:19:36.406
+And without that,
+it feels definitely short of it.
+
+00:19:36.406 --> 00:19:40.510
+CA: I mean, do you guys have internally
+a clear definition of what AGI is,
+
+00:19:40.510 --> 00:19:44.280
+and when do you think
+that we may be there?
+
+00:19:45.114 --> 00:19:46.482
+SA: It's like the joke,
+
+00:19:46.516 --> 00:19:48.718
+if you’ve got 10 OpenAI
+researchers in a room
+
+00:19:48.751 --> 00:19:51.888
+and ask to define AGI,
+you’d get 14 definitions.
+
+00:19:53.223 --> 00:19:55.058
+CA: That's worrying, though, isn't it?
+
+00:19:55.091 --> 00:19:57.694
+Because that has been
+the mission initially,
+
+00:19:57.727 --> 00:19:59.729
+“We’re going to be
+the first to get to AGI.
+
+00:19:59.762 --> 00:20:01.764
+We'll do so safely.
+
+00:20:01.798 --> 00:20:04.634
+But we don't have a clear
+definition of what it is."
+
+00:20:04.634 --> 00:20:06.436
+SA: I was going to finish the answer.
+
+00:20:06.436 --> 00:20:07.670
+CA: Sorry.
+
+00:20:08.238 --> 00:20:09.806
+SA: What I think matters though,
+
+00:20:09.806 --> 00:20:14.811
+and what people want to know
+is not where is this one,
+
+00:20:14.811 --> 00:20:17.914
+you know, magic moment of, “We finished.”
+
+00:20:17.947 --> 00:20:22.218
+But given that what looks
+like is going to happen
+
+00:20:22.218 --> 00:20:25.321
+is that the models are just going to get
+smarter and more capable
+
+00:20:25.321 --> 00:20:26.889
+and smarter and more capable,
+
+00:20:26.889 --> 00:20:29.125
+on this long exponential,
+
+00:20:29.158 --> 00:20:32.061
+different people will call it AGI
+at different points.
+
+00:20:32.061 --> 00:20:34.597
+But we all agree it’s going to go
+way, way past that.
+
+00:20:35.665 --> 00:20:38.101
+You know, to whatever you want
+to call these systems
+
+00:20:38.134 --> 00:20:40.637
+that get much more capable than we are.
+
+00:20:41.271 --> 00:20:46.809
+The thing that matters
+is how do we talk about a system
+
+00:20:46.843 --> 00:20:49.912
+that is safe through all
+of these steps and beyond,
+
+00:20:49.946 --> 00:20:52.048
+as the system gets
+more capable than we are,
+
+00:20:52.081 --> 00:20:54.951
+as the system can do things
+that we don't totally understand.
+
+00:20:54.984 --> 00:20:59.689
+And I think more important
+than when is AGI coming
+
+00:20:59.722 --> 00:21:01.824
+and what's the definition of it,
+
+00:21:01.858 --> 00:21:06.329
+it's recognizing that we are
+in this unbelievable exponential curve.
+
+00:21:06.362 --> 00:21:10.633
+And you can, you know,
+say this is what I think AGI is.
+
+00:21:10.667 --> 00:21:13.469
+You can say you think
+this is what you think AGI is.
+
+00:21:15.004 --> 00:21:17.507
+Someone else can say
+superintelligence is out here,
+
+00:21:17.540 --> 00:21:19.375
+but we're going to have to contend
+
+00:21:19.409 --> 00:21:22.779
+and get wonderful benefits
+from this incredible system.
+
+00:21:22.812 --> 00:21:25.014
+And so I think we should
+shift the conversation
+
+00:21:25.048 --> 00:21:27.583
+away from what's the AGI moment
+
+00:21:27.617 --> 00:21:30.920
+to a recognition that,
+like, this thing is not going to stop,
+
+00:21:30.953 --> 00:21:33.756
+it's going to go way beyond
+what any of us would call AGI.
+
+00:21:33.790 --> 00:21:37.093
+And we have to build a society
+to get the tremendous benefits of this
+
+00:21:37.126 --> 00:21:38.828
+and figure out how to make it safe.
+
+00:21:38.828 --> 00:21:41.331
+CA: Well, one of the conversations
+this week has been
+
+00:21:41.331 --> 00:21:45.001
+that the real change moment is --
+
+00:21:45.001 --> 00:21:49.038
+I mean, AGI is a fuzzy thing,
+but what is clear is agentic AI --
+
+00:21:49.038 --> 00:21:53.743
+when AI is set free
+to pursue projects on its own
+
+00:21:53.776 --> 00:21:55.812
+and to put the pieces together --
+
+00:21:56.579 --> 00:21:57.914
+you’ve actually,
+
+00:21:57.947 --> 00:22:01.217
+you've got a thing called Operator
+which starts to do this.
+
+00:22:01.217 --> 00:22:03.052
+And I tried it out.
+
+00:22:04.721 --> 00:22:06.656
+You know, I wanted to book a restaurant,
+
+00:22:06.689 --> 00:22:08.057
+and it's kind of incredible.
+
+00:22:08.057 --> 00:22:11.694
+It kind of can go ahead and do it,
+but this is what it said.
+
+00:22:11.694 --> 00:22:14.664
+You know, it was an intriguing process.
+
+00:22:14.664 --> 00:22:18.568
+And, you know, “Give me your credit
+card” and everything else,
+
+00:22:18.601 --> 00:22:24.073
+and I declined on this case to go forward.
+
+00:22:24.073 --> 00:22:27.577
+But I think this is the challenge
+that people are going to have.
+
+00:22:27.610 --> 00:22:30.279
+It's kind of like,
+it's an incredible superpower.
+
+00:22:30.279 --> 00:22:31.748
+It's a little bit scary.
+
+00:22:31.781 --> 00:22:34.550
+And Yoshua Bengio, when he spoke here,
+
+00:22:34.584 --> 00:22:37.754
+said that agentic AI is the thing
+to pay attention to.
+
+00:22:37.787 --> 00:22:41.591
+This is when everything could go wrong
+as we give power to AI
+
+00:22:41.624 --> 00:22:44.327
+to go out onto the internet to do stuff.
+
+00:22:44.360 --> 00:22:47.697
+I mean, going out onto the internet
+was always, in the sci-fi stories,
+
+00:22:47.697 --> 00:22:49.098
+the moment where, you know,
+
+00:22:49.132 --> 00:22:53.436
+escape happened and potential --
+things could go horribly wrong.
+
+00:22:53.469 --> 00:22:57.440
+How do you both release agentic AI
+
+00:22:57.473 --> 00:23:00.410
+and have guardrails in place
+that it doesn't go too far?
+
+00:23:01.811 --> 00:23:05.548
+SA: First of all, obviously you
+can choose not to do this and say,
+
+00:23:05.548 --> 00:23:07.950
+I don't want this. I'm going
+to call the restaurant
+
+00:23:07.950 --> 00:23:10.019
+and read them my credit card
+over the phone.
+
+00:23:10.052 --> 00:23:12.255
+CA: I could choose,
+but someone else might say,
+
+00:23:12.288 --> 00:23:14.757
+“Oh, go out, ChatGPT
+onto the internet at large
+
+00:23:14.791 --> 00:23:18.060
+and rewrite the internet to make it 
+better for humans,” or whatever.
+
+00:23:18.060 --> 00:23:21.164
+SA: The point I was going to make
+is just with any new technology,
+
+00:23:21.164 --> 00:23:23.366
+it takes a while for people
+to get comfortable.
+
+00:23:23.366 --> 00:23:26.235
+I remember when I wouldn't
+put my credit card on the internet
+
+00:23:26.235 --> 00:23:29.672
+because my parents had convinced me
+someone was going to read the number,
+
+00:23:29.672 --> 00:23:32.108
+and you had to fill out the form
+and then call them.
+
+00:23:32.141 --> 00:23:33.576
+And then we kind of all said,
+
+00:23:33.609 --> 00:23:37.046
+OK, we’ll build anti-fraud systems,
+and we can get comfortable with this.
+
+00:23:37.046 --> 00:23:40.349
+I think people are going to be slow
+to get comfortable with agentic AI
+
+00:23:40.383 --> 00:23:41.517
+in many ways.
+
+00:23:41.551 --> 00:23:43.553
+But I also really agree
+with what you said,
+
+00:23:43.586 --> 00:23:47.123
+which is that even if some people
+are comfortable with it and some aren't,
+
+00:23:47.156 --> 00:23:50.059
+we are going to have AI systems
+clicking around the internet.
+
+00:23:50.092 --> 00:23:51.260
+And this is, I think,
+
+00:23:51.294 --> 00:23:56.999
+the most interesting and consequential
+safety challenge we have yet faced.
+
+00:23:56.999 --> 00:24:00.970
+Because AI that you give access
+to your systems, your information,
+
+00:24:01.003 --> 00:24:03.372
+your ability to click around
+on your computer,
+
+00:24:03.372 --> 00:24:05.174
+now, those, you know,
+
+00:24:05.208 --> 00:24:08.010
+when AI makes a mistake,
+it's much higher stakes.
+
+00:24:10.546 --> 00:24:12.248
+It is the gate on --
+
+00:24:12.281 --> 00:24:15.251
+so we talked earlier
+about safety and capability.
+
+00:24:15.284 --> 00:24:18.321
+I kind of think they're increasingly
+becoming one-dimensional.
+
+00:24:18.321 --> 00:24:20.523
+Like a good product is a safe product.
+
+00:24:20.556 --> 00:24:22.391
+You will not use our agents
+
+00:24:22.425 --> 00:24:25.495
+if you do not trust
+that they’re not going to like
+
+00:24:25.495 --> 00:24:27.563
+empty your bank account
+or delete your data
+
+00:24:27.597 --> 00:24:29.232
+or who knows what else.
+
+00:24:29.265 --> 00:24:34.570
+And so people want to use agents
+that they can really trust,
+
+00:24:34.570 --> 00:24:35.738
+that are really safe.
+
+00:24:35.771 --> 00:24:39.742
+And I think we are gated
+on our ability to make progress
+
+00:24:39.775 --> 00:24:41.077
+on our ability to do that.
+
+00:24:41.077 --> 00:24:43.312
+But it's a fundamental part
+of the product.
+
+00:24:43.312 --> 00:24:46.048
+CA: In a world where agency is out there
+
+00:24:46.082 --> 00:24:49.552
+and say that, you know,
+maybe it’s open models
+
+00:24:49.552 --> 00:24:52.755
+are widely distributed
+and someone says, 
+
+00:24:52.788 --> 00:24:54.223
+"OK, AGI,
+
+00:24:54.257 --> 00:24:58.861
+I want you to go out onto the internet
+
+00:24:58.895 --> 00:25:01.230
+and, you know,
+
+00:25:01.264 --> 00:25:03.766
+spread a meme however you can
+
+00:25:03.799 --> 00:25:08.004
+that X people are evil,”
+or whatever it is.
+
+00:25:08.471 --> 00:25:10.606
+It doesn't have to be
+an individual choice.
+
+00:25:10.640 --> 00:25:14.310
+A single person could let that agent
+out there, and the agent could decide,
+
+00:25:14.343 --> 00:25:16.445
+"Well, in order to execute
+on that function,
+
+00:25:16.479 --> 00:25:18.414
+I've got to copy myself everywhere,"
+
+00:25:18.447 --> 00:25:19.682
+and, you know.
+
+00:25:20.950 --> 00:25:24.954
+Are there red lines that you have
+clearly drawn internally,
+
+00:25:24.987 --> 00:25:28.658
+where you know what
+the danger moments are,
+
+00:25:28.691 --> 00:25:32.995
+and that we cannot put out
+something that could go beyond this?
+
+00:25:34.430 --> 00:25:37.466
+SA: Yeah, so this is the purpose
+of our preparedness framework.
+
+00:25:37.500 --> 00:25:39.936
+And we'll update that over time.
+
+00:25:39.936 --> 00:25:46.442
+But we’ve tried to outline where we think
+the most important danger moments are,
+
+00:25:46.475 --> 00:25:49.078
+or what the categories are,
+how we measure that,
+
+00:25:49.111 --> 00:25:52.181
+and how we would mitigate something
+before releasing it.
+
+00:25:52.715 --> 00:25:55.751
+I can tell from the conversation
+you're not a big AI fan.
+
+00:25:56.485 --> 00:25:59.088
+CA: Actually, on the contrary,
+I use it every day.
+
+00:25:59.121 --> 00:26:00.423
+I'm awed by it.
+
+00:26:00.423 --> 00:26:02.825
+I think this is an incredible
+time to be alive.
+
+00:26:02.858 --> 00:26:04.560
+I wouldn't be alive any other time,
+
+00:26:04.560 --> 00:26:06.729
+and I cannot wait to see where it goes.
+
+00:26:06.729 --> 00:26:08.664
+We've been holding ...
+
+00:26:09.298 --> 00:26:11.167
+I think it's essential to hold ...
+
+00:26:11.200 --> 00:26:13.369
+like we can’t divide people
+into those camps.
+
+00:26:13.369 --> 00:26:16.606
+You have to hold a passionate
+belief in the possibility,
+
+00:26:16.639 --> 00:26:18.608
+but not be overseduced by it
+
+00:26:18.641 --> 00:26:20.543
+because things could go horribly wrong.
+
+00:26:20.576 --> 00:26:25.348
+(Applause)
+
+00:26:25.848 --> 00:26:28.618
+SA: What I was going to say
+is I totally understand that.
+
+00:26:28.651 --> 00:26:30.453
+I totally understand looking at this
+
+00:26:30.486 --> 00:26:34.590
+and saying this is an unbelievable
+change coming to the world.
+
+00:26:34.624 --> 00:26:38.394
+And, you know, maybe I don't want this,
+or maybe I love parts of it.
+
+00:26:38.427 --> 00:26:40.463
+Maybe I love talking to ChatGPT,
+
+00:26:40.496 --> 00:26:42.798
+but I worry about what's going
+to happen to art,
+
+00:26:42.798 --> 00:26:44.600
+and I worry about the pace of change,
+
+00:26:44.600 --> 00:26:47.436
+and I worry about these agents
+clicking around the internet.
+
+00:26:47.470 --> 00:26:49.839
+And maybe, on balance,
+
+00:26:49.872 --> 00:26:51.307
+I wish this weren't happening.
+
+00:26:51.340 --> 00:26:53.676
+Or maybe I wish it were
+happening a little slower.
+
+00:26:53.709 --> 00:26:55.745
+Or maybe I wish it were happening in a way
+
+00:26:55.778 --> 00:26:59.281
+where I could pick and choose what parts
+of progress were going to happen.
+
+00:26:59.315 --> 00:27:05.021
+And I think, the fear is totally rational.
+
+00:27:05.054 --> 00:27:07.189
+Sort of, the anxiety is totally rational.
+
+00:27:07.223 --> 00:27:08.924
+We all have a lot of it, too.
+
+00:27:08.924 --> 00:27:10.092
+But ...
+
+00:27:10.926 --> 00:27:13.262
+A, there will be tremendous upside.
+
+00:27:13.796 --> 00:27:16.399
+Obviously, you know,
+you use it every day, you like it.
+
+00:27:16.932 --> 00:27:18.067
+B ...
+
+00:27:19.568 --> 00:27:23.139
+I really believe that society
+figures out, over time,
+
+00:27:23.172 --> 00:27:26.676
+with some big mistakes along the way,
+how to get technology right.
+
+00:27:26.709 --> 00:27:28.844
+And C, this is going to happen.
+
+00:27:28.878 --> 00:27:31.080
+This is like a discovery
+of fundamental physics
+
+00:27:31.080 --> 00:27:32.782
+that the world now knows about.
+
+00:27:32.815 --> 00:27:35.151
+And it's going to be part of our world.
+
+00:27:35.184 --> 00:27:38.187
+And I think this conversation
+is really important.
+
+00:27:38.220 --> 00:27:40.222
+I think talking about these
+areas of danger
+
+00:27:40.222 --> 00:27:42.024
+[is] really important to talk about.
+
+00:27:42.058 --> 00:27:44.093
+New economic models are really important.
+
+00:27:44.126 --> 00:27:48.731
+But we have to embrace this
+with like, caution but not fear,
+
+00:27:48.764 --> 00:27:53.102
+or we will get run by with other people
+that use AI to do better.
+
+00:27:53.135 --> 00:27:58.641
+CA: You've actually been one of the most
+eloquent proponents of safety.
+
+00:27:58.674 --> 00:28:00.076
+You testified in the Senate.
+
+00:28:00.109 --> 00:28:02.778
+I think you said basically
+
+00:28:02.812 --> 00:28:05.681
+that we should form a new safety agency
+
+00:28:05.715 --> 00:28:07.817
+that licenses any effort,
+
+00:28:07.817 --> 00:28:11.454
+ie. it will refuse
+to license certain efforts.
+
+00:28:11.487 --> 00:28:15.758
+Do you still believe
+in that policy proposal?
+
+00:28:16.058 --> 00:28:18.661
+SA: I have learned more
+about how the government works.
+
+00:28:18.694 --> 00:28:21.230
+I don't think this is quite
+the right policy proposal.
+
+00:28:21.897 --> 00:28:23.733
+CA: What is the right policy proposal?
+
+00:28:23.766 --> 00:28:27.837
+SA: But, I do think the idea
+that as these systems get more advanced
+
+00:28:27.870 --> 00:28:29.705
+and have legitimate global impact,
+
+00:28:29.739 --> 00:28:32.007
+we need some way, you know,
+
+00:28:32.041 --> 00:28:35.244
+maybe the companies themselves
+put together the right framework
+
+00:28:35.244 --> 00:28:38.013
+or the right sort of model for this,
+but we need some way
+
+00:28:38.013 --> 00:28:42.551
+that very advanced models
+have external safety testing.
+
+00:28:42.585 --> 00:28:45.721
+And we understand when we get close
+to some of these danger zones.
+
+00:28:45.755 --> 00:28:47.389
+I very much still believe in that.
+
+00:28:47.423 --> 00:28:51.994
+CA: Struck me as ironic
+that a safety agency
+
+00:28:52.027 --> 00:28:53.796
+might be what we want,
+
+00:28:53.829 --> 00:28:57.500
+and yet agency is
+the very thing that is unsafe.
+
+00:28:58.134 --> 00:29:01.337
+There's something odd
+about the language there, but anyway.
+
+00:29:01.370 --> 00:29:03.205
+SA: Can I say one more thing on that?
+
+00:29:03.239 --> 00:29:07.176
+I do think this concept of
+
+00:29:07.209 --> 00:29:11.480
+we need to define
+rigorous testing for models,
+
+00:29:11.480 --> 00:29:14.784
+understand what the threats
+that we, collectively, society,
+
+00:29:14.817 --> 00:29:16.318
+most want to focus on,
+
+00:29:16.318 --> 00:29:19.288
+and make sure that as models
+are getting more capable,
+
+00:29:19.321 --> 00:29:22.024
+we have a system where we all
+get to understand
+
+00:29:22.057 --> 00:29:23.759
+what's being released in the world.
+
+00:29:23.759 --> 00:29:25.361
+I think this is really important.
+
+00:29:25.361 --> 00:29:28.397
+And I think we’re not far away
+from models that are going to be
+
+00:29:28.430 --> 00:29:30.399
+of great public interest in that sense.
+
+00:29:30.933 --> 00:29:34.436
+CA: So Sam, I asked
+your o1-pro reasoning model,
+
+00:29:34.470 --> 00:29:35.638
+which is incredibly --
+
+00:29:35.671 --> 00:29:37.306
+SA: Thank you for the 200 dollars.
+
+00:29:37.339 --> 00:29:39.308
+CA: (Laughs) 200 dollars a month.
+
+00:29:39.308 --> 00:29:41.544
+It's a bargain at the price.
+
+00:29:41.977 --> 00:29:45.314
+I said, what is the single most
+penetrating question I could ask you?
+
+00:29:46.015 --> 00:29:48.083
+It thought about it for two minutes.
+
+00:29:48.117 --> 00:29:49.451
+Two minutes.
+
+00:29:49.485 --> 00:29:50.886
+You want to see the question?
+
+00:29:50.886 --> 00:29:52.054
+SA: I do.
+
+00:29:52.755 --> 00:29:55.724
+CA: "Sam, given that you're
+helping create technology
+
+00:29:55.758 --> 00:29:58.561
+that could reshape the destiny
+of our entire species,
+
+00:29:58.594 --> 00:30:01.864
+who granted you (or anyone)
+the moral authority to do that?”
+
+00:30:01.897 --> 00:30:03.065
+(Laughter)
+
+00:30:03.098 --> 00:30:07.136
+"And how are you personally
+accountable if you're wrong?"
+
+00:30:07.436 --> 00:30:08.604
+SA: No, it was good.
+
+00:30:08.604 --> 00:30:09.805
+CA: That was impressive.
+
+00:30:09.805 --> 00:30:12.908
+SA: You've been asking me versions
+of this for the last half hour.
+
+00:30:12.942 --> 00:30:14.109
+What do you think?
+
+00:30:14.143 --> 00:30:18.614
+(Laughter and applause)
+
+00:30:20.983 --> 00:30:22.651
+CA: What I would say is this.
+
+00:30:22.685 --> 00:30:24.620
+Here's my version of that question.
+
+00:30:24.620 --> 00:30:25.788
+SA: But no answer?
+
+00:30:26.155 --> 00:30:27.756
+CA: What was your question to me?
+
+00:30:27.756 --> 00:30:29.425
+SA: How would you answer that one?
+
+00:30:29.425 --> 00:30:30.593
+CA: In your shoes?
+
+00:30:30.626 --> 00:30:32.228
+SA: Or as an outsider.
+
+00:30:32.228 --> 00:30:33.562
+CA: I don't know.
+
+00:30:33.596 --> 00:30:35.531
+I am puzzled by you.
+
+00:30:35.531 --> 00:30:36.699
+I’m kind of awed by you.
+
+00:30:36.732 --> 00:30:40.102
+Because you’ve built one of the most
+astonishing things out there.
+
+00:30:41.003 --> 00:30:43.105
+There are two narratives
+about you out there.
+
+00:30:43.138 --> 00:30:46.909
+One is, you know, you are this incredible
+visionary who's done the impossible,
+
+00:30:46.909 --> 00:30:48.177
+and you shocked the world.
+
+00:30:48.177 --> 00:30:49.812
+With far fewer people than Google,
+
+00:30:49.812 --> 00:30:52.414
+you came out with something
+that was much more powerful
+
+00:30:52.414 --> 00:30:53.616
+than anything being done.
+
+00:30:53.616 --> 00:30:55.551
+I mean, it is amazing what you've built.
+
+00:30:55.551 --> 00:30:58.921
+But the other narrative
+is that you have shifted ground,
+
+00:30:58.954 --> 00:31:01.657
+that you've shifted from being OpenAI,
+
+00:31:01.690 --> 00:31:03.025
+this open thing,
+
+00:31:03.058 --> 00:31:06.996
+to the allure of building
+something super powerful.
+
+00:31:06.996 --> 00:31:09.665
+And you know, you’ve lost
+some of your key people.
+
+00:31:09.698 --> 00:31:11.300
+There's a narrative out there.
+
+00:31:11.300 --> 00:31:14.904
+Some people believe that you're not
+to be trusted in this space.
+
+00:31:14.937 --> 00:31:18.207
+I would love to know who you are.
+
+00:31:18.240 --> 00:31:20.542
+What is your narrative about yourself?
+
+00:31:20.576 --> 00:31:22.077
+What are your core values, Sam,
+
+00:31:22.111 --> 00:31:25.681
+that can give us, the world, confidence
+
+00:31:25.714 --> 00:31:29.952
+that someone with so much
+power here is entitled to it?
+
+00:31:30.419 --> 00:31:33.722
+SA: Look, I think like anyone else,
+I'm a nuanced character
+
+00:31:33.756 --> 00:31:36.325
+that doesn't reduce well
+to one dimension here.
+
+00:31:36.358 --> 00:31:38.761
+You know, probably some
+of the good things are true
+
+00:31:38.761 --> 00:31:40.963
+and probably some
+of the criticism is true.
+
+00:31:40.996 --> 00:31:42.932
+In terms of OpenAI,
+
+00:31:42.965 --> 00:31:48.170
+our goal is to make AGI and distribute it,
+
+00:31:48.170 --> 00:31:50.606
+make it safe, for the broad
+benefit of humanity.
+
+00:31:50.639 --> 00:31:54.510
+I think by all accounts,
+we have done a lot in that direction.
+
+00:31:55.311 --> 00:31:57.780
+Clearly our tactics
+have shifted over time.
+
+00:31:57.813 --> 00:32:00.382
+I think we didn't really know
+what we were going to be
+
+00:32:00.382 --> 00:32:01.583
+when we grew up.
+
+00:32:01.617 --> 00:32:04.486
+We didn't think we would have
+to build a company around this.
+
+00:32:04.520 --> 00:32:06.188
+We learned a lot about how it goes
+
+00:32:06.221 --> 00:32:10.225
+and the realities of what these systems
+were going to take from capital.
+
+00:32:10.259 --> 00:32:11.794
+But I think we've been,
+
+00:32:11.827 --> 00:32:15.531
+in terms of putting incredibly capable AI
+
+00:32:15.564 --> 00:32:18.734
+with a high degree of safety
+in the hands of a lot of people,
+
+00:32:18.767 --> 00:32:20.703
+and giving them tools to sort of
+
+00:32:20.736 --> 00:32:23.672
+do whatever amazing
+things they're going to do,
+
+00:32:23.706 --> 00:32:26.241
+I think it'd be hard to give us
+a bad grade on that.
+
+00:32:26.241 --> 00:32:29.845
+I do think it's fair that we should
+be open sourcing more.
+
+00:32:29.878 --> 00:32:31.080
+I think it was reasonable
+
+00:32:31.113 --> 00:32:33.282
+for all of the reasons
+that you asked earlier,
+
+00:32:33.282 --> 00:32:36.518
+as we weren't sure about the impact
+these systems were going to have
+
+00:32:36.552 --> 00:32:37.820
+and how to make them safe,
+
+00:32:37.820 --> 00:32:39.855
+that we acted with precaution.
+
+00:32:40.222 --> 00:32:44.293
+I think a lot of your questions earlier
+would suggest at least some sympathy
+
+00:32:44.326 --> 00:32:46.395
+to the fact that we've operated that way.
+
+00:32:46.795 --> 00:32:50.299
+But now I think we have a better
+understanding, as a world,
+
+00:32:50.332 --> 00:32:54.636
+and it is time for us to put very
+capable open systems out into the world.
+
+00:32:55.070 --> 00:32:57.940
+If you invite me back next year,
+you will probably yell at me
+
+00:32:57.940 --> 00:33:00.542
+for somebody who has misused
+these open-source systems,
+
+00:33:00.542 --> 00:33:02.044
+and say, "Why did you do that?"
+
+00:33:02.044 --> 00:33:04.980
+You know, "You should have
+not gone back to your open roots."
+
+00:33:05.914 --> 00:33:09.251
+But, you know, there's trade offs
+in everything we do.
+
+00:33:09.284 --> 00:33:13.555
+And we are one player, one voice,
+
+00:33:13.589 --> 00:33:15.691
+in this AI revolution,
+
+00:33:15.724 --> 00:33:17.493
+trying to do the best we can
+
+00:33:17.526 --> 00:33:21.463
+and kind of steward this technology
+into the world in a responsible way.
+
+00:33:21.497 --> 00:33:22.998
+We've definitely made mistakes,
+
+00:33:23.032 --> 00:33:25.000
+we'll definitely make more in the future.
+
+00:33:25.000 --> 00:33:28.771
+On the whole, I think we have,
+over the last almost decade,
+
+00:33:28.804 --> 00:33:30.205
+it’s been a long time now,
+
+00:33:32.541 --> 00:33:36.345
+you know, we have mostly done
+the thing we’ve set out to do.
+
+00:33:36.378 --> 00:33:38.480
+We have a long way to go in front of us.
+
+00:33:38.514 --> 00:33:40.716
+Our tactics will shift more in the future,
+
+00:33:40.749 --> 00:33:42.718
+but adherence to this sort of mission
+
+00:33:42.751 --> 00:33:45.220
+and what we're trying to do,
+I think very strong.
+
+00:33:45.754 --> 00:33:49.091
+(Applause)
+
+00:33:49.124 --> 00:33:51.026
+CA: You posted this --
+
+00:33:51.493 --> 00:33:55.531
+Well, OK, so here's the Ring of Power
+
+00:33:55.564 --> 00:33:56.832
+from "Lord of the rings."
+
+00:33:57.232 --> 00:34:01.970
+Your rival, I will say,
+not your best friend at the moment,
+
+00:34:01.970 --> 00:34:05.107
+Elon Musk, claimed that, you know,
+
+00:34:05.107 --> 00:34:07.976
+he thought that you'd been corrupted
+by the Ring of Power.
+
+00:34:08.010 --> 00:34:09.678
+An allegation that, by the way --
+
+00:34:09.711 --> 00:34:12.614
+(Laughter)
+
+00:34:12.648 --> 00:34:13.849
+SA: Hi, Steve.
+
+00:34:13.882 --> 00:34:17.119
+CA: An allegation that could
+be applied to Elon as well,
+
+00:34:17.152 --> 00:34:18.320
+you know, to be fair.
+
+00:34:18.353 --> 00:34:21.690
+But I'm curious, people, you have --
+
+00:34:21.723 --> 00:34:23.725
+SA: I might respond.
+I'm thinking about it.
+
+00:34:23.759 --> 00:34:24.960
+I might say something.
+
+00:34:24.993 --> 00:34:26.695
+(Laughter)
+
+00:34:26.728 --> 00:34:28.997
+CA: It's in everyone's mind,
+
+00:34:28.997 --> 00:34:33.068
+as we see technology CEOs
+get more powerful,
+
+00:34:33.068 --> 00:34:34.269
+get richer,
+
+00:34:34.269 --> 00:34:38.140
+is can they handle it,
+or does it become irresistible?
+
+00:34:38.173 --> 00:34:41.210
+Does the power and the wealth
+make it impossible
+
+00:34:41.243 --> 00:34:42.778
+to sometimes do the right thing
+
+00:34:42.811 --> 00:34:45.547
+and you just have to cling
+tightly to that ring?
+
+00:34:46.215 --> 00:34:47.483
+What do you think?
+
+00:34:47.850 --> 00:34:50.486
+I mean, do you feel that ring sometimes?
+
+00:34:50.519 --> 00:34:53.956
+SA: How do you think I'm doing,
+relative to other CEOs,
+
+00:34:53.956 --> 00:34:55.491
+that have gotten a lot of power
+
+00:34:55.524 --> 00:34:57.025
+and changed how they act
+
+00:34:57.025 --> 00:34:59.161
+or done a bunch of stuff in the world,
+
+00:34:59.194 --> 00:35:00.896
+like how do you think?
+
+00:35:00.896 --> 00:35:05.033
+(Applause)
+
+00:35:05.067 --> 00:35:07.669
+CA: You have a beautiful ...
+
+00:35:10.706 --> 00:35:13.909
+you are not a rude, angry person
+
+00:35:13.942 --> 00:35:16.979
+who comes out and says
+aggressive things to other people.
+
+00:35:16.979 --> 00:35:18.213
+SA: Sometimes I do that.
+
+00:35:18.247 --> 00:35:20.182
+That's my single vice, you know?
+
+00:35:20.215 --> 00:35:21.750
+(Laughter)
+
+00:35:22.417 --> 00:35:25.787
+CA: No, I think in the way
+that you personally conduct yourself,
+
+00:35:25.821 --> 00:35:27.322
+it's impressive.
+
+00:35:27.322 --> 00:35:30.893
+I mean, the question some people ask is,
+is that the real you or, you know,
+
+00:35:30.893 --> 00:35:32.494
+is there something else going on?
+
+00:35:32.528 --> 00:35:34.229
+SA: No, I'll take the feedback.
+
+00:35:34.530 --> 00:35:38.100
+You put up the Sauron Ring of Power
+or whatever that thing is.
+
+00:35:38.133 --> 00:35:39.401
+So I'll take the feedback.
+
+00:35:39.401 --> 00:35:41.069
+What is like something I have done
+
+00:35:41.103 --> 00:35:43.305
+where you think
+I've been corrupted by power?
+
+00:35:43.338 --> 00:35:45.607
+CA: I think the fear is
+that just the transition
+
+00:35:45.641 --> 00:35:49.578
+of OpenAI to a for-profit model,
+
+00:35:49.611 --> 00:35:52.080
+is, you know, some people say,
+well, there you go.
+
+00:35:52.114 --> 00:35:55.584
+You got corrupted
+by the desire for wealth.
+
+00:35:55.617 --> 00:35:58.487
+You know, at one point there was going
+to be no equity in it.
+
+00:35:58.520 --> 00:36:00.255
+It will make you fabulously wealthy.
+
+00:36:00.289 --> 00:36:03.225
+By the way, I don't think
+that is your motivation, personally.
+
+00:36:03.258 --> 00:36:05.827
+I think you want to build stuff
+that is insanely cool.
+
+00:36:05.827 --> 00:36:09.364
+And what I worry about
+is the competitive feeling
+
+00:36:09.398 --> 00:36:11.099
+that you see other people doing it,
+
+00:36:11.099 --> 00:36:14.469
+and it makes it impossible
+to develop at the right pace.
+
+00:36:14.503 --> 00:36:18.607
+But you tell me, if you don't
+feel that, like, what ...
+
+00:36:20.008 --> 00:36:25.047
+so few people in the world have the kind
+of capability and potential you have,
+
+00:36:25.080 --> 00:36:26.682
+we don't know what it feels like.
+
+00:36:26.682 --> 00:36:28.383
+What does it feel like?
+
+00:36:28.951 --> 00:36:30.652
+SA: Shockingly, the same as before.
+
+00:36:30.652 --> 00:36:33.589
+I think you can get used
+to anything step by step.
+
+00:36:33.622 --> 00:36:36.425
+I think if I were like transported
+from 10 years ago
+
+00:36:36.458 --> 00:36:37.759
+to right now, all at once,
+
+00:36:37.793 --> 00:36:39.394
+it would feel very disorienting.
+
+00:36:39.428 --> 00:36:43.432
+But anything does become
+sort of the new normal,
+
+00:36:43.432 --> 00:36:46.335
+so it doesn't feel any different.
+
+00:36:46.368 --> 00:36:49.204
+And it's strange to be sitting here
+talking about this,
+
+00:36:49.238 --> 00:36:52.007
+but like, you know,
+
+00:36:52.007 --> 00:36:54.476
+the monotony of day-to-day life,
+
+00:36:54.476 --> 00:36:57.179
+which I mean in the best possible way,
+
+00:36:57.212 --> 00:36:58.780
+feels exactly the same.
+
+00:36:58.814 --> 00:37:00.182
+CA: You're the same person.
+
+00:37:01.016 --> 00:37:03.352
+SA: I mean, I'm sure
+I'm not in all sorts of ways,
+
+00:37:03.385 --> 00:37:04.920
+but I don't feel any different.
+
+00:37:05.454 --> 00:37:08.991
+CA: This was a beautiful thing
+you posted, your son.
+
+00:37:09.024 --> 00:37:12.494
+I mean, that last thing you said there,
+"I've never felt love like this,"
+
+00:37:12.527 --> 00:37:15.030
+I think any parent in the room
+so knows that feeling,
+
+00:37:15.030 --> 00:37:17.366
+that wild biological
+feeling that humans have
+
+00:37:17.399 --> 00:37:18.734
+and AIs never will,
+
+00:37:18.767 --> 00:37:20.469
+of you’re holding your kid.
+
+00:37:22.070 --> 00:37:25.240
+And I'm wondering whether
+that's changed how you think
+
+00:37:25.240 --> 00:37:28.210
+about things like if, you know,
+say, here's a red box,
+
+00:37:28.243 --> 00:37:30.412
+here's a black box
+with the red button on it,
+
+00:37:30.445 --> 00:37:31.947
+you can press that button
+
+00:37:31.980 --> 00:37:37.286
+and you give your son
+likely the most unbelievable life,
+
+00:37:37.286 --> 00:37:42.724
+but also you inject a 10 percent chance
+that he gets destroyed.
+
+00:37:44.259 --> 00:37:45.794
+Do you press that button?
+
+00:37:48.130 --> 00:37:50.999
+SA: In the literal case, no.
+
+00:37:51.667 --> 00:37:56.338
+If the question is, do I feel
+like I'm doing that with my work,
+
+00:37:56.371 --> 00:37:58.573
+the answer is, I also
+don't feel like that.
+
+00:37:58.607 --> 00:38:01.810
+Having a kid changed a lot of things.
+
+00:38:02.911 --> 00:38:05.914
+And by far the most amazing thing
+that has ever happened to me,
+
+00:38:05.914 --> 00:38:08.250
+like everything everybody says is true.
+
+00:38:08.283 --> 00:38:12.788
+A thing my cofounder Ilya
+said once is, I don’t know.
+
+00:38:12.821 --> 00:38:14.589
+This is a paraphrase, something like,
+
+00:38:14.623 --> 00:38:16.625
+"I don't know what the meaning of life is,
+
+00:38:16.658 --> 00:38:18.960
+but for sure it has something
+to do with babies."
+
+00:38:18.960 --> 00:38:21.029
+And it's like, unbelievably accurate.
+
+00:38:24.533 --> 00:38:30.305
+It changed how much I’m willing to
+like spend time on certain things
+
+00:38:30.339 --> 00:38:33.175
+and like the kind of cost
+of not being with my kid
+
+00:38:33.208 --> 00:38:35.143
+is just like crazily high.
+
+00:38:36.445 --> 00:38:37.979
+And I ...
+
+00:38:38.980 --> 00:38:42.551
+But, you know, I really cared about
+like not destroying the world before.
+
+00:38:42.551 --> 00:38:43.852
+I really care about it now.
+
+00:38:43.885 --> 00:38:45.520
+I didn't need a kid for that part.
+
+00:38:45.554 --> 00:38:49.491
+(Applause)
+
+00:38:49.524 --> 00:38:51.626
+I mean, I definitely
+think more about like
+
+00:38:51.660 --> 00:38:54.963
+what the future will be like
+for him in particular,
+
+00:38:54.963 --> 00:38:57.799
+but I feel a responsibility
+to do the best thing I can
+
+00:38:57.799 --> 00:38:59.601
+for the future of everybody.
+
+00:38:59.634 --> 00:39:02.404
+CA: Tristan Harris gave
+a very powerful talk here this week
+
+00:39:02.437 --> 00:39:05.073
+in which he said that the key
+problem, in his view,
+
+00:39:05.107 --> 00:39:09.111
+was that you and your peers
+in these other models
+
+00:39:09.111 --> 00:39:10.679
+all feel basically,
+
+00:39:10.712 --> 00:39:14.416
+that the development
+of advanced AI is inevitable,
+
+00:39:14.449 --> 00:39:16.318
+that the race is on,
+
+00:39:16.351 --> 00:39:18.387
+and that there is no choice
+
+00:39:18.420 --> 00:39:20.122
+but to try and win that race
+
+00:39:20.155 --> 00:39:22.391
+and to do so as responsibly as you can.
+
+00:39:22.424 --> 00:39:23.992
+And maybe there’s a scenario
+
+00:39:24.025 --> 00:39:28.463
+where your superintelligent AI
+can act as a brake on everyone else's
+
+00:39:28.497 --> 00:39:29.965
+or something like that.
+
+00:39:30.499 --> 00:39:34.936
+But that the very fact that everyone
+believes it is inevitable,
+
+00:39:34.936 --> 00:39:40.742
+that is a pathway
+to serious risk and instability.
+
+00:39:41.743 --> 00:39:45.614
+Do you think that you and your peers
+do feel that it's inevitable,
+
+00:39:45.614 --> 00:39:48.617
+and can you see any pathway out of that
+
+00:39:48.617 --> 00:39:51.219
+where we could collectively agree
+
+00:39:51.253 --> 00:39:53.688
+to just slow things down a bit,
+
+00:39:53.722 --> 00:39:57.325
+have society as a whole
+weigh in a bit and say,
+
+00:39:57.325 --> 00:40:01.263
+no, you know, we don't want this
+to happen quite as fast.
+
+00:40:01.296 --> 00:40:02.864
+It's too disruptive.
+
+00:40:04.499 --> 00:40:05.767
+SA: First of all,
+
+00:40:05.801 --> 00:40:09.738
+I think people slow
+things down all the time
+
+00:40:09.771 --> 00:40:11.973
+because the technology is not ready,
+
+00:40:12.007 --> 00:40:15.243
+because something's not safe enough,
+because something doesn't work.
+
+00:40:15.277 --> 00:40:19.247
+There are, I think, all of the efforts
+
+00:40:19.247 --> 00:40:21.550
+hold on things, pause on things,
+delay on things,
+
+00:40:21.583 --> 00:40:23.285
+don't release certain capabilities.
+
+00:40:23.285 --> 00:40:24.486
+So I think this happens.
+
+00:40:24.486 --> 00:40:27.923
+And again, this is where I think
+the track record does matter.
+
+00:40:27.923 --> 00:40:29.391
+If we were rushing things out
+
+00:40:29.424 --> 00:40:31.326
+and there were all sorts of problems,
+
+00:40:31.359 --> 00:40:33.895
+either the product didn’t work
+as people wanted it to
+
+00:40:33.929 --> 00:40:36.531
+or there were real safety issues
+or other things there.
+
+00:40:36.565 --> 00:40:39.768
+And I will come back to a change we made,
+I think you could do that.
+
+00:40:39.768 --> 00:40:43.138
+There is communication between most
+of the efforts, with one exception.
+
+00:40:43.138 --> 00:40:46.875
+I think all of the efforts
+care a lot about AI safety.
+
+00:40:47.642 --> 00:40:49.010
+And I think that --
+
+00:40:49.044 --> 00:40:50.212
+CA: Who's the exception?
+
+00:40:50.245 --> 00:40:52.013
+SA: I'm not going to say.
+
+00:40:52.614 --> 00:40:57.385
+And I think that there's really
+
+00:40:57.419 --> 00:41:00.489
+deep care to get this right.
+
+00:41:00.989 --> 00:41:06.361
+I think the caricature of this
+as just like this crazy
+
+00:41:06.394 --> 00:41:10.131
+race or sprint or whatever,
+
+00:41:10.165 --> 00:41:13.869
+misses the nuance of people are trying
+to put out models quickly
+
+00:41:13.902 --> 00:41:16.037
+and make great products for people.
+
+00:41:16.037 --> 00:41:22.511
+But people feel the impact
+of this so incredibly that ...
+
+00:41:23.979 --> 00:41:29.985
+you know, I think if you could go
+sit in a meeting in OpenAI
+
+00:41:30.018 --> 00:41:31.720
+or other companies, you'd be like,
+
+00:41:31.753 --> 00:41:34.322
+oh, these people are really
+kind of caring about this.
+
+00:41:34.356 --> 00:41:39.794
+Now we did make a change recently
+to how we think about one part of
+
+00:41:39.828 --> 00:41:42.063
+what's traditionally
+been understood as safety.
+
+00:41:42.063 --> 00:41:43.965
+Which is, with our new image model,
+
+00:41:43.999 --> 00:41:46.001
+we've given users much more freedom
+
+00:41:46.034 --> 00:41:49.204
+on what we would traditionally
+think about as speech harms.
+
+00:41:49.237 --> 00:41:52.674
+You know, if you try
+to get offended by the model,
+
+00:41:52.707 --> 00:41:54.943
+will the model let you be offended?
+
+00:41:54.976 --> 00:41:59.915
+And in the past, we've had much
+tighter guardrails on this.
+
+00:42:00.982 --> 00:42:02.884
+But I think part of model alignment
+
+00:42:02.918 --> 00:42:06.588
+is following what the user
+of a model wants it to do
+
+00:42:06.621 --> 00:42:10.392
+within the very broad bounds
+of what society decides.
+
+00:42:10.425 --> 00:42:16.264
+So if you ask the model to depict a bunch
+of violence or something like that
+
+00:42:16.298 --> 00:42:19.568
+or to sort of reinforce some stereotype,
+
+00:42:19.601 --> 00:42:22.203
+there's a question of whether
+or not it should do that.
+
+00:42:22.203 --> 00:42:24.406
+And we're taking a much more
+permissive stance.
+
+00:42:24.439 --> 00:42:27.609
+There's a place where that starts
+to interact with real-world harms
+
+00:42:27.642 --> 00:42:30.078
+that we have to figure out how
+to draw the line for,
+
+00:42:30.078 --> 00:42:33.782
+but, you know, I think there will be cases
+where a company says, OK,
+
+00:42:33.815 --> 00:42:35.750
+we've heard the feedback from society.
+
+00:42:35.750 --> 00:42:38.019
+People really don't want
+models to censor them
+
+00:42:38.053 --> 00:42:40.055
+in ways that they don't think make sense.
+
+00:42:40.088 --> 00:42:42.457
+That's a fair safety negotiation.
+
+00:42:42.924 --> 00:42:45.660
+CA: But to the extent
+that this is a collective,
+
+00:42:45.694 --> 00:42:48.029
+a problem of collective belief,
+
+00:42:48.063 --> 00:42:51.700
+the solution to those kinds
+of problems is to bring people together
+
+00:42:51.733 --> 00:42:55.036
+and meet at one point
+and make a different agreement.
+
+00:42:55.070 --> 00:42:58.373
+If there was a group of people, say,
+here or out there in the world
+
+00:42:58.373 --> 00:43:02.944
+who were willing to host a summit
+
+00:43:02.978 --> 00:43:08.216
+of the best ethicists, technologists,
+
+00:43:08.249 --> 00:43:09.751
+but not too many people, small,
+
+00:43:09.751 --> 00:43:11.953
+and you and your peers
+
+00:43:11.953 --> 00:43:17.959
+to try to crack what agreed safety
+lines could be across the world,
+
+00:43:18.493 --> 00:43:20.295
+would you be willing to attend?
+
+00:43:20.328 --> 00:43:22.464
+Would you urge your colleagues to come?
+
+00:43:22.464 --> 00:43:24.599
+SA: Of course,
+but I'm much more interested
+
+00:43:24.633 --> 00:43:27.369
+in what our hundreds of millions
+of users want as a whole.
+
+00:43:27.369 --> 00:43:30.038
+I think a lot of the room
+has historically been decided
+
+00:43:30.038 --> 00:43:31.272
+in small elite summits.
+
+00:43:31.306 --> 00:43:34.943
+One of the cool new things about AI
+is our AI can talk to everybody on Earth,
+
+00:43:34.976 --> 00:43:38.446
+and we can learn the collective
+value preference of what everybody wants,
+
+00:43:38.446 --> 00:43:41.650
+rather than have a bunch of people
+who are, like, blessed by society
+
+00:43:41.683 --> 00:43:43.685
+to sit in a room and make these decisions,
+
+00:43:43.718 --> 00:43:44.986
+I think that's very cool.
+
+00:43:44.986 --> 00:43:47.789
+(Applause)
+
+00:43:47.822 --> 00:43:51.059
+And I think you will see us
+do more in that direction.
+
+00:43:51.092 --> 00:43:53.161
+And when we have gotten things wrong,
+
+00:43:53.194 --> 00:43:55.797
+because the elites in the room
+had a different opinion
+
+00:43:55.797 --> 00:43:58.466
+about what people wanted
+for the guardrails on image-gen
+
+00:43:58.500 --> 00:44:00.101
+than what people actually wanted,
+
+00:44:00.101 --> 00:44:03.171
+and we couldn't point to real-world harm,
+so we made that change.
+
+00:44:03.204 --> 00:44:04.472
+I'm proud of that.
+
+00:44:04.472 --> 00:44:05.640
+(Applause)
+
+00:44:05.674 --> 00:44:08.443
+CA: There is a long track record
+of unintended consequences
+
+00:44:08.476 --> 00:44:11.546
+coming out of the actions
+of hundreds of millions of people.
+
+00:44:11.579 --> 00:44:13.848
+SA: Also 100 people
+in a room making a decision.
+
+00:44:13.848 --> 00:44:17.018
+CA: And the hundreds of millions of people
+don't have control over,
+
+00:44:17.052 --> 00:44:21.423
+they don't necessarily see
+what the next step could lead to.
+
+00:44:22.657 --> 00:44:24.559
+SA: I am hopeful that --
+
+00:44:24.592 --> 00:44:26.695
+that is totally accurate
+and totally right --
+
+00:44:26.695 --> 00:44:31.566
+I am hopeful that AI can help us be wiser,
+make better decisions,
+
+00:44:31.566 --> 00:44:35.236
+can talk to us, and if we say,
+hey, I want thing X,
+
+00:44:35.236 --> 00:44:38.406
+you know, rather than like,
+the crowds spin that up,
+
+00:44:38.406 --> 00:44:41.109
+AI can say, hey, totally
+understand that's what you want.
+
+00:44:41.142 --> 00:44:43.778
+If that's what you want
+at the end of this conversation,
+
+00:44:43.778 --> 00:44:45.146
+you're in control, you pick.
+
+00:44:45.180 --> 00:44:47.882
+But have you considered it
+from this person's perspective
+
+00:44:47.882 --> 00:44:49.584
+or the impact it will have on this?
+
+00:44:49.584 --> 00:44:51.086
+I think AI can help us be wiser
+
+00:44:51.119 --> 00:44:54.389
+and make better collective governance
+decisions than we could before.
+
+00:44:54.389 --> 00:44:55.623
+CA: We're out of time.
+
+00:44:55.657 --> 00:44:57.258
+Sam, I'll give you the last word.
+
+00:44:57.258 --> 00:44:58.927
+What kind of world do you believe,
+
+00:44:58.960 --> 00:45:01.796
+all things considered,
+your son will grow up into?
+
+00:45:06.701 --> 00:45:10.038
+SA: I remember -- it's so long ago now,
+
+00:45:10.038 --> 00:45:12.073
+I don't know when the first iPad came out.
+
+00:45:12.107 --> 00:45:14.075
+Is it like 15 years, something like that?
+
+00:45:14.109 --> 00:45:16.778
+I remember watching
+a YouTube video at the time,
+
+00:45:16.811 --> 00:45:19.781
+of like a little toddler
+
+00:45:19.814 --> 00:45:23.084
+sitting in a doctor's office
+waiting room or something,
+
+00:45:23.084 --> 00:45:25.353
+and there was a magazine,
+like one of those old,
+
+00:45:25.353 --> 00:45:26.988
+you know, glossy-cover magazines,
+
+00:45:27.021 --> 00:45:28.923
+and the toddler had his hand on it
+
+00:45:28.957 --> 00:45:31.760
+and was going like this and kind of angry.
+
+00:45:32.560 --> 00:45:35.096
+And to that toddler,
+it was like a broken iPad.
+
+00:45:36.331 --> 00:45:41.002
+And he never, she never thought
+of a world that didn't have, you know,
+
+00:45:41.035 --> 00:45:42.170
+touch screens in them.
+
+00:45:42.203 --> 00:45:44.139
+And to all the adults watching this,
+
+00:45:44.172 --> 00:45:47.208
+it was this amazing thing
+because it was like
+
+00:45:47.242 --> 00:45:49.377
+it's so new, it's so amazing,
+it's a miracle.
+
+00:45:49.410 --> 00:45:52.647
+Of course, you know, magazines
+are the way the world works.
+
+00:45:54.015 --> 00:45:58.086
+My kid, my kids hopefully,
+will never be smarter than AI.
+
+00:45:59.387 --> 00:46:01.122
+They will never grow up in a world
+
+00:46:01.156 --> 00:46:05.894
+where products and services
+are not incredibly smart,
+
+00:46:05.894 --> 00:46:07.462
+incredibly capable.
+
+00:46:07.495 --> 00:46:09.164
+They will never grow up in a world
+
+00:46:09.164 --> 00:46:12.100
+where computers don't just
+kind of understand you.
+
+00:46:12.667 --> 00:46:17.338
+And do, you know, for some definition
+of whatever you can imagine,
+
+00:46:17.338 --> 00:46:19.507
+whatever you can imagine.
+
+00:46:19.874 --> 00:46:22.944
+It'll be a world of incredible
+material abundance.
+
+00:46:22.977 --> 00:46:25.814
+It'll be a world where
+
+00:46:25.847 --> 00:46:27.649
+the rate of change is incredibly fast
+
+00:46:27.649 --> 00:46:29.450
+and amazing new things are happening.
+
+00:46:29.484 --> 00:46:33.621
+And it’ll be a world where,
+like individual ...
+
+00:46:33.621 --> 00:46:35.824
+ability, impact, whatever,
+
+00:46:35.824 --> 00:46:38.560
+is just so far beyond
+what a person can do today.
+
+00:46:39.227 --> 00:46:41.930
+I hope that my kids and all of your kids
+
+00:46:41.963 --> 00:46:44.999
+will look back at us with some like
+pity and nostalgia
+
+00:46:45.033 --> 00:46:47.202
+and be like, "They lived
+such horrible lives.
+
+00:46:47.202 --> 00:46:48.636
+They were so limited.
+
+00:46:48.670 --> 00:46:50.271
+The world sucked so much."
+
+00:46:51.439 --> 00:46:53.208
+I think that's great.
+
+00:46:54.776 --> 00:46:58.546
+(Applause)
+
+00:46:58.580 --> 00:47:00.448
+CA: It's incredible what you've built.
+
+00:47:00.481 --> 00:47:02.550
+It really is, it's unbelievable.
+
+00:47:02.550 --> 00:47:05.753
+I think over the next few years,
+you're going to have
+
+00:47:05.787 --> 00:47:08.790
+some of the biggest opportunities,
+the biggest moral challenges,
+
+00:47:08.790 --> 00:47:10.225
+the biggest decisions to make
+
+00:47:10.258 --> 00:47:13.561
+of perhaps any human
+in history, pretty much.
+
+00:47:13.595 --> 00:47:16.331
+You should know that everyone
+here will be cheering you on
+
+00:47:16.331 --> 00:47:17.899
+to do the right thing.
+
+00:47:17.932 --> 00:47:20.068
+SA: We will do our best,
+thank you very much.
+
+00:47:20.101 --> 00:47:21.803
+CA: Thank you for coming to TED.
+
+00:47:21.836 --> 00:47:24.906
+(Applause)
+
+00:47:24.939 --> 00:47:26.074
+Thank you.
+
+00:47:26.107 --> 00:47:27.942
+SA: Thank you very much.
+
