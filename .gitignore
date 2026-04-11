@@ -9,3 +9,5 @@ artifacts/
 *.sync-conflict-*
 .playwright-mcp/
 !workers/instrument-architecture/scripts/
+__pycache__/
+.claude/worktrees/

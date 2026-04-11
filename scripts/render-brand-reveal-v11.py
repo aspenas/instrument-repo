@@ -116,13 +116,13 @@ QUOTE_CARDS = [
 _t = 7.0
 for i, c in enumerate(QUOTE_CARDS):
     c['t'] = _t
-    if i < 3:      _t += 1.4
-    elif i < 7:    _t += 0.7
-    elif i < 12:   _t += 0.45
-    elif i < 18:   _t += 0.25
-    elif i < 25:   _t += 0.18
-    elif i < 35:   _t += 0.12
-    else:          _t += 0.08
+    if i < 4:      _t += 1.3    # 7-12s: 4 cards, large and readable
+    elif i < 8:    _t += 0.9    # 12-16s: 4 cards, medium pace
+    elif i < 14:   _t += 0.65   # 16-20s: 6 cards, building
+    elif i < 22:   _t += 0.45   # 20-24s: 8 cards, fast
+    elif i < 32:   _t += 0.25   # 24-26.5s: 10 cards, flooding
+    elif i < 42:   _t += 0.12   # 26.5-27.7s: 10 cards, machine-gun
+    else:          _t += 0.05   # 27.7-28s: 6 cards, pure noise burst
 
 
 # ── Utility functions ────────────────────────────────────
@@ -401,53 +401,60 @@ class Renderer:
         margin = 30
         card_w = W - 2 * margin
         elapsed = t - 7.0
+        total_dur = 21.0   # 7s to 28s
 
-        # C) SPEED: exponential scroll acceleration
-        # Scroll speed (px/s): starts at 8, accelerates to ~250
-        a_coeff, b_coeff, c_dur = 8.0, 300.0, 14.0
-        if elapsed <= c_dur:
-            scroll_offset = a_coeff * elapsed + b_coeff * (elapsed ** 4) / (4 * c_dur ** 3)
-            scroll_speed = a_coeff + b_coeff * (elapsed ** 3) / (c_dur ** 3)
-        else:
-            base = a_coeff * c_dur + b_coeff * c_dur / 4
-            terminal_v = a_coeff + b_coeff
-            scroll_offset = base + terminal_v * (elapsed - c_dur)
-            scroll_speed = terminal_v
+        # Global progress through the cacophony (0.0 → 1.0)
+        global_p = min(1.0, elapsed / total_dur)
 
-        start_y = CZ_TOP + 10
+        # C) SPEED: scroll accelerates exponentially
+        # Early: barely scrolls (cards accumulate on screen)
+        # Late: STREAKING upward (cards blur past)
+        scroll_speed = lerp(5, 400, global_p ** 3)
+        # Integrate scroll speed over time for offset
+        # Approximate: s = 5*t + 395 * t^4 / (4 * 21^3)
+        scroll_offset = 5.0 * elapsed + 395.0 * (elapsed ** 4) / (4.0 * total_dur ** 3)
+
+        # Place cards so they fill the visible screen area
+        # Each new card appears at: previous_card_bottom + gap
+        # Cards overlap because gaps go negative for later cards
+        start_y = CZ_TOP + 200  # Start a bit down from top
+
         for i, card in enumerate(QUOTE_CARDS):
             if t < card['t']: continue
             card_age = t - card['t']
             ch = self.card_heights[i]
             progress_i = i / max(1, len(QUOTE_CARDS) - 1)
 
-            # Position: cards pile up due to negative gaps
-            y_base = start_y + self.card_y_offsets[i] - scroll_offset * 0.25
+            # Position: stack from offset, scroll removes earlier cards
+            y_base = start_y + self.card_y_offsets[i] - scroll_offset
             y = int(y_base)
 
             # Cull off-screen (generous bounds for ghosts)
-            ghost_range = int(scroll_speed * 0.4) + 60
+            ghost_range = int(min(scroll_speed * 0.4, 120)) + 60
             if y < -ch - ghost_range or y > H + ghost_range: continue
 
-            card_a = min(1.0, card_age / 0.2)
+            card_a = min(1.0, card_age / 0.15)
             if card_a <= 0: continue
 
             # C) SPEED BLUR: ghost/smear effect for fast-moving cards
-            if scroll_speed > 40 and progress_i > 0.3:
-                ghost_offset = int(min(scroll_speed * 0.3, 80))
-                ghost_opacity = card_a * 0.3 * min(1.0, (scroll_speed - 40) / 100)
-                # Draw ghost (leading smear)
-                self._draw_quote_card(draw, margin, y - ghost_offset,
+            blur_intensity = 0.0
+            if scroll_speed > 60 and progress_i > 0.25:
+                blur_intensity = min(1.0, (scroll_speed - 60) / 200)
+                ghost_offset = int(min(scroll_speed * 0.25, 100))
+                ghost_opacity = card_a * 0.35 * blur_intensity
+                # Draw ghost (leading smear — card trails upward)
+                self._draw_quote_card(draw, margin, y + ghost_offset,
                                       card_w, ch, card, ghost_opacity, progress_i)
-                # Second ghost for extreme speeds
-                if scroll_speed > 120:
-                    ghost2_offset = int(min(scroll_speed * 0.15, 40))
-                    self._draw_quote_card(draw, margin, y - ghost2_offset,
-                                          card_w, ch, card, ghost_opacity * 0.5, progress_i)
+                # Second ghost for extreme speeds (double trail)
+                if scroll_speed > 180:
+                    ghost2_offset = int(min(scroll_speed * 0.12, 50))
+                    self._draw_quote_card(draw, margin, y + ghost2_offset,
+                                          card_w, ch, card, ghost_opacity * 0.4, progress_i)
 
-            # Draw main card
+            # Draw main card (slightly dimmed at high speed)
+            main_opacity = card_a * lerp(1.0, 0.75, blur_intensity)
             self._draw_quote_card(draw, margin, y, card_w, ch, card,
-                                  card_a * 0.85 if scroll_speed > 100 else card_a, progress_i)
+                                  main_opacity, progress_i)
 
     def _draw_quote_card(self, draw, x, y, w, h, card, a, progress=0.0):
         """Draw a single quote card with decay-aware rendering.
