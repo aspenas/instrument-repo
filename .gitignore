@@ -6,3 +6,8 @@ artifacts/
 .playwright-mcp/
 *.log
 *.png
+*.mp4
+*.sync-conflict-*
+assets/
+scripts/
+!workers/instrument-architecture/scripts/
