@@ -10,7 +10,7 @@ const principles = [
   },
   {
     title: 'Calm enough to trust',
-    body: 'The surface should feel measured, legible, and free of theatrical UI. If the design competes with the content, the instrument has failed.',
+    body: 'Every output should feel measured, legible, and free of noise. If the operator has to interpret the interpretation, the instrument has failed.',
   },
   {
     title: 'Own species, shared language',
@@ -197,16 +197,17 @@ export default function App() {
 
           <div className="intro-body">
             <p>
-              An instrument is purpose-built operational intelligence — software
-              that reads a domain, interprets what happened, and delivers the
-              operator read before anyone has to ask. Not a dashboard to stare at.
-              Not a chatbot to prompt. A named, specific piece of the system that
-              does one thing exceptionally well.
+              A named, specific piece of the system that does one thing
+              exceptionally well. An instrument reads a domain, interprets what
+              happened, and delivers the operator read before anyone has to ask.
+              Purpose-built operational intelligence — not a dashboard, not a
+              chatbot, not another AI wrapper.
             </p>
             <p>
-              Wake is the platform underneath — the shared memory, the connectors,
-              the synthesis layer. It does the hard work quietly so each instrument
-              can stay calm and specific to the operator receiving it.
+              Underneath every instrument is a shared platform — the memory, the
+              connectors, the synthesis engine. It does the hard work quietly so
+              each instrument can stay calm and specific to the operator
+              receiving it.
             </p>
           </div>
 
@@ -310,8 +311,8 @@ export default function App() {
             <p className="section-label">Voice</p>
             <h2 className="section-heading">Perch should read like operating intelligence.</h2>
             <p className="voice-desc">
-              Not a dashboard caption. Not a chatbot persona. A trusted operator
-              read — steady, specific, and free of filler.
+              A trusted operator read — steady, specific, and free of filler.
+              The voice should land with the same confidence as the brand.
             </p>
           </div>
 
