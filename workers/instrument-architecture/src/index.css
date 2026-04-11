@@ -34,13 +34,6 @@ html[data-theme="light"] {
 html {
   background: var(--bg);
   color-scheme: dark;
-  scroll-snap-type: y proximity;
-}
-
-@media (max-width: 768px) {
-  html {
-    scroll-snap-type: none;
-  }
 }
 
 html[data-theme="light"] {
@@ -149,7 +142,7 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   padding: 0 clamp(2rem, 5vw, 5rem);
   overflow: clip;
-  scroll-snap-align: start;
+
 }
 
 .hero-mark {
@@ -245,7 +238,7 @@ img { display: block; max-width: 100%; }
    ─────────────────────────────────────────────── */
 
 .demo-callout {
-  scroll-snap-align: start;
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -260,6 +253,25 @@ img { display: block; max-width: 100%; }
   inset: 0;
   background: radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%);
   pointer-events: none;
+}
+
+.demo-confidential {
+  margin: 0 0 2rem;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid #e05252;
+  border-radius: 0.5rem;
+  font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #e05252;
+  animation: blink-badge 2s ease-in-out infinite;
+}
+
+@keyframes blink-badge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
 .demo-pulse {
@@ -327,7 +339,7 @@ img { display: block; max-width: 100%; }
    ─────────────────────────────────────────────── */
 
 .intro {
-  scroll-snap-align: start;
+
   max-width: 1120px;
   margin: 0 auto;
   padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
@@ -451,7 +463,7 @@ img { display: block; max-width: 100%; }
    ─────────────────────────────────────────────── */
 
 .brand {
-  scroll-snap-align: start;
+
   max-width: 1120px;
   margin: 0 auto;
   padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
@@ -534,7 +546,7 @@ img { display: block; max-width: 100%; }
    ─────────────────────────────────────────────── */
 
 .voice {
-  scroll-snap-align: start;
+
   max-width: 1120px;
   margin: 0 auto;
   padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);

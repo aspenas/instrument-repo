@@ -1,15 +1,8 @@
-node_modules
-dist
+node_modules/
+dist/
 *.local
 .DS_Store
 artifacts/
-playwright-report/
-test-results/
 .playwright-mcp/
-.claude/
 *.log
 *.png
-HANDOFF.md
-instrument-architecture.html
-assets/
-scripts/

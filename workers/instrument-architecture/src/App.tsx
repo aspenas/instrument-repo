@@ -154,7 +154,7 @@ export default function App() {
 
       <main id="main">
         {/* ──── Hero ──── */}
-        <section className="hero" data-lenis-scroll-snap-align="start">
+        <section className="hero">
           <div className="hero-content">
             <h1 className="hero-title">Perch<span className="accent">.</span></h1>
             <p className="hero-attr">built by Candlefish</p>
@@ -170,8 +170,9 @@ export default function App() {
         </section>
 
         {/* ──── Demo callout ──── */}
-        <section className="demo-callout" data-lenis-scroll-snap-align="start">
+        <section className="demo-callout">
           <div className="demo-glow" aria-hidden="true" />
+          <p className="demo-confidential">Confidential — Do Not Share</p>
           <span className="demo-pulse" aria-hidden="true" />
           <p className="demo-label">Live demo</p>
           <h2 className="demo-heading">See Perch in action.</h2>
@@ -185,7 +186,7 @@ export default function App() {
         </section>
 
         {/* ──── Intro ──── */}
-        <section className="intro" data-lenis-scroll-snap-align="start">
+        <section className="intro">
           <div className="intro-lead">
             <p className="section-label">Why instruments</p>
             <h2 className="display-heading">
@@ -263,7 +264,7 @@ export default function App() {
         </section>
 
         {/* ──── Brand ──── */}
-        <section id="brand" className="brand" data-lenis-scroll-snap-align="start">
+        <section id="brand" className="brand">
           <div className="brand-header">
             <p className="section-label">Brand system</p>
             <h2 className="section-heading">Shown correctly on both surfaces.</h2>
@@ -304,7 +305,7 @@ export default function App() {
         </section>
 
         {/* ──── Voice ──── */}
-        <section className="voice" data-lenis-scroll-snap-align="start">
+        <section className="voice">
           <div className="voice-header">
             <p className="section-label">Voice</p>
             <h2 className="section-heading">Perch should read like operating intelligence.</h2>
