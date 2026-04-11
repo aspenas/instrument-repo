@@ -1,30 +1,41 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Lenis from 'lenis'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import 'lenis/dist/lenis.css'
 import './fonts.css'
 import './index.css'
 
 import App from './App.tsx'
 
-// Smooth scroll — desktop gets Lenis, touch devices get native
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+gsap.registerPlugin(ScrollTrigger)
 
-if (!isTouchDevice) {
+// Smooth scroll — desktop gets Lenis + GSAP, touch devices get native
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+if (!isTouchDevice && !prefersReduced) {
   const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    lerp: 0.1,
     smoothWheel: true,
-    touchMultiplier: 0,
+    wheelMultiplier: 1,
+    orientation: 'vertical',
   })
 
-  function raf(time: number) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
-  requestAnimationFrame(raf)
+  // Wire Lenis into GSAP ticker for frame-perfect sync
+  gsap.ticker.lagSmoothing(0)
+  gsap.ticker.add((time: number) => {
+    lenis.raf(time * 1000)
+  })
+  lenis.on('scroll', ScrollTrigger.update)
 
-  // Wire up anchor links
+  // Expose scroll velocity as CSS variable
+  lenis.on('scroll', ({ velocity }: { velocity: number }) => {
+    document.documentElement.style.setProperty('--scroll-velocity', `${velocity}`)
+  })
+
+  // Anchor links through Lenis
   document.addEventListener('click', (e) => {
     const target = (e.target as HTMLElement).closest('a[href^="#"]')
     if (!target) return
@@ -38,30 +49,53 @@ if (!isTouchDevice) {
   })
 }
 
-// Scroll-triggered section reveals via IntersectionObserver
-function initScrollReveals() {
+// ScrollTrigger-powered section reveals
+function initReveals() {
   const sections = document.querySelectorAll(
     '.intro, .instrument, .brand, .voice, .tech-ref, .site-footer, .demo-callout'
   )
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed')
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
-  )
+  sections.forEach((section) => {
+    gsap.fromTo(section,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      }
+    )
+  })
 
-  sections.forEach((section) => observer.observe(section))
+  // Stagger children
+  document.querySelectorAll('.principles, .rules, .voice-specimens').forEach((container) => {
+    const children = container.children
+    gsap.fromTo(children,
+      { opacity: 0, y: 24 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        stagger: 0.08,
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      }
+    )
+  })
 }
 
-// Init reveals after React renders
+// Init after React renders
 requestAnimationFrame(() => {
-  requestAnimationFrame(initScrollReveals)
+  requestAnimationFrame(initReveals)
 })
 
 createRoot(document.getElementById('root')!).render(
