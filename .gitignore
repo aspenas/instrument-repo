@@ -11,3 +11,16 @@ artifacts/
 !workers/instrument-architecture/scripts/
 __pycache__/
 .claude/worktrees/
+
+# Wake AI family-context memory — Surface 14 protective hygiene
+memory/family/
+memory/overnight/ctx_*.json
+memory/overnight/rel_*.json
+intelligence/people/
+meetings/*-tyler*
+meetings/*-trevor*
+meetings/*-kendall*
+meetings/*-mcintosh*
+meetings/*-robinson*
+*.tharp-brief.json
+
