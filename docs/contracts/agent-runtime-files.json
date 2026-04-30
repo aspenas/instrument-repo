@@ -1,0 +1,18 @@
+{
+  "schema": "agent_runtime.files.v1",
+  "required_dirs": [
+    "docs/agent-runtime",
+    "docs/contracts",
+    "scripts",
+    "tests"
+  ],
+  "required_paths": [
+    "docs/agent-runtime/README.md",
+    "docs/agent-runtime/current.md",
+    "docs/agent-runtime/known-drift.md",
+    "docs/agent-runtime/ledger.md",
+    "docs/contracts/agent-runtime-files.json",
+    "docs/contracts/known-drift.json",
+    "scripts/validate_agent_runtime.py"
+  ]
+}
