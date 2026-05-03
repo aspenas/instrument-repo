@@ -1,12 +1,14 @@
 # Current Agent Brief
 
-Updated: 2026-04-30
+Updated: 2026-05-03
 
 Read this before long handoffs. This is the compact operating truth for Codex, Claude, and any other agent picking up this repo.
 
 ## Mission
 
-(instrument-repo — fill in the load-bearing thing this repo currently exists to do.)
+The Perch brand and instrument-architecture site. Brand site for Perch — the first instrument in the Wake platform — plus the architecture page that explains how an instrument fits into the broader Wake / Candlefish substrate. Built with React + Vite + Cloudflare Workers; static assets plus a Worker handler for any dynamic routes.
+
+Surface: `instruments.highline.work`. Brand assets live under `assets/`; Worker source under `workers/instrument-architecture/`. The architecture page should stay in sync with `architecture.highline.work` chapters in Wake (`~/Work/wake/architecture/`) — when those move, this page's references should follow.
 
 ## Role Split
 
@@ -30,7 +32,11 @@ Both agents write claims using these labels:
 
 ## Current Source-Backed Claims
 
-(Project-specific — list the small set of facts the current demo or hand-off depends on. Anything that lands here should be machine-checkable via the validator or a one-line shell command.)
+- Stack: React + Vite + Cloudflare Workers.
+- Worker source: `workers/instrument-architecture/`.
+- Deploy: `wrangler deploy` (Cloudflare).
+- Surface: `instruments.highline.work`.
+- Brand assets: `assets/` (including the v11 4K reveal video bundle).
 
 ## Current Known Drift
 
