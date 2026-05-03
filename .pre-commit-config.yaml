@@ -1,0 +1,64 @@
+# Pre-commit hooks for instrument-repo.
+#
+# Inherits the workspace prose-discipline tooling adopted in Phase B
+# (2026-05-03) per ~/Work/.claude/rules/prose-discipline.md. The Vale and
+# markdownlint configs live at workspace root and are referenced via
+# relative paths (`../.vale.ini`, `../.markdownlint.json`).
+#
+# Install: pipx install pre-commit && pre-commit install
+# Run manually: pre-commit run --all-files
+
+exclude: |
+  (?x)^(
+    node_modules/.*|
+    .*/node_modules/.*|
+    .*/__pycache__/.*|
+    .*/\.venv/.*|
+    .*/venv/.*|
+    .*/dist/.*|
+    .*/build/.*|
+    .*/\.next/.*|
+    .*/coverage/.*|
+    .*\.min\.js$|
+    .*\.min\.css$
+  )$
+
+repos:
+  # Standard pre-commit hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+        args: ['--unsafe']
+      - id: check-json
+        exclude: '(^|/)tsconfig.*\.json$'
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  # Gitleaks - Secret scanning
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.1
+    hooks:
+      - id: gitleaks
+
+  # Prose-discipline hooks (Phase B, 2026-05-03)
+  - repo: local
+    hooks:
+      - id: vale
+        name: Lint prose with Vale (workspace style)
+        entry: vale --config ../.vale.ini --minAlertLevel=error --no-wrap
+        language: system
+        files: '\.(md|mdx)$'
+        pass_filenames: true
+
+      - id: markdownlint
+        name: Lint markdown structure with markdownlint-cli2
+        entry: markdownlint-cli2 --config ../.markdownlint.json
+        language: system
+        files: '\.(md|mdx)$'
+        pass_filenames: true
