@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_comment": "Repo-scoped Claude Code settings. SessionStart hook is the entry point for the web/phone-sandbox bootstrap (see .claude/hooks/web-bootstrap.sh and docs/runbooks/04-web-session-bootstrap.md). The hook is a no-op on macOS — your user-global ~/.claude/settings.json handles context injection on dev machines.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/session-start.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
